@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nguyen Phuc Loc - Portfolio</title>
     
-    <!-- Favicon Configuration -->
-    <link rel="icon" type="image/jpeg" href="anh cv 2.jpg">
-    <link rel="shortcut icon" type="image/jpeg" href="anh cv 2.jpg">
-    <link rel="apple-touch-icon" href="anh cv 2.jpg">
+    <link rel="icon" href="ảnh cv của t.jpg">
+    <link rel="apple-touch-icon" href="ảnh cv của t.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -218,20 +216,7 @@
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
-        
-        /* New Shimmer Animation for Hero Text */
-        @keyframes text-shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-        .animate-text-shimmer {
-            background: linear-gradient(90deg, #e2e8f0 20%, #38bdf8 50%, #e2e8f0 80%);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: text-shimmer 4s linear infinite;
-        }
+
         /* Roadmap Styles */
         .roadmap-line {
             position: absolute;
@@ -370,8 +355,8 @@
                 <!-- Modern Bio Description -->
                 <div class="max-w-2xl mx-auto lg:mx-0 space-y-6 hero-bio-anim" style="animation-delay: 0.3s;">
                     <p class="text-xl md:text-2xl text-white/90 font-light flex items-center justify-center lg:justify-start gap-3">
-                     <span class="text-ai-cyan font-mono font-bold text-xl"></span>
-                    <span class="animate-text-shimmer font-semibold">Growth-oriented Marketer</span>
+                        <span class="text-ai-cyan font-mono font-bold text-xl"></span>
+                        Growth-oriented Marketer
                     </p>
                     
                     <div class="glass-card p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg shadow-xl relative overflow-hidden">
@@ -585,11 +570,7 @@
                 </div>
             </div>
 
-  <div id="upbase-showcase" class="fixed inset-0 z-[150] hidden bg-[#05050f]/80 backdrop-blur-[24px] overflow-y-auto transition-all duration-500 opacity-0 transform scale-105 custom-scroll">
-        <!-- Floating Ambient Orbs inside Modal -->
-        <div class="absolute top-[10%] left-[20%] w-96 h-96 bg-ai-cyan/20 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-ai-purple/20 rounded-full blur-[150px] pointer-events-none"></div>
-
+  <div id="upbase-showcase" class="fixed inset-0 z-[150] hidden bg-[#05050f]/95 backdrop-blur-[40px] overflow-y-auto transition-all duration-500 opacity-0 transform scale-105 custom-scroll">
         <div class="max-w-7xl mx-auto px-4 py-16 relative">
             <button onclick="closeUpbaseShowcase()" class="fixed top-8 right-8 z-[160] w-14 h-14 rounded-full glass-card flex items-center justify-center hover:bg-white/10 text-white transition-all group border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
                 <i class="fas fa-times text-2xl group-hover:rotate-90 transition-transform"></i>
@@ -655,7 +636,7 @@
                                 <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative" onclick="openModal('lark-lp')">
                                     <img id="lark-lp" src="LDP.png" class="rounded-[2rem] w-full h-full object-cover">
                                     <div class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]"><i class="fas fa-search-plus text-white text-2xl"></i></div>
-                                    <span class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest">Conversion Landing Pages</span>
+                                    <span class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest">Conversion LP</span>
                                 </div>
                             </div>
                         </div>
@@ -881,11 +862,7 @@
     </section>
 
     <!-- NEW HERBALIFE SHOWCASE MODAL -->
-    <div id="herbalife-showcase" class="fixed inset-0 z-[150] hidden bg-[#05050f]/80 backdrop-blur-[24px] overflow-y-auto transition-all duration-500 opacity-0 transform scale-105 custom-scroll">
-        <!-- Floating Ambient Orbs inside Modal -->
-        <div class="absolute top-[10%] left-[20%] w-96 h-96 bg-ai-cyan/20 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-ai-purple/20 rounded-full blur-[150px] pointer-events-none"></div>
-
+    <div id="herbalife-showcase" class="fixed inset-0 z-[150] hidden bg-[#05050f]/95 backdrop-blur-[40px] overflow-y-auto transition-all duration-500 opacity-0 transform scale-105 custom-scroll">
         <div class="max-w-6xl mx-auto px-4 py-20 relative">
             <button onclick="closeHerbalifeShowcase()" class="fixed top-8 right-8 z-[160] w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-white/20 text-white transition-all group shadow-[0_0_20px_rgba(0,0,0,0.5)]">
                 <i class="fas fa-times text-xl group-hover:rotate-90 transition-transform"></i>
@@ -1137,10 +1114,10 @@
                 <!-- Content -->
                 <div class="p-8 lg:p-12 flex-1 flex flex-col">
                     <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl lg:text-2xl font-black text-white uppercase tracking-tight">DEPARTMENT OF EXTERNAL RELATIONS OF NEU</h3>
+                        <h3 class="text-2xl lg:text-3xl font-black text-white uppercase tracking-tight">DEPARTMENT OF EXTERNAL RELATIONS OF NEU</h3>
                         <span class="text-[10px] font-bold text-ai-cyan bg-ai-cyan/10 border border-ai-cyan/20 px-4 py-1.5 rounded-full whitespace-nowrap uppercase">Since 2006</span>
                     </div>
-                    <h4 class="text-ai-cyan mb-8 font-medium text-lg tracking-widest uppercase opacity-80">Core Member (Nov 2022 - Jan 2024)</h4>
+                    <h4 class="text-ai-cyan mb-8 font-medium text-xl tracking-widest uppercase opacity-80">Core Member (Nov 2022 - Jan 2024)</h4>
                     
                     <!-- Always visible details -->
                     <div class="space-y-8 text-sm text-gray-300">
@@ -1149,13 +1126,13 @@
                                 <p class="text-ai-cyan font-black uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
                                     <i class="fas fa-star"></i> Responsibility
                                 </p>
-                                <p class="text-xs text-white leading-relaxed"> Took charge of external affairs at NEU Student Union events, focusing on Sponsorship Acquisition, Media & Press Relations, and Event Organization.</p>                            
+                                <p>Took charge of external affairs at NEU Student Union events, focusing on Sponsorship Acquisition, Media & Press Relations, and Event Organization.</p>
                             </div>
                             <div>
                                 <p class="text-ai-purple font-black uppercase text-xs tracking-widest mb-3 flex items-center gap-2">
                                     <i class="fas fa-sync-alt"></i> Workflow
                                 </p>
-                                <p class="text-xs text-white leading-relaxed"> Collaborated cross-functionally to pitch partnership proposals, manage media communications, and execute high-impact student events.</p>
+                                <p>Collaborated cross-functionally to pitch partnership proposals, manage media communications, and execute high-impact student events.</p>
                             </div>
                         </div>
 
@@ -1167,11 +1144,11 @@
                                 <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
                                     <div class="text-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-ai-cyan/50 transition-all">
                                         <p class="text-2xl lg:text-3xl font-black text-white mb-1 drop-shadow-sm">3.5B+</p>
-                                        <p class="text-[7px] uppercase font-bold text-ai-cyan">VNĐ Sponsorship</p>
+                                        <p class="text-[7px] uppercase font-bold text-ai-cyan tracking-widest">VNĐ Sponsorship</p>
                                     </div>
                                     <div class="text-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-ai-purple/50 transition-all">
                                         <p class="text-2xl lg:text-3xl font-black text-white mb-1 drop-shadow-sm">36K</p>
-                                        <p class="text-[7px] uppercase font-bold text-ai-purple tracking-widest">Followers</p>
+                                        <p class="text-[7px] uppercase font-bold text-gray-400 tracking-widest">Followers</p>
                                     </div>
                                     <div class="text-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-ai-cyan/50 transition-all">
                                         <p class="text-2xl lg:text-3xl font-black text-white mb-1 drop-shadow-sm">34K</p>
@@ -1243,7 +1220,7 @@
                                 <span class="text-[8px] uppercase font-bold text-gray-500 tracking-widest">Media Pubs</span>
                             </div>
                         </div>
-                        <div class="text-sm text-white space-y-4 text-justify">
+                        <div class="text-sm text-gray-400 space-y-4 text-justify">
                             <p><strong>Responsibility:</strong> Served as Head of External Relations for NEU's largest annual freshmen event, overseeing partner negotiations, internal team leadership, and cross-unit collaboration.</p>
                             <p><strong>Workflow:</strong> Led strategic negotiations with key sponsors and managed internal team members throughout the 5-month preparation period.</p>
                         </div>
@@ -1296,7 +1273,7 @@
                                 <span class="text-[8px] uppercase text-gray-500 tracking-tighter">Sponsors</span>
                             </div>
                         </div>
-                        <div class="text-sm text-white space-y-4 text-justify">
+                        <div class="text-sm text-gray-400 space-y-4 text-justify">
                             <p><strong>Responsibility:</strong> Served as Sub-leader in Content Strategy and Academic Sponsorship for the Brand Communication Case Competition.</p>
                             <p><strong>Workflow:</strong> Led content planning, execution, and quality control, while managing academic partners to finalize competition format.</p>
                         </div>
@@ -2411,7 +2388,6 @@
             precision highp float;
             layout(location=0) in vec2 a_pos;
             void main(){ gl_Position = vec4(a_pos,0.0,1.0); }`;
-            // Giảm 60% vòng lặp Shader (5e1 xuống 2e1) để tăng hiệu năng tối đa
             const fragSrc = `#version 300 es
             precision highp float;
             out vec4 fragColor;
@@ -2427,7 +2403,7 @@
               vec3 p = vec3(0.0);
               vec3 v = vec3(1.0, 2.0, 6.0);
               float i = 0.0, z = 1.0, d = 1.0, f = 1.0;
-              for (; i++ < 2e1; o.rgb += (cos((p.x + z + v) * 0.1) + 1.0) / d / f / z) {
+              for (; i++ < 5e1; o.rgb += (cos((p.x + z + v) * 0.1) + 1.0) / d / f / z) {
                 p = z * normalize(FC * 2.0 - r.xyy);
                 vec4 m = cos((p + sin(p)).y * 0.4 + vec4(0.0, 33.0, 11.0, 0.0));
                 p.xz = mat2(m) * p.xz;
@@ -2449,27 +2425,18 @@
             gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
             const uRes = gl.getUniformLocation(prog, "u_res"), uTime = gl.getUniformLocation(prog, "u_time");
             const resizeGL = () => {
-            // Render ở mức 50% phân giải màn hình để mượt mà khi kết hợp Spline 3D
-                const dpr = 0.5;
+                const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
                 const w = Math.floor(window.innerWidth * dpr), h = Math.floor(window.innerHeight * dpr);
                 glCanvas.width = w; glCanvas.height = h; gl.viewport(0, 0, w, h); gl.uniform2f(uRes, w, h);
             };
             window.addEventListener("resize", resizeGL, { passive: true }); resizeGL();
             const t0 = performance.now();
-            let lastTime = 0;
-                // Khóa tốc độ nền webGL ở 30fps
-                const fpsInterval = 1000 / 30;
-                const drawGL = (currentTime) => { 
-                    requestAnimationFrame(drawGL);
-                    const elapsed = currentTime - lastTime;
-                    if (elapsed > fpsInterval) {
-                        lastTime = currentTime - (elapsed % fpsInterval);
-                        gl.uniform1f(uTime, (currentTime - t0) / 1000); 
-                        gl.clear(gl.COLOR_BUFFER_BIT); 
-                        gl.drawArrays(gl.TRIANGLES, 0, 6); 
-                    }
-                };
+            const drawGL = () => {
+                gl.uniform1f(uTime, (performance.now() - t0) / 1000);
+                gl.clear(gl.COLOR_BUFFER_BIT); gl.drawArrays(gl.TRIANGLES, 0, 6);
                 requestAnimationFrame(drawGL);
+            };
+            drawGL();
         }
 
         // Scroll Reveal
