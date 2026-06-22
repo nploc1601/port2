@@ -125,9 +125,7 @@
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.9) !important;
-            backdrop-filter: blur(12px) !important;
-            -webkit-backdrop-filter: blur(12px) !important;
+            background: #ffffff !important;
             border: 1px solid rgba(212, 104, 10, 0.12) !important;
             box-shadow: 0 8px 30px rgba(212, 104, 10, 0.03) !important;
             transition: all 0.3s ease;
@@ -142,7 +140,7 @@
             color: transparent;
             background-clip: text;
             -webkit-background-clip: text;
-            background-image: linear-gradient(90deg, #D4680A, #F5A623);
+            background-image: linear-gradient(90deg, #B24E00, #C58300);
         }
 
         .timeline-dot {
@@ -381,61 +379,6 @@
             transform: translateY(0);
         }
 
-        /* Custom hover colors for proposal link icons */
-        .proposal-link-mobile:hover {
-            background-color: #ffffff !important;
-            color: #8B5A2B !important;
-        }
-
-        .proposal-link-mobile:hover i {
-            color: #8B5A2B !important;
-        }
-
-        .proposal-link-affiliate:hover {
-            background-color: #ffffff !important;
-            color: #1D4ED8 !important;
-        }
-
-        .proposal-link-affiliate:hover i {
-            color: #1D4ED8 !important;
-        }
-
-        .proposal-link-ride:hover {
-            background-color: #ffffff !important;
-            color: #00B14F !important;
-        }
-
-        .proposal-link-ride:hover i {
-            color: #00B14F !important;
-        }
-
-        .proposal-link-deodorant:hover {
-            background-color: #ffffff !important;
-            color: #FFB6C1 !important;
-        }
-
-        .proposal-link-deodorant:hover i {
-            color: #FFB6C1 !important;
-        }
-
-        .proposal-link-oral:hover {
-            background-color: #ffffff !important;
-            color: #E63946 !important;
-        }
-
-        .proposal-link-oral:hover i {
-            color: #E63946 !important;
-        }
-
-        .proposal-link-facial:hover {
-            background-color: #ffffff !important;
-            color: #FFB703 !important;
-        }
-
-        .proposal-link-facial:hover i {
-            color: #FFB703 !important;
-        }
-
         .delay-100 {
             transition-delay: 100ms;
         }
@@ -466,62 +409,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             animation: text-shimmer 4s linear infinite;
-        }
-
-        .loc-premium-effect {
-            background: linear-gradient(135deg, #2D1B00 0%, #D4680A 35%, #F5A623 50%, #D4680A 65%, #2D1B00 100%);
-            background-size: 300% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: loc-shimmer 8s linear infinite, loc-pulse-glow 4s ease-in-out infinite;
-            display: inline-block;
-        }
-
-        @keyframes loc-shimmer {
-            0% {
-                background-position: 0% center;
-            }
-
-            50% {
-                background-position: 300% center;
-            }
-
-            100% {
-                background-position: 0% center;
-            }
-        }
-
-        @keyframes loc-pulse-glow {
-
-            0%,
-            100% {
-                filter: drop-shadow(0 0 4px rgba(212, 104, 10, 0.25));
-            }
-
-            50% {
-                filter: drop-shadow(0 0 10px rgba(245, 166, 35, 0.45));
-            }
-        }
-
-        .project-title-nyf a {
-            color: #ffffff !important;
-            transition: color 0.3s ease;
-        }
-
-        .project-title-nyf a:hover {
-            color: #ffffff !important;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-        }
-
-        .project-title-tnth a {
-            color: #ffffff !important;
-            transition: color 0.3s ease;
-        }
-
-        .project-title-tnth a:hover {
-            color: #D4680A !important;
-            /* ai-cyan */
         }
 
         /* Roadmap Styles */
@@ -625,16 +512,20 @@
             color: #2D1B00 !important;
         }
 
+        .text-real-white {
+            color: #ffffff !important;
+        }
+
         .text-gray-300 {
             color: #3D2800 !important;
         }
 
         .text-gray-400 {
-            color: #8B6914 !important;
+            color: #6D510D !important;
         }
 
         .text-gray-500 {
-            color: #B8860B !important;
+            color: #806100 !important;
         }
 
         .text-gray-200 {
@@ -642,7 +533,7 @@
         }
 
         .text-white\/50 {
-            color: rgba(45, 27, 0, 0.5) !important;
+            color: rgba(45, 27, 0, 0.65) !important;
         }
 
         .text-white\/80 {
@@ -650,7 +541,7 @@
         }
 
         .text-gray-400\/80 {
-            color: rgba(139, 105, 20, 0.8) !important;
+            color: rgba(109, 81, 13, 0.85) !important;
         }
 
         /* Clear all drop shadows and glows for minimalist sharp typography */
@@ -756,17 +647,6 @@
             box-shadow: 0 0 8px rgba(212, 104, 10, 0.2) !important;
         }
 
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 12px;
-            bottom: -60px;
-            width: 2px;
-            background: rgba(212, 104, 10, 0.3);
-            z-index: 0;
-        }
-
         /* Fix icons or elements that must keep white color (e.g. inside badges/pills/buttons) */
         .text-ai-cyan {
             color: #D4680A !important;
@@ -794,7 +674,7 @@
         .falcon-bg-gradient {
             position: absolute;
             inset: 0;
-            background: linear-gradient(160deg, #FFFDF9 0%, #FFF4E3 20%, #FEE5BE 45%, #FCD299 65%, #F9BE74 85%, #E6963B 100%);
+            background: linear-gradient(160deg, #FFF5E0 0%, #FFCC4D 20%, #F5A623 45%, #F08C19 65%, #E87A10 85%, #D4680A 100%);
             z-index: -3;
         }
 
@@ -1036,7 +916,7 @@
         <div
             class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-[-1]">
             <img src="falcon mascot.png" alt="Falcon Mascot"
-                class="w-[550px] h-[550px] max-w-[95vw] max-h-[95vh] object-contain opacity-[0.08] filter blur-[1.5px] select-none pointer-events-none">
+                class="w-[500px] h-[500px] max-w-[80vw] max-h-[80vh] object-contain opacity-[0.08] filter blur-[3px] select-none pointer-events-none">
         </div>
         <div class="falcon-sparkles" id="falcon-sparkles"></div>
         <div class="falcon-game-elements" id="falcon-game-el"></div>
@@ -1056,10 +936,8 @@
         class="fixed w-full z-50 glass-card border-b-0 border-t-0 border-l-0 border-r-0 border-b border-[rgba(255,255,255,0.05)]">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="#about" class="flex items-center">
-                    <img src="mascot falcon.png" alt="Falcon Mascot"
-                        class="h-10 w-auto object-contain select-none hover:scale-105 transition-transform duration-300">
-                </a>
+                <span
+                    class="font-orbitron text-2xl font-black text-ai-cyan tracking-[0.2em] select-none hover:text-white transition-colors duration-300">NPL</span>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#about"
@@ -1088,33 +966,34 @@
 
     <!-- NEW INNOVATIVE & FULL HERO SECTION -->
     <section id="about"
-        class="relative w-full min-h-screen flex items-center pt-20 pb-8 px-4 sm:px-8 lg:px-16 overflow-hidden">
+        class="relative w-full min-h-screen flex items-center pt-28 pb-16 px-4 sm:px-8 lg:px-16 overflow-hidden">
         <div
-            class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+            class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center relative z-10">
 
             <!-- Left Column: Innovative Text Content -->
             <div class="lg:col-span-7 flex flex-col justify-center text-center lg:text-left z-20">
 
                 <!-- Minimalist Status Badge -->
                 <div
-                    class="relative inline-flex items-center gap-3 px-5 py-2 rounded-full glass-card border border-white/10 backdrop-blur-md mx-auto lg:mx-0 hero-name-anim w-max">
+                    class="relative inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mx-auto lg:mx-0 hero-name-anim w-max">
                     <div class="w-2 h-2 rounded-full bg-ai-cyan shadow-[0_0_8px_#D4680A] animate-pulse"></div>
-                    <span class="text-xs font-semibold text-black/90 tracking-widest uppercase">Open to work</span>
+                    <span class="text-xs font-semibold text-white/90 tracking-widest uppercase">Open to work</span>
                 </div>
 
                 <!-- Innovative Main Heading -->
-                <div class="mt-4 mb-4">
-                    <h1 class="text-[3rem] sm:text-5xl lg:text-[4.5rem] font-black tracking-tighter leading-[1.0] hero-name-anim relative"
+                <div class="mt-8 mb-6">
+                    <h1 class="text-[3.5rem] sm:text-6xl lg:text-[5.5rem] font-black tracking-tighter leading-[1.0] hero-name-anim relative"
                         style="animation-delay: 0.1s;">
                         <span class="block text-white mb-2 uppercase">Nguyen Phuc</span>
-                        <span class="loc-premium-effect font-black relative z-10 uppercase tracking-tight">
+                        <span
+                            class="bg-gradient-to-br from-ai-cyan via-[#F5A623] to-ai-purple bg-clip-text text-transparent font-black relative z-10 uppercase tracking-tight drop-shadow-[0_0_20px_rgba(212, 104, 10,0.5)]">
                             LOC
                         </span>
                     </h1>
                 </div>
 
                 <!-- Loading Progress Bar Animation -->
-                <div class="relative w-full max-w-lg mx-auto lg:mx-0 mb-4 hero-title-anim h-8 flex items-center gap-4"
+                <div class="relative w-full max-w-lg mx-auto lg:mx-0 mb-8 hero-title-anim h-8 flex items-center gap-4"
                     style="animation-delay: 0.2s;">
                     <div class="relative h-[2px] bg-white/10 flex-1 rounded-full overflow-hidden">
                         <div
@@ -1128,7 +1007,7 @@
                 </div>
 
                 <!-- Modern Bio Description -->
-                <div class="max-w-2xl mx-auto lg:mx-0 space-y-4 hero-bio-anim" style="animation-delay: 0.3s;">
+                <div class="max-w-2xl mx-auto lg:mx-0 space-y-6 hero-bio-anim" style="animation-delay: 0.3s;">
                     <p
                         class="text-xl md:text-2xl text-white/90 font-light flex items-center justify-center lg:justify-start gap-3">
                         <span class="text-ai-cyan font-mono font-bold text-xl"></span>
@@ -1136,11 +1015,11 @@
                     </p>
 
                     <div
-                        class="glass-card p-5 rounded-2xl border border-white/10 backdrop-blur-lg shadow-xl relative overflow-hidden">
+                        class="glass-card p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg shadow-xl relative overflow-hidden">
                         <div
                             class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#F5A623]/30 to-transparent">
                         </div>
-                        <p class="text-sm md:text-base text-gray-300 leading-relaxed text-justify">
+                        <p class="text-sm md:text-base text-gray-300 leading-relaxed text-justify lg:text-left">
                             User Acquisition practitioner with hands-on experience in <strong
                                 class="text-white font-medium">full-funnel paid campaigns</strong>, <strong
                                 class="text-white font-medium">lead tracking</strong>, and <span
@@ -1150,7 +1029,7 @@
                                 data-driven thinking</span>, and a fast-learning mindset to scale products on global ad
                             networks at the intersection of:
                         </p>
-                        <div class="flex flex-wrap gap-2 mt-3 justify-center lg:justify-start">
+                        <div class="flex flex-wrap gap-2 mt-4 justify-center lg:justify-start">
                             <span
                                 class="px-3 py-1 rounded-md bg-white/10 border border-white/20 text-white text-sm font-medium backdrop-blur-md shadow-[0_2px_10px_rgba(0,0,0,0.2)]">AI</span>
                             <span
@@ -1158,19 +1037,21 @@
                             <span
                                 class="px-3 py-1 rounded-md bg-white/10 border border-white/20 text-white text-sm font-medium backdrop-blur-md shadow-[0_2px_10px_rgba(0,0,0,0.2)]">Human</span>
                         </div>
-                        <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/10">
+                        <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
                             <span class="text-xs text-gray-400">Professional Portfolio</span>
+                            <span class="font-signature text-2xl text-ai-cyan rotate-[-2deg] inline-block select-none">-
+                                Loc Nguyen</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- High-tech Action Buttons -->
-                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4 hero-btn-anim"
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-6 hero-btn-anim"
                     style="animation-delay: 0.5s;">
 
                     <!-- Primary Button (Email - Bright Modern SaaS Style) -->
                     <a href="mailto:nploc.work@gmail.com"
-                        class="group relative inline-flex items-center gap-3 px-6 py-2.5 bg-white text-black rounded-xl font-bold text-sm md:text-base shadow-[0_10px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.4)] hover:bg-gray-100 transition-all duration-500 overflow-hidden hover:-translate-y-1">
+                        class="group relative inline-flex items-center gap-3 px-8 py-3.5 bg-white text-black rounded-xl font-bold text-sm md:text-base shadow-[0_10px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.4)] hover:bg-gray-100 transition-all duration-500 overflow-hidden hover:-translate-y-1">
                         <i class="fas fa-envelope text-black"></i>
                         <span class="relative z-10 tracking-wide">Email Me</span>
                         <i
@@ -1179,7 +1060,7 @@
 
                     <!-- Secondary Button (Phone) -->
                     <a href="tel:+84988766406"
-                        class="group relative inline-flex items-center gap-3 px-5 py-2.5 border border-white/20 rounded-xl font-medium text-sm md:text-base text-white hover:border-white/60 transition-all duration-500 backdrop-blur-xl bg-white/80 hover:bg-white/95 shadow-lg overflow-hidden hover:-translate-y-1">
+                        class="group relative inline-flex items-center gap-3 px-6 py-3.5 border border-white/20 rounded-xl font-medium text-sm md:text-base text-white hover:border-white/60 transition-all duration-500 backdrop-blur-xl bg-white/80 hover:bg-white/95 shadow-lg overflow-hidden hover:-translate-y-1">
                         <i
                             class="fas fa-phone text-ai-cyan group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"></i>
                         <span class="relative z-10 tracking-wide">Phone</span>
@@ -1187,7 +1068,7 @@
 
                     <!-- Secondary Button (LinkedIn) -->
                     <a href="https://www.linkedin.com/in/nplocwork" target="_blank"
-                        class="group relative inline-flex items-center gap-3 px-5 py-2.5 border border-white/20 rounded-xl font-medium text-sm md:text-base text-white hover:border-white/60 transition-all duration-500 backdrop-blur-xl bg-white/80 hover:bg-white/95 shadow-lg overflow-hidden hover:-translate-y-1">
+                        class="group relative inline-flex items-center gap-3 px-6 py-3.5 border border-white/20 rounded-xl font-medium text-sm md:text-base text-white hover:border-white/60 transition-all duration-500 backdrop-blur-xl bg-white/80 hover:bg-white/95 shadow-lg overflow-hidden hover:-translate-y-1">
                         <i
                             class="fab fa-linkedin-in text-ai-purple group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300"></i>
                         <span class="relative z-10 tracking-wide">LinkedIn</span>
@@ -1196,12 +1077,12 @@
             </div>
 
             <!-- Right Column: Interactive Avatar & Bright Floating Glass Panels -->
-            <div class="lg:col-span-5 relative flex items-center justify-center h-[380px] lg:h-[450px] mt-12 lg:mt-0 hero-avatar-anim"
+            <div class="lg:col-span-5 relative flex items-center justify-center h-[450px] lg:h-[550px] mt-12 lg:mt-0 hero-avatar-anim"
                 style="animation-delay: 0.6s;">
 
                 <!-- Floating Glass Panel 1 (Top Left) - BRIGHTER -->
                 <div
-                    class="absolute top-2 -left-2 lg:-left-8 glass-card px-5 py-3 rounded-2xl flex items-center gap-3 animate-float-1 z-30 border border-white/30 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+                    class="absolute top-4 -left-2 sm:-left-8 lg:-left-16 glass-card px-5 py-3 rounded-2xl flex items-center gap-3 animate-float-1 z-30 border border-white/30 bg-white/10 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
                     <div
                         class="w-8 h-8 rounded-full bg-ai-cyan/20 flex items-center justify-center text-ai-cyan shadow-[0_0_15px_rgba(212, 104, 10,0.4)]">
                         <i class="fas fa-chart-pie text-sm"></i>
@@ -1213,7 +1094,7 @@
                 </div>
 
                 <!-- Floating Glass Panel 2 (Middle Right) - BRIGHTER -->
-                <div class="absolute top-1/2 -translate-y-1/2 -right-2 lg:-right-12 glass-card px-5 py-3 rounded-2xl flex items-center gap-3 animate-float-2 z-30 border border-white/30 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
+                <div class="absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-12 lg:-right-32 glass-card px-5 py-3 rounded-2xl flex items-center gap-3 animate-float-2 z-30 border border-white/30 bg-white/10 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
                     style="animation-delay: -2s;">
                     <div
                         class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white shadow-[0_0_15px_rgba(255,255,255,0.4)]">
@@ -1226,7 +1107,7 @@
                 </div>
 
                 <!-- Floating Glass Panel 3 (Bottom Right) - BRIGHTER -->
-                <div class="absolute bottom-4 right-2 lg:-right-8 glass-card px-5 py-3 rounded-2xl flex items-center gap-3 animate-float-1 z-30 border border-white/30 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
+                <div class="absolute bottom-8 right-2 sm:right-4 lg:-right-16 glass-card px-5 py-3 rounded-2xl flex items-center gap-3 animate-float-1 z-30 border border-white/30 bg-white/10 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
                     style="animation-delay: -4s;">
                     <div
                         class="w-8 h-8 rounded-full bg-ai-purple/20 flex items-center justify-center text-ai-purple shadow-[0_0_15px_rgba(245, 166, 35,0.4)]">
@@ -1239,7 +1120,7 @@
                 </div>
 
                 <!-- Central Avatar (Perfect Circle) -->
-                <div class="relative w-64 h-64 md:w-[340px] md:h-[340px] flex items-center justify-center group z-20 cursor-pointer"
+                <div class="relative w-64 h-64 md:w-[350px] md:h-[350px] flex items-center justify-center group z-20 cursor-pointer"
                     onclick="openModal('avatar-preview')">
                     <!-- Glowing Outer Rings -->
                     <div
@@ -1282,7 +1163,10 @@
         </h2>
 
         <div class="relative ml-3 md:ml-6 space-y-12">
-            <div class="relative pl-8 md:pl-12 reveal-on-scroll timeline-item">
+            <!-- Continuous Timeline Line -->
+            <div class="absolute left-0 top-3 bottom-0 w-[2px] bg-[rgba(212,104,10,0.3)]"></div>
+
+            <div class="relative pl-8 md:pl-12 reveal-on-scroll">
                 <div class="absolute w-4 h-4 bg-ai-cyan rounded-full -left-[7px] top-3 timeline-dot"></div>
                 <div class="glass-card p-6 rounded-2xl">
                     <div class="flex flex-col sm:flex-row gap-4 mb-4">
@@ -1342,7 +1226,7 @@
             </div>
 
             <!-- AZWAY TRAVEL -->
-            <div class="relative pl-8 md:pl-12 reveal-on-scroll timeline-item">
+            <div class="relative pl-8 md:pl-12 reveal-on-scroll">
                 <div class="absolute w-4 h-4 bg-ai-cyan rounded-full -left-[7px] top-3 timeline-dot"></div>
                 <div class="glass-card p-6 rounded-2xl">
                     <div class="flex flex-col sm:flex-row gap-4 mb-4">
@@ -1379,16 +1263,13 @@
                         <ul class="list-disc pl-5 space-y-2">
                             <li>Managed <strong>acquisition-to-booking</strong> travel growth campaigns across
                                 <strong>Meta Ads lead generation</strong>, <strong>landing page optimization</strong>,
-                                <strong>lead qualification</strong>, and <strong>closed-booking tracking</strong>.
-                            </li>
+                                <strong>lead qualification</strong>, and <strong>closed-booking tracking</strong>.</li>
                             <li>Executed Meta Ads lead campaigns, achieving <strong>3,93% CTR</strong> (benchmark
                                 &gt;2%), <strong>31.0% lead-to-qualified CVR</strong> (benchmark: 20–30%), and
-                                <strong>10.5% qualified-lead-to-booking CVR</strong> (benchmark: >7%).
-                            </li>
+                                <strong>10.5% qualified-lead-to-booking CVR</strong> (benchmark: >7%).</li>
                             <li>Produced multi-format creative assets (1:1, 3:4, 9:16) and <strong>landing
                                     pages</strong> via Ladipage to test campaign angles, tour packages, and
-                                <strong>customer intent</strong> across travel segments.
-                            </li>
+                                <strong>customer intent</strong> across travel segments.</li>
                         </ul>
                     </div>
 
@@ -1444,8 +1325,7 @@
                             <li>Managed <strong>end-to-end paid acquisition funnel</strong> to acquire and nurture B2B
                                 users for Lark Suite (ByteDance) – from <strong>ad creative production</strong> and
                                 <strong>landing page optimization</strong> to <strong>lead qualification</strong> and
-                                <strong>conversion tracking</strong>.
-                            </li>
+                                <strong>conversion tracking</strong>.</li>
                             <li>Exceeded <strong>Opportunity KPIs by 17–60%</strong> for 3 months.</li>
                             <li>Achieved <strong>Cost/Opportunity: 300–400K</strong> (benchmark &lt;600K), <strong>CVR
                                     Opportunity/Lead: 11%–37%</strong> (benchmark 10–15%); <strong>CVR Demo/Opportunity:
@@ -1582,8 +1462,7 @@
                                                 <i class="fas fa-search-plus text-white text-2xl"></i>
                                             </div>
                                             <span
-                                                class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest"
-                                                style="color: #ffffff !important;">Advertising
+                                                class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest">Advertising
                                                 Assets</span>
                                         </div>
                                         <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
@@ -1595,8 +1474,7 @@
                                                 <i class="fas fa-search-plus text-white text-2xl"></i>
                                             </div>
                                             <span
-                                                class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest"
-                                                style="color: #ffffff !important;">Conversion
+                                                class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest">Conversion
                                                 Landing Pages</span>
                                         </div>
                                     </div>
@@ -1628,16 +1506,17 @@
                                         <div
                                             class="absolute inset-0 bg-gradient-to-b from-ai-cyan/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
                                         </div>
-                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
-                                            style="color: #2D1B00 !important; opacity: 0.85;">
+                                        <p
+                                            class="text-[11px] font-black uppercase text-gray-400 tracking-[0.2em] mb-4 text-center">
                                             Exceeded Opp KPIs</p>
                                         <p
-                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-purple to-ai-cyan drop-shadow-[0_0_20px_rgba(212, 104, 10,0.4)] mb-4 text-center leading-tight">
+                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#1a052e] to-ai-cyan drop-shadow-[0_0_20px_rgba(212, 104, 10,0.6)] mb-4 text-center leading-tight">
                                             60%</p>
                                         <div
                                             class="w-full bg-black/50 rounded-full h-10 flex items-center justify-center px-4 border border-white/10 mt-auto">
-                                            <span class="text-[10px] font-black tracking-widest uppercase"
-                                                style="color: #ffffff !important;">Peak Growth Rate</span>
+                                            <span
+                                                class="text-[10px] font-black tracking-widest text-ai-cyan uppercase">Peak
+                                                Growth Rate</span>
                                         </div>
                                     </div>
                                     <div
@@ -1645,18 +1524,18 @@
                                         <div
                                             class="absolute inset-0 bg-gradient-to-b from-ai-purple/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
                                         </div>
-                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
-                                            style="color: #2D1B00 !important; opacity: 0.85;">
+                                        <p
+                                            class="text-[11px] font-black uppercase text-gray-400 tracking-[0.2em] mb-4 text-center">
                                             Cost / Opp (VNĐ)</p>
                                         <p
-                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-cyan to-ai-purple drop-shadow-[0_0_20px_rgba(245, 166, 35,0.4)] mb-4 text-center leading-tight">
+                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#1a052e] to-ai-purple drop-shadow-[0_0_20px_rgba(245, 166, 35,0.6)] mb-4 text-center leading-tight">
                                             300K</p>
                                         <div
                                             class="w-full bg-black/50 rounded-full h-10 flex items-center justify-between px-5 border border-white/10 mt-auto">
-                                            <span class="text-[10px] font-black tracking-widest"
-                                                style="color: #ffffff !important;">Achieved</span>
-                                            <span class="text-[10px] font-black line-through"
-                                                style="color: #FFF3DB !important; opacity: 0.85;">BM: 600K</span>
+                                            <span
+                                                class="text-[10px] font-black tracking-widest text-ai-purple">Achieved</span>
+                                            <span class="text-[10px] font-black text-gray-500 line-through">BM:
+                                                600K</span>
                                         </div>
                                     </div>
                                     <div
@@ -1664,18 +1543,17 @@
                                         <div
                                             class="absolute inset-0 bg-gradient-to-b from-ai-cyan/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
                                         </div>
-                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
-                                            style="color: #2D1B00 !important; opacity: 0.85;">
+                                        <p
+                                            class="text-[11px] font-black uppercase text-gray-400 tracking-[0.2em] mb-4 text-center">
                                             Lead-to-Opp CVR</p>
                                         <p
-                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-purple to-ai-cyan drop-shadow-[0_0_20px_rgba(212, 104, 10,0.4)] mb-4 text-center leading-tight">
+                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#1a052e] to-ai-cyan drop-shadow-[0_0_20px_rgba(212, 104, 10,0.6)] mb-4 text-center leading-tight">
                                             37%</p>
                                         <div
                                             class="w-full bg-black/50 rounded-full h-10 flex items-center justify-between px-5 border border-white/10 mt-auto">
-                                            <span class="text-[10px] font-black tracking-widest"
-                                                style="color: #ffffff !important;">Peak</span>
-                                            <span class="text-[10px] font-black"
-                                                style="color: #FFF3DB !important; opacity: 0.85;">BM: 10-15%</span>
+                                            <span
+                                                class="text-[10px] font-black tracking-widest text-ai-cyan">Peak</span>
+                                            <span class="text-[10px] font-black text-gray-500">BM: 10-15%</span>
                                         </div>
                                     </div>
                                     <div
@@ -1683,18 +1561,17 @@
                                         <div
                                             class="absolute inset-0 bg-gradient-to-b from-ai-purple/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
                                         </div>
-                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
-                                            style="color: #2D1B00 !important; opacity: 0.85;">
+                                        <p
+                                            class="text-[11px] font-black uppercase text-gray-400 tracking-[0.2em] mb-4 text-center">
                                             Opp-to-Demo CVR</p>
                                         <p
-                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-cyan to-ai-purple drop-shadow-[0_0_20px_rgba(245, 166, 35,0.4)] mb-4 text-center leading-tight">
+                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-[#1a052e] to-ai-purple drop-shadow-[0_0_20px_rgba(245, 166, 35,0.6)] mb-4 text-center leading-tight">
                                             38%</p>
                                         <div
                                             class="w-full bg-black/50 rounded-full h-10 flex items-center justify-between px-5 border border-white/10 mt-auto">
-                                            <span class="text-[10px] font-black tracking-widest"
-                                                style="color: #ffffff !important;">Peak</span>
-                                            <span class="text-[10px] font-black"
-                                                style="color: #FFF3DB !important; opacity: 0.85;">BM: 9-17%</span>
+                                            <span
+                                                class="text-[10px] font-black tracking-widest text-ai-purple">Peak</span>
+                                            <span class="text-[10px] font-black text-gray-500">BM: 9-17%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1763,7 +1640,7 @@
                                     <div
                                         class="glass-card p-6 rounded-2xl border-white/10 hover:border-ai-cyan/40 transition-colors">
                                         <p
-                                            class="text-ai-cyan font-black uppercase text-[9px] tracking-[0.2em] mb-2 flex items-center gap-2">
+                                            class="text-ai-cyan font-black uppercase text-[10px] tracking-[0.2em] mb-2 flex items-center gap-2">
                                             <i class="fas fa-link text-sm"></i> Pipeline Ownership
                                         </p>
                                         <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
@@ -1772,7 +1649,7 @@
                                     <div
                                         class="glass-card p-6 rounded-2xl border-white/10 hover:border-ai-purple/40 transition-colors">
                                         <p
-                                            class="text-ai-purple font-black uppercase text-[8.5px] tracking-[0.2em] mb-2 flex items-center gap-2">
+                                            class="text-ai-purple font-black uppercase text-[10px] tracking-[0.2em] mb-2 flex items-center gap-2">
                                             <i class="fas fa-coins text-sm"></i> Quality & Efficiency
                                         </p>
                                         <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
@@ -1821,10 +1698,10 @@
             <i class="fas fa-project-diagram text-ai-purple"></i> <span class="neon-text">PERSONAL PROJECT</span>
         </h2>
 
-        <div class="relative border-l-2 border-[rgba(212,104,10,0.3)] ml-3 md:ml-6 space-y-12">
+        <div class="relative border-l-2 border-[rgba(245, 166, 35,0.3)] ml-3 md:ml-6 space-y-12">
             <div class="relative pl-8 md:pl-12 reveal-on-scroll">
-                <div class="absolute w-4 h-4 bg-ai-cyan rounded-full -left-[9px] top-0 timeline-dot"
-                    style="box-shadow: 0 0 10px #D4680A, 0 0 20px #D4680A;"></div>
+                <div class="absolute w-4 h-4 bg-ai-purple rounded-full -left-[9px] top-1 timeline-dot"
+                    style="box-shadow: 0 0 10px #F5A623, 0 0 20px #F5A623;"></div>
                 <div class="glass-card p-6 rounded-2xl">
                     <div class="flex flex-col sm:flex-row gap-4 mb-4">
                         <div class="flex-shrink-0 relative cursor-pointer upload-container w-16 h-16 rounded-lg bg-[rgba(0,0,0,0.3)] border border-[rgba(255,255,255,0.1)] overflow-hidden"
@@ -1853,7 +1730,7 @@
                     </div>
 
                     <div id="desc-taphoa"
-                        class="space-y-3 text-sm text-gray-300 text-justify transition-all duration-300">
+                        class="hidden space-y-3 text-sm text-gray-300 text-justify transition-all duration-300">
                         <p><strong class="text-ai-purple">Industry:</strong> Retail</p>
                         <ul class="list-disc pl-5 space-y-2">
                             <li>
@@ -1882,6 +1759,10 @@
                     </div>
 
                     <div class="flex flex-wrap gap-3 mt-4">
+                        <button onclick="toggleDesc('desc-taphoa', this)"
+                            class="px-3 py-1.5 text-xs rounded-lg bg-[rgba(245, 166, 35,0.05)] border border-[rgba(245, 166, 35,0.2)] text-ai-purple hover:bg-[rgba(245, 166, 35,0.15)] hover:text-white flex items-center gap-2 transition-all w-max focus:outline-none">
+                            <i class="fas fa-chevron-down"></i> <span>Show Description</span>
+                        </button>
                         <!-- ADDED VIEW MORE BUTTON FOR PROJECT SHOWCASE -->
                         <button onclick="openProjectShowcase()"
                             class="px-4 py-1.5 text-xs rounded-lg bg-ai-cyan/10 border border-ai-cyan/30 text-ai-cyan hover:bg-ai-cyan/20 hover:text-white flex items-center gap-2 transition-all w-max focus:outline-none font-bold uppercase tracking-widest shadow-lg">
@@ -1919,7 +1800,7 @@
                     <img id="der-main-preview" src="bdn port.jpg" alt="DER NEU"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div
-                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white backdrop-blur-sm p-4">
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-real-white backdrop-blur-sm p-4">
                         <i class="fas fa-file-pdf text-4xl mb-3"></i>
                         <span class="text-xs font-black uppercase tracking-widest text-center">Click to View Full
                             Portfolio</span>
@@ -1929,7 +1810,7 @@
                 <!-- Content -->
                 <div class="p-8 lg:p-12 flex-1 flex flex-col">
                     <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl lg:text-xl font-black text-white uppercase tracking-tight">DEPARTMENT OF
+                        <h3 class="text-xl lg:text-2xl font-black text-white uppercase tracking-tight">DEPARTMENT OF
                             EXTERNAL RELATIONS OF NEU</h3>
                         <span
                             class="text-[10px] font-bold text-ai-cyan bg-ai-cyan/10 border border-ai-cyan/20 px-4 py-1.5 rounded-full whitespace-nowrap uppercase">Since
@@ -2052,10 +1933,11 @@
                         <img id="nyf-img-sc" src="nyf 2023.png" alt="NYF" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center upload-overlay">
-                            <i class="fas fa-search-plus text-3xl text-white"></i>
+                            <i class="fas fa-search-plus text-3xl text-real-white"></i>
                         </div>
                         <div class="absolute bottom-6 left-10">
-                            <h3 class="text-3xl font-black uppercase leading-tight project-title-nyf">
+                            <h3
+                                class="text-3xl font-black text-real-white uppercase leading-tight hover:text-ai-cyan transition-colors">
                                 <a href="https://www.facebook.com/share/p/1BwrRzpXsz/" target="_blank">NEU YOUTH
                                     FESTIVAL 2023 <i class="fas fa-external-link-alt text-xs align-middle ml-1"></i></a>
                             </h3>
@@ -2099,10 +1981,11 @@
                         <img id="tnth-img-sc" src="tnth 2023.jpg" alt="TNTH" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center upload-overlay">
-                            <i class="fas fa-search-plus text-3xl text-white"></i>
+                            <i class="fas fa-search-plus text-3xl text-real-white"></i>
                         </div>
                         <div class="absolute bottom-6 left-10">
-                            <h3 class="text-3xl font-black uppercase leading-tight project-title-tnth">
+                            <h3
+                                class="text-3xl font-black text-real-white uppercase leading-tight hover:text-ai-cyan transition-colors">
                                 <a href="https://www.facebook.com/tamnhinthuonghieu.neu" target="_blank">TAM NHIN THUONG
                                     HIEU 2023 <i class="fas fa-external-link-alt text-xs align-middle ml-1"></i></a>
                             </h3>
@@ -2204,7 +2087,7 @@
                         <a href="https://www.facebook.com/ktqdNEU" target="_blank"
                             class="hover:text-ai-cyan transition-colors flex items-center gap-2 justify-center md:justify-start"
                             title="Xem Fanpage trên Facebook">
-                            NATIONAL ECONOMICS UNIVERSITY (NEU)
+                            NATIONAL ECONOMICS UNIVERSITY
                             <i class="fas fa-external-link-alt text-[10px] opacity-70"></i>
                         </a>
                     </h3>
@@ -2218,6 +2101,10 @@
                     </p>
 
                     <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <button onclick="toggleDesc('desc-neu', this)"
+                            class="px-4 py-2 text-xs rounded-xl bg-white/5 border border-white/10 text-ai-cyan hover:bg-ai-cyan/15 hover:text-white flex items-center gap-2 transition-all focus:outline-none">
+                            <i class="fas fa-chevron-down"></i> <span>Show Achievements</span>
+                        </button>
                         <button onclick="openNEUShowcase()"
                             class="px-4 py-2 text-xs rounded-xl bg-ai-cyan text-ai-dark hover:bg-ai-cyan/80 hover:scale-105 flex items-center gap-2 transition-all focus:outline-none font-bold uppercase tracking-wider">
                             <i class="fas fa-images"></i> View More
@@ -2228,33 +2115,23 @@
                 <!-- Right Column: Stats & Highlight Cards -->
                 <div class="md:col-span-7 space-y-6">
                     <!-- Key stats cards -->
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div
-                            class="glass-card p-4 rounded-2xl border border-white/5 bg-white/[0.02] text-center hover:border-ai-cyan/30 transition-all duration-300">
-                            <div class="text-2xl md:text-3xl font-black neon-text mb-1">3.77 / 4.0</div>
-                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-none">GPA
-                                4.0 scale</p>
+                            class="glass-card p-5 rounded-2xl border border-white/5 bg-white/[0.02] text-center hover:border-ai-cyan/30 transition-all duration-300 shadow-md">
+                            <div class="text-2xl md:text-3xl font-black neon-text mb-1.5">GPA: 3.77 / 4.0</div>
+                            <div class="text-xs text-ai-cyan font-bold font-mono tracking-wider">Scale 10 equivalent: 8.8 / 10</div>
                         </div>
                         <div
-                            class="glass-card p-4 rounded-2xl border border-white/5 bg-white/[0.02] text-center hover:border-ai-purple/30 transition-all duration-300">
-                            <div class="text-2xl md:text-3xl font-black text-white mb-1">Top 5%</div>
-                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-none">High
-                                Distinction
-                            </p>
-                        </div>
-                        <div
-                            class="glass-card p-4 rounded-2xl border border-white/5 bg-white/[0.02] text-center hover:border-white/20 transition-all duration-300">
-                            <div class="text-2xl md:text-3xl font-black neon-text mb-1">8.8 / 10</div>
-                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-none">GPA
-                                10 scale
-                            </p>
+                            class="glass-card p-5 rounded-2xl border border-white/5 bg-white/[0.02] text-center hover:border-ai-purple/30 transition-all duration-300 shadow-md">
+                            <div class="text-2xl md:text-3xl font-black text-white mb-1.5">Top 5%</div>
+                            <div class="text-xs text-ai-purple font-bold font-mono tracking-wider">Rank: High Distinction</div>
                         </div>
                     </div>
 
                     <!-- Achievements List (toggled or expanded) -->
                     <div class="space-y-4">
                         <ul id="desc-neu"
-                            class="list-disc pl-5 text-sm text-gray-300 space-y-2.5 transition-all duration-300 text-justify">
+                            class="hidden list-disc pl-5 text-sm text-gray-300 space-y-2.5 transition-all duration-300 text-justify">
                             <li>Ranked 1st in major with Excellence Academic Scholarship 2022–2023</li>
                             <li>Student with Five Good Criteria 2023–2024, University-level</li>
                             <li>Champion – “Marketing Warrior 2024” hosted by Thuongmai University</li>
@@ -2291,9 +2168,8 @@
     </div>
 
     <!-- Core Competencies (100% ACCURATE CONTENT) -->
-    <section id="skills"
-        class="min-h-[calc(100vh-4rem)] flex flex-col justify-center scroll-mt-16 py-8 px-4 max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6 flex items-center justify-center lg:justify-start gap-4 reveal-on-scroll">
+    <section id="skills" class="py-12 px-4 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 flex items-center justify-center lg:justify-start gap-4 reveal-on-scroll">
             <div
                 class="w-10 h-10 rounded-full bg-ai-cyan/20 flex items-center justify-center shadow-[0_0_15px_rgba(212, 104, 10,0.3)]">
                 <i class="fas fa-microchip text-ai-cyan text-xl"></i>
@@ -2324,7 +2200,7 @@
                         <div class="grid grid-cols-2 gap-2">
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-gpt')">
-                                <img id="tool-gpt" src="logo gpt black.png" class="w-3.5 h-3.5 object-contain" alt="">
+                                <img id="tool-gpt" src="logo chatgpt.png" class="w-3.5 h-3.5 object-contain" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">GPT</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
@@ -2339,8 +2215,8 @@
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-notebooklm')">
-                                <img id="tool-notebooklm" src="logo notebooklm black.png"
-                                    class="w-3.5 h-3.5 object-contain" alt="">
+                                <img id="tool-notebooklm" src="logo notebooklm.png" class="w-3.5 h-3.5 object-contain"
+                                    alt="">
                                 <span class="text-[10px] font-bold text-gray-300">NotebookLM</span>
                             </div>
                         </div>
@@ -2376,7 +2252,7 @@
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-github')">
-                                <img id="tool-github" src="logo github black.png" class="w-3.5 h-3.5" alt="">
+                                <img id="tool-github" src="white logo github.webp" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">GitHub</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
@@ -2428,8 +2304,7 @@
                     <!-- Performance Marketing -->
                     <div>
                         <div class="flex justify-between items-end mb-2 border-b border-white/10 pb-1">
-                            <h4 class="text-ai-cyan text-[14px] font-black uppercase tracking-[0.2em]">Performance
-                                Marketing</h4>
+                            <h4 class="text-white font-bold text-sm mb-0.5">Performance Marketing</h4>
                         </div>
                         <p class="text-[10px] text-gray-400 mb-2 italic">— for user acquisition, A/B testing & funnel
                             optimization</p>
@@ -2443,8 +2318,7 @@
                     <!-- Data Analytics -->
                     <div>
                         <div class="flex justify-between items-end mb-2 border-b border-white/10 pb-1">
-                            <h4 class="text-ai-cyan text-[14px] font-black uppercase tracking-[0.2em]">Data Analytics
-                            </h4>
+                            <h4 class="text-white font-bold text-sm mb-0.5">Data Analytics</h4>
                         </div>
                         <p class="text-[10px] text-gray-400 mb-2 italic">— for data preparation & exploration, report,
                             insight & recommendation</p>
@@ -2495,33 +2369,28 @@
 
                 <div class="space-y-5">
                     <div
-                        class="relative pl-4 border-l border-ai-purple/30 group/item hover:border-ai-black transition-all">
-                        <h4 class="text-ai-cyan text-[14px] font-black uppercase tracking-[0.2em]">User Need Discovery
-                        </h4>
-                        <p class="text-[10px] text-gray-400 italic">— for uncovering pain points, unmet needs & reasons
-                            behind product demand
+                        class="relative pl-4 border-l border-ai-purple/30 group/item hover:border-ai-purple transition-all">
+                        <h4 class="text-[#5A379C] font-bold text-sm mb-0.5">Brand Marketing</h4>
+                        <p class="text-[10px] text-gray-400 italic">— for positioning, messaging & go-to-market strategy
                         </p>
                     </div>
                     <div
-                        class="relative pl-4 border-l border-ai-purple/30 group/item hover:border-ai-black transition-all">
-                        <h4 class="text-ai-cyan text-[14px] font-black uppercase tracking-[0.2em]">Creative & Message
-                            Testing</h4>
-                        <p class="text-[10px] text-gray-400 italic">— for translating product values into ad angles,
-                            landing pages & conversion hooks</p>
+                        class="relative pl-4 border-l border-ai-purple/30 group/item hover:border-ai-purple transition-all">
+                        <h4 class="text-[#5A379C] font-bold text-sm mb-0.5">B2C Sales</h4>
+                        <p class="text-[10px] text-gray-400 italic">— for consultative selling & customer conversion</p>
                     </div>
                     <div
-                        class="relative pl-4 border-l border-ai-purple/30 group/item hover:border-ai-black transition-all">
-                        <h4 class="text-ai-cyan text-[13px] font-black uppercase tracking-[0.2em]">Cross-Functional
-                            Alignment</h4>
-                        <p class="text-[10px] text-gray-400 italic">— for building shared understanding across teams to
-                            improve customer-focused growth outcomes</p>
+                        class="relative pl-4 border-l border-ai-purple/30 group/item hover:border-ai-purple transition-all">
+                        <h4 class="text-[#5A379C] font-bold text-sm mb-0.5">Customer Insight & Communication</h4>
+                        <p class="text-[10px] text-gray-400 italic">— for understanding user unmet needs & improving
+                            experience</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Next Section Hint -->
-        <div class="mt-6 flex justify-center animate-bounce pb-1 relative z-30">
+        <div class="mt-12 flex justify-center animate-bounce pb-4 relative z-30">
             <a href="#proposals"
                 class="flex flex-col items-center gap-2 text-white/50 hover:text-ai-cyan transition-colors">
                 <span class="text-[10px] uppercase tracking-[0.4em] font-bold">Discover</span>
@@ -2531,9 +2400,8 @@
     </section>
 
     <!-- Marketing Proposals -->
-    <section id="proposals"
-        class="min-h-[calc(100vh-4rem)] flex flex-col justify-center scroll-mt-16 py-8 px-4 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6 flex items-center gap-3 reveal-on-scroll">
+    <section id="proposals" class="py-16 px-4 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 flex items-center gap-3 reveal-on-scroll">
             <i class="fas fa-lightbulb text-ai-cyan"></i> <span class="neon-text">MARKETING PROPOSAL</span>
         </h2>
 
@@ -2545,7 +2413,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
                     class="absolute inset-0 flex items-center justify-center upload-overlay bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div class="text-center" style="color: #ffffff !important;">
+                    <div class="text-center text-real-white">
                         <i class="fas fa-search-plus text-3xl mb-2"></i>
                         <p class="text-xs mt-2">Phóng to ảnh</p>
                     </div>
@@ -2554,13 +2422,12 @@
                     class="absolute bottom-0 left-0 p-5 w-full flex justify-between items-end z-20 pointer-events-none">
                     <div class="pointer-events-auto">
                         <span
-                            class="text-[10px] font-bold px-2 py-1 rounded bg-[#8B5A2B] mb-2 inline-block tracking-wider uppercase"
-                            style="color: #ffffff !important;">Category</span>
-                        <h4 class="font-bold text-xl drop-shadow-md" style="color: #ffffff !important;">Mobile App</h4>
+                            class="text-[10px] font-bold px-2 py-1 rounded bg-[#8B5A2B] text-real-white mb-2 inline-block tracking-wider uppercase">Category</span>
+                        <h4 class="text-real-white font-bold text-xl drop-shadow-md">Mobile App</h4>
                     </div>
                     <a href="https://drive.google.com/file/d/1PDBK-r2AenG5OgO-ueoWfsbNTuKcrzP3/view?usp=sharing"
                         target="_blank" onclick="event.stopPropagation()"
-                        class="pointer-events-auto bg-black/60 text-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)] proposal-link-mobile"
+                        class="pointer-events-auto bg-black/60 hover:bg-[#8B5A2B] hover:text-real-white text-real-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
                         title="View Proposal">
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -2575,7 +2442,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
                     class="absolute inset-0 flex items-center justify-center upload-overlay bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div class="text-center" style="color: #ffffff !important;">
+                    <div class="text-center text-real-white">
                         <i class="fas fa-search-plus text-3xl mb-2"></i>
                         <p class="text-xs mt-2">Phóng to ảnh</p>
                     </div>
@@ -2584,13 +2451,12 @@
                     class="absolute bottom-0 left-0 p-5 w-full flex justify-between items-end z-20 pointer-events-none">
                     <div class="pointer-events-auto">
                         <span
-                            class="text-[10px] font-bold px-2 py-1 rounded bg-[#1D4ED8] mb-2 inline-block tracking-wider uppercase"
-                            style="color: #ffffff !important;">Category</span>
-                        <h4 class="font-bold text-xl drop-shadow-md" style="color: #ffffff !important;">Affiliate</h4>
+                            class="text-[10px] font-bold px-2 py-1 rounded bg-[#1D4ED8] text-real-white mb-2 inline-block tracking-wider uppercase">Category</span>
+                        <h4 class="text-real-white font-bold text-xl drop-shadow-md">Affiliate</h4>
                     </div>
                     <a href="https://drive.google.com/file/d/1bJas5R63GW1QRPhaOXFpOAXc9Dww75OR/view?usp=sharing"
                         target="_blank" onclick="event.stopPropagation()"
-                        class="pointer-events-auto bg-black/60 text-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)] proposal-link-affiliate"
+                        class="pointer-events-auto bg-black/60 hover:bg-[#1D4ED8] hover:text-real-white text-real-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
                         title="View Proposal">
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -2604,7 +2470,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
                     class="absolute inset-0 flex items-center justify-center upload-overlay bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div class="text-center" style="color: #ffffff !important;">
+                    <div class="text-center text-real-white">
                         <i class="fas fa-search-plus text-3xl mb-2"></i>
                         <p class="text-xs mt-2">Phóng to ảnh</p>
                     </div>
@@ -2613,14 +2479,12 @@
                     class="absolute bottom-0 left-0 p-5 w-full flex justify-between items-end z-20 pointer-events-none">
                     <div class="pointer-events-auto">
                         <span
-                            class="text-[10px] font-bold px-2 py-1 rounded bg-[#00B14F] mb-2 inline-block tracking-wider uppercase"
-                            style="color: #ffffff !important;">Category</span>
-                        <h4 class="font-bold text-xl drop-shadow-md" style="color: #ffffff !important;">Ride-hailing
-                        </h4>
+                            class="text-[10px] font-bold px-2 py-1 rounded bg-[#00B14F] text-real-white mb-2 inline-block tracking-wider uppercase">Category</span>
+                        <h4 class="text-real-white font-bold text-xl drop-shadow-md">Ride-hailing</h4>
                     </div>
                     <a href="https://drive.google.com/file/d/1GYAjci4ScHlt7Zu1JD-4tMQVAnRd4reh/view?usp=sharing"
                         target="_blank" onclick="event.stopPropagation()"
-                        class="pointer-events-auto bg-black/60 text-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)] proposal-link-ride"
+                        class="pointer-events-auto bg-black/60 hover:bg-[#00B14F] hover:text-real-white text-real-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
                         title="View Proposal">
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -2634,7 +2498,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
                     class="absolute inset-0 flex items-center justify-center upload-overlay bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div class="text-center" style="color: #ffffff !important;">
+                    <div class="text-center text-real-white">
                         <i class="fas fa-search-plus text-3xl mb-2"></i>
                         <p class="text-xs mt-2">Phóng to ảnh</p>
                     </div>
@@ -2644,11 +2508,11 @@
                     <div class="pointer-events-auto">
                         <span
                             class="text-[10px] font-bold px-2 py-1 rounded bg-[#FFB6C1] text-black mb-2 inline-block tracking-wider uppercase">Category</span>
-                        <h4 class="font-bold text-xl drop-shadow-md" style="color: #ffffff !important;">Deodorant</h4>
+                        <h4 class="text-real-white font-bold text-xl drop-shadow-md">Deodorant</h4>
                     </div>
                     <a href="https://drive.google.com/file/d/1mNH_BgZSTscJzmfhWjF4DERba2iRciJo/view?usp=sharing"
                         target="_blank" onclick="event.stopPropagation()"
-                        class="pointer-events-auto bg-black/60 text-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)] proposal-link-deodorant"
+                        class="pointer-events-auto bg-black/60 hover:bg-[#FFB6C1] hover:text-black text-real-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
                         title="View Proposal">
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -2662,7 +2526,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
                     class="absolute inset-0 flex items-center justify-center upload-overlay bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div class="text-center" style="color: #ffffff !important;">
+                    <div class="text-center text-real-white">
                         <i class="fas fa-search-plus text-3xl mb-2"></i>
                         <p class="text-xs mt-2">Phóng to ảnh</p>
                     </div>
@@ -2671,13 +2535,12 @@
                     class="absolute bottom-0 left-0 p-5 w-full flex justify-between items-end z-20 pointer-events-none">
                     <div class="pointer-events-auto">
                         <span
-                            class="text-[10px] font-bold px-2 py-1 rounded bg-[#E63946] mb-2 inline-block tracking-wider uppercase"
-                            style="color: #ffffff !important;">Category</span>
-                        <h4 class="font-bold text-xl drop-shadow-md" style="color: #ffffff !important;">Oral Care</h4>
+                            class="text-[10px] font-bold px-2 py-1 rounded bg-[#E63946] text-real-white mb-2 inline-block tracking-wider uppercase">Category</span>
+                        <h4 class="text-real-white font-bold text-xl drop-shadow-md">Oral Care</h4>
                     </div>
                     <a href="https://drive.google.com/file/d/1DVlbXTPtUlayeQSrlBe_-ggPWamkdnZp/view?usp=sharing"
                         target="_blank" onclick="event.stopPropagation()"
-                        class="pointer-events-auto bg-black/60 text-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)] proposal-link-oral"
+                        class="pointer-events-auto bg-black/60 hover:bg-[#E63946] hover:text-real-white text-real-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
                         title="View Proposal">
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -2692,7 +2555,7 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
                     class="absolute inset-0 flex items-center justify-center upload-overlay bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div class="text-center" style="color: #ffffff !important;">
+                    <div class="text-center text-real-white">
                         <i class="fas fa-search-plus text-3xl mb-2"></i>
                         <p class="text-xs mt-2">Phóng to ảnh</p>
                     </div>
@@ -2702,11 +2565,11 @@
                     <div class="pointer-events-auto">
                         <span
                             class="text-[10px] font-bold px-2 py-1 rounded bg-[#FFB703] text-black mb-2 inline-block tracking-wider uppercase">Category</span>
-                        <h4 class="font-bold text-xl drop-shadow-md" style="color: #ffffff !important;">Facial Care</h4>
+                        <h4 class="text-real-white font-bold text-xl drop-shadow-md">Facial Care</h4>
                     </div>
                     <a href="https://drive.google.com/file/d/14YqKuLEA2dk2eag5s24FAGVHHKm1ECuE/view?usp=sharing"
                         target="_blank" onclick="event.stopPropagation()"
-                        class="pointer-events-auto bg-black/60 text-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)] proposal-link-facial"
+                        class="pointer-events-auto bg-black/60 hover:bg-[#FFB703] hover:text-black text-real-white w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all border border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
                         title="View Proposal">
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -2715,7 +2578,7 @@
         </div>
 
         <!-- Next Section Hint -->
-        <div class="mt-6 flex justify-center animate-bounce pb-2 relative z-30">
+        <div class="mt-16 flex justify-center animate-bounce pb-8 relative z-30">
             <a href="#certifications"
                 class="flex flex-col items-center gap-2 text-white/50 hover:text-ai-cyan transition-colors">
                 <span class="text-[10px] uppercase tracking-[0.4em] font-bold">Discover</span>
@@ -3057,9 +2920,8 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact"
-        class="min-h-[calc(100vh-4rem)] flex flex-col justify-center scroll-mt-16 py-8 px-4 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6 flex items-center gap-3 reveal-on-scroll">
+    <section id="contact" class="py-16 px-4 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 flex items-center gap-3 reveal-on-scroll">
             <i class="fas fa-paper-plane text-ai-purple"></i> <span class="neon-text">LET'S MAKE IT HAPPEN</span>
         </h2>
 
@@ -3071,8 +2933,9 @@
                     <i class="fas fa-quote-left text-3xl text-ai-cyan/20 absolute top-4 left-6"></i>
                     <p
                         class="text-sm md:text-base text-gray-300 italic text-justify leading-relaxed relative z-10 pl-6">
-                        "User Acquisition is about acquiring the right users, learning what converts, and scaling what
-                        works."
+                        "Marketing is about defining and delivering competitive values that drives profit. But profit is
+                        only the beginning. True growth comes from reinvesting it into bigger plays, where each
+                        successful investment fuels the next."
                     </p>
                 </div>
 
@@ -3118,7 +2981,7 @@
 
             <div class="lg:col-span-7 reveal-on-scroll delay-200">
                 <div class="glass-card p-6 md:p-8 md:px-10 rounded-2xl h-full shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                    <h3 class="text-2xl font-bold text-white mb-4 text-center">Get in Touch</h3>
+                    <h3 class="text-2xl font-bold text-white mb-8 text-center">Get in Touch</h3>
                     <form action="https://formsubmit.co/nploc.work@gmail.com" method="POST" class="space-y-6">
                         <input type="hidden" name="_subject" value="New message from your Portfolio!">
                         <input type="hidden" name="_captcha" value="false">
@@ -3144,7 +3007,7 @@
                             <div class="absolute top-4 left-0 pl-4 pointer-events-none">
                                 <i class="far fa-comment-alt text-gray-400"></i>
                             </div>
-                            <textarea name="Details" id="contact-details" rows="4" maxlength="500" placeholder="Details"
+                            <textarea name="Details" id="contact-details" rows="6" maxlength="500" placeholder="Details"
                                 required
                                 class="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.1)] text-white text-sm rounded-xl py-3.5 pl-11 pr-4 focus:outline-none focus:border-ai-cyan focus:bg-[rgba(212, 104, 10,0.02)] focus:ring-1 focus:ring-ai-cyan/50 transition-all placeholder-gray-500 resize-none"
                                 oninput="updateCharCount(this)"></textarea>
@@ -3591,7 +3454,7 @@
                                     class="text-ai-cyan font-black uppercase text-[10px] tracking-[0.2em] flex items-center gap-2 border-b border-white/10 pb-3">
                                     <i class="fas fa-tasks text-sm"></i> Project Management
                                 </p>
-                                <p class="text-sm text-gray-300 leading-relaxed italic pr-4 text-justify">Ability to own
+                                <p class="text-sm text-gray-300 leading-relaxed italic pr-4 text-left">Ability to own
                                     both strategy and execution end-to-end.</p>
                             </div>
                             <div class="space-y-3">
@@ -3599,7 +3462,7 @@
                                     class="text-ai-purple font-black uppercase text-[10px] tracking-[0.2em] flex items-center gap-2 border-b border-white/10 pb-3">
                                     <i class="fas fa-water text-sm"></i> Adaptability
                                 </p>
-                                <p class="text-sm text-gray-300 leading-relaxed italic pr-4 text-justify">Staying agile
+                                <p class="text-sm text-gray-300 leading-relaxed italic pr-4 text-left">Staying agile
                                     across social channels and B2B operations under peak-season pressure.</p>
                             </div>
                         </div>
@@ -3715,8 +3578,7 @@
                                         <i class="fas fa-search-plus text-white text-2xl"></i>
                                     </div>
                                     <span
-                                        class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-white text-white uppercase tracking-widest"
-                                        style="color: #ffffff !important;">Target
+                                        class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest">Target
                                         Community</span>
                                 </div>
                                 <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
@@ -3728,8 +3590,7 @@
                                         <i class="fas fa-search-plus text-white text-2xl"></i>
                                     </div>
                                     <span
-                                        class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest"
-                                        style="color: #ffffff !important;">Data
+                                        class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest">Data
                                         Output</span>
                                 </div>
                             </div>
@@ -3797,8 +3658,7 @@
                                             <i class="fas fa-search-plus text-white text-2xl"></i>
                                         </div>
                                         <span
-                                            class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest"
-                                            style="color: #ffffff !important;">Puppeteer
+                                            class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest">Puppeteer
                                             + DMX</span>
                                     </div>
                                     <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
@@ -3811,8 +3671,7 @@
                                             <i class="fas fa-search-plus text-white text-2xl"></i>
                                         </div>
                                         <span
-                                            class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest"
-                                            style="color: #ffffff !important;">Review
+                                            class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest">Review
                                             Dataset</span>
                                     </div>
                                 </div>
@@ -3841,9 +3700,9 @@
                                 class="glass-card p-6 rounded-2xl border-white/10 hover:border-ai-cyan/40 transition-colors">
                                 <p
                                     class="text-ai-cyan font-black uppercase text-[10px] tracking-[0.2em] mb-2 flex items-center gap-2">
-                                    <i class="fas fa-bullseye text-sm"></i> Be User-centric
+                                    <i class="fas fa-bullseye text-sm"></i> Pain & Positioning
                                 </p>
-                                <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
+                                <p class="text-sm text-gray-300 leading-relaxed italic text-left">
                                     Strong UA starts with understanding user pain points and product positioning.</p>
                             </div>
                             <div
@@ -3852,7 +3711,7 @@
                                     class="text-ai-purple font-black uppercase text-[10px] tracking-[0.2em] mb-2 flex items-center gap-2">
                                     <i class="fas fa-magic text-sm"></i> Automation Loop
                                 </p>
-                                <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
+                                <p class="text-sm text-gray-300 leading-relaxed italic text-left">
                                     Automation helps shorten the insight loop and speed up Product Delivery decisions.
                                 </p>
                             </div>
@@ -3862,7 +3721,7 @@
                                     class="text-white font-black uppercase text-[10px] tracking-[0.2em] mb-2 flex items-center gap-2">
                                     <i class="fas fa-search text-sm"></i> Sharper Insight
                                 </p>
-                                <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
+                                <p class="text-sm text-gray-300 leading-relaxed italic text-left">
                                     Sharper customer insight leads to clearer messaging and better acquisition quality.
                                 </p>
                             </div>
@@ -4230,10 +4089,10 @@
                             <div
                                 class="glass-card p-6 rounded-2xl border-white/10 hover:border-ai-cyan/40 transition-colors">
                                 <p
-                                    class="text-ai-cyan font-black uppercase text-[8.5px] tracking-[0.2em] mb-2 flex items-center gap-2">
+                                    class="text-ai-cyan font-black uppercase text-[10px] tracking-[0.2em] mb-2 flex items-center gap-2">
                                     <i class="fas fa-star-of-life text-sm"></i> Quality Over Volume
                                 </p>
-                                <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
+                                <p class="text-sm text-gray-300 leading-relaxed italic text-left">
                                     Prioritized user quality over lead volume.</p>
                             </div>
                             <div
@@ -4242,16 +4101,16 @@
                                     class="text-ai-purple font-black uppercase text-[10px] tracking-[0.2em] mb-2 flex items-center gap-2">
                                     <i class="fas fa-funnel-dollar text-sm"></i> Beyond CTR/CPL
                                 </p>
-                                <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
+                                <p class="text-sm text-gray-300 leading-relaxed italic text-left">
                                     Looked beyond CTR/CPL to evaluate real funnel progress.</p>
                             </div>
                             <div
                                 class="glass-card p-6 rounded-2xl border-white/10 hover:border-white/40 transition-colors">
                                 <p
-                                    class="text-white font-black uppercase text-[8.5px] tracking-[0.2em] mb-2 flex items-center gap-2">
-                                    <i class="fas fa-magnet text-sm"></i> High-Intent Hooks
+                                    class="text-white font-black uppercase text-[10px] tracking-[0.2em] mb-2 flex items-center gap-2">
+                                    <i class="fas fa-magnet text-sm"></i> High-Intent Messaging
                                 </p>
-                                <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
+                                <p class="text-sm text-gray-300 leading-relaxed italic text-left">
                                     Used creative and landing page messaging to attract higher-intent users.</p>
                             </div>
                         </div>
@@ -4560,110 +4419,6 @@
                 }
             }
         })();
-    </script>
-
-    <!-- Invisible YouTube Container for Background Music -->
-    <div id="youtube-player"
-        style="position: fixed; top: -100px; left: -100px; width: 1px; height: 1px; opacity: 0.001; pointer-events: none; z-index: -9999;">
-    </div>
-
-    <script>
-        // Load YouTube IFrame Player API
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        let ytPlayer;
-        let isMusicPlaying = false;
-        let hasInteracted = false;
-
-        // Create YT Player
-        function onYouTubeIframeAPIReady() {
-            const playerVars = {
-                'autoplay': 1,
-                'controls': 0,
-                'disablekb': 1,
-                'fs': 0,
-                'rel': 0,
-                'modestbranding': 1,
-                'loop': 1,
-                'playlist': 'LVQ9eobn_pY'
-            };
-
-            if (window.location.origin && window.location.origin !== 'null') {
-                playerVars.origin = window.location.origin;
-            }
-
-            ytPlayer = new YT.Player('youtube-player', {
-                height: '0',
-                width: '0',
-                videoId: 'LVQ9eobn_pY',
-                playerVars: playerVars,
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        // First interaction listener to bypass browser autoplay policies
-        const interactionEvents = ['click', 'mousedown', 'keydown', 'touchstart', 'pointerdown'];
-
-        function handleFirstInteraction() {
-            if (hasInteracted) return;
-            hasInteracted = true;
-
-            console.log("First user interaction detected, triggering playVideo...");
-
-            // Remove listeners
-            interactionEvents.forEach(event => {
-                window.removeEventListener(event, handleFirstInteraction);
-            });
-
-            // Attempt play
-            if (ytPlayer && typeof ytPlayer.playVideo === 'function') {
-                try {
-                    ytPlayer.playVideo();
-                } catch (err) {
-                    console.error("Failed to play video on interaction:", err);
-                }
-            }
-        }
-
-        function setupAutoplayWorkaround() {
-            interactionEvents.forEach(event => {
-                window.addEventListener(event, handleFirstInteraction, { passive: true });
-            });
-        }
-
-        function onPlayerReady(event) {
-            console.log("YouTube Background Player Ready");
-            // Set initial volume to 50%
-            ytPlayer.setVolume(50);
-
-            // Try to autoplay directly
-            try {
-                ytPlayer.playVideo();
-            } catch (err) {
-                console.log("Direct autoplay failed/blocked, waiting for interaction");
-            }
-
-            // Set up fallback to trigger as soon as user interacts
-            setupAutoplayWorkaround();
-        }
-
-        function onPlayerStateChange(event) {
-            if (event.data === YT.PlayerState.PLAYING) {
-                console.log("Music is playing successfully");
-                isMusicPlaying = true;
-                hasInteracted = true; // music is playing, no need for interaction trigger
-                // Clean up listeners
-                interactionEvents.forEach(ev => window.removeEventListener(ev, handleFirstInteraction));
-            } else {
-                isMusicPlaying = false;
-            }
-        }
     </script>
 </body>
 

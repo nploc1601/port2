@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Phuc Loc - Growth Portfolio</title>
+    
+    <!-- Favicon Configuration -->
+    <link rel="icon" type="image/jpeg" href="anh cv 2.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="anh cv 2.jpg">
+    <link rel="apple-touch-icon" href="anh cv 2.jpg">
+
+    <!-- Fonts: Geist & Geist Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Geist', 'Inter', 'sans-serif'],
+                        mono: ['Geist Mono', 'monospace'],
+                    },
+                    colors: {
+                        page: '#0c0c0e',
+                        brand: {
+                            cyan: '#06b6d4',
+                            purple: '#a855f7',
+                            muted: '#18181b',
+                        },
+                        neutral: {
+                            950: '#08080a',
+                            900: '#0c0c0e',
+                            800: '#18181b',
+                            700: '#27272a',
+                            400: '#a1a1aa',
+                            300: '#d4d4d8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Once UI Design Tokens & Theme Variables */
+        :root {
+            --bg-page: #0c0c0e;
+            --bg-card: rgba(255, 255, 255, 0.015);
+            --bg-card-hover: rgba(255, 255, 255, 0.03);
+            --border-weak: rgba(255, 255, 255, 0.05);
+            --border-medium: rgba(255, 255, 255, 0.1);
+            --border-hover: rgba(6, 182, 212, 0.2);
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --text-weak: #71717a;
+            --grid-dot: rgba(255, 255, 255, 0.03);
+            --toggle-bg: rgba(255, 255, 255, 0.03);
+            --toggle-bg-active: rgba(255, 255, 255, 0.08);
+            --nav-bg: rgba(12, 12, 14, 0.8);
+            --shadow: rgba(0, 0, 0, 0.5);
+        }
+
+        html[data-theme="light"] {
+            --bg-page: #fafafa;
+            --bg-card: rgba(0, 0, 0, 0.015);
+            --bg-card-hover: rgba(0, 0, 0, 0.025);
+            --border-weak: rgba(0, 0, 0, 0.05);
+            --border-medium: rgba(0, 0, 0, 0.1);
+            --border-hover: rgba(6, 182, 212, 0.2);
+            --text-main: #18181b;
+            --text-muted: #52525b;
+            --text-weak: #a1a1aa;
+            --grid-dot: rgba(0, 0, 0, 0.03);
+            --toggle-bg: rgba(0, 0, 0, 0.03);
+            --toggle-bg-active: rgba(0, 0, 0, 0.06);
+            --nav-bg: rgba(250, 250, 250, 0.8);
+            --shadow: rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            background-color: var(--bg-page);
+            background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .once-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-weak);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .once-card:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Toggle Button styles matching Once UI System */
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            color: var(--text-muted) !important;
+            border: 1px solid transparent;
+            border-radius: 0.75rem;
+            background-color: transparent;
+        }
+
+        .nav-btn:hover {
+            color: var(--text-main) !important;
+            background-color: var(--toggle-bg);
+        }
+
+        .nav-btn.active {
+            color: var(--text-main) !important;
+            background-color: var(--toggle-bg-active);
+            border-color: var(--border-medium);
+        }
+
+        /* custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-page);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-medium);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--border-hover);
+        }
+
+        .active-tab {
+            border-color: #06b6d4 !important;
+            color: #06b6d4 !important;
+            background: rgba(6, 182, 212, 0.05) !important;
+        }
+
+        /* Light Theme Element Color Overrides */
+        html[data-theme="light"] .text-white {
+            color: var(--text-main) !important;
+        }
+        html[data-theme="light"] .text-neutral-300 {
+            color: var(--text-muted) !important;
+        }
+        html[data-theme="light"] .text-neutral-400 {
+            color: var(--text-muted) !important;
+        }
+        html[data-theme="light"] .text-neutral-500 {
+            color: var(--text-weak) !important;
+        }
+        html[data-theme="light"] .bg-page {
+            background-color: var(--bg-page) !important;
+        }
+        html[data-theme="light"] .bg-neutral-900 {
+            background-color: var(--bg-card) !important;
+        }
+        html[data-theme="light"] .bg-neutral-950 {
+            background-color: var(--bg-page) !important;
+        }
+        html[data-theme="light"] .border-white\/5 {
+            border-color: var(--border-weak) !important;
+        }
+        html[data-theme="light"] .border-white\/10 {
+            border-color: var(--border-medium) !important;
+        }
+        html[data-theme="light"] .bg-white\/5 {
+            background-color: var(--toggle-bg) !important;
+        }
+        html[data-theme="light"] .bg-white\/10 {
+            background-color: var(--toggle-bg-active) !important;
+        }
+        html[data-theme="light"] .bg-white\/\[0\.01\] {
+            background-color: var(--bg-card) !important;
+        }
+        
+        /* Modals adaptation for Light Mode */
+        html[data-theme="light"] [id$="-showcase"] {
+            background-color: rgba(250, 250, 250, 0.98) !important;
+            color: var(--text-main) !important;
+        }
+        html[data-theme="light"] [id$="-showcase"] .bg-neutral-950 {
+            background-color: var(--bg-page) !important;
+        }
+        html[data-theme="light"] [id$="-showcase"] .bg-neutral-900\/50 {
+            background-color: rgba(0, 0, 0, 0.03) !important;
+        }
+        html[data-theme="light"] [id$="-showcase"] .text-white {
+            color: var(--text-main) !important;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-cyan/30 selection:text-white relative">
+
+    <!-- Floating Background Fades (Once UI UX) -->
+    <div class="fixed top-0 left-0 right-0 h-20 pointer-events-none bg-gradient-to-b from-[var(--bg-page)] to-transparent z-40 hidden md:block"></div>
+    <div class="fixed bottom-0 left-0 right-0 h-20 pointer-events-none bg-gradient-to-t from-[var(--bg-page)] to-transparent z-40 md:hidden"></div>
+
+    <!-- Sticky Header Navigation -->
+    <header class="fixed z-50 left-0 right-0 px-4 md:px-8 py-2 md:py-4 flex items-center justify-between transition-all duration-300
+                   bottom-6 top-auto md:top-2 md:bottom-auto w-full">
+        
+        <!-- Left Side: Timezone Location (hidden on mobile) -->
+        <div class="hidden md:flex flex-1 items-center justify-start text-xs text-neutral-400 font-mono gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse"></span>
+            <span>Asia/Ho_Chi_Minh</span>
+        </div>
+
+        <!-- Middle Side: Navigation Pills -->
+        <div class="flex justify-center mx-auto md:mx-0">
+            <div class="flex items-center gap-1 bg-[var(--nav-bg)] border border-[var(--border-weak)] rounded-2xl p-1 backdrop-blur-md shadow-lg">
+                
+                <!-- Home Button -->
+                <a href="#about" id="nav-home" class="nav-btn flex items-center justify-center p-2.5 rounded-xl text-neutral-400" aria-label="Home">
+                    <i class="fas fa-home text-sm"></i>
+                </a>
+                
+                <div class="h-6 w-px bg-[var(--border-medium)] my-auto"></div>
+
+                <!-- About Button (Scrolls to Experience) -->
+                <a href="#experience" id="nav-about" class="nav-btn flex items-center gap-1.5 px-3 py-2 rounded-xl text-neutral-400 text-xs font-medium">
+                    <i class="fas fa-user text-sm md:text-[13px]"></i>
+                    <span class="hidden md:inline">About</span>
+                </a>
+
+                <!-- Work Button (Scrolls to Education) -->
+                <a href="#education" id="nav-work" class="nav-btn flex items-center gap-1.5 px-3 py-2 rounded-xl text-neutral-400 text-xs font-medium">
+                    <i class="fas fa-briefcase text-sm md:text-[13px]"></i>
+                    <span class="hidden md:inline">Work</span>
+                </a>
+
+                <!-- Blog Button (Scrolls to Proposals) -->
+                <a href="#proposals" id="nav-blog" class="nav-btn flex items-center gap-1.5 px-3 py-2 rounded-xl text-neutral-400 text-xs font-medium">
+                    <i class="fas fa-book text-sm md:text-[13px]"></i>
+                    <span class="hidden md:inline">Blog</span>
+                </a>
+
+                <!-- Gallery Button (Scrolls to Gallery) -->
+                <a href="#gallery" id="nav-gallery" class="nav-btn flex items-center gap-1.5 px-3 py-2 rounded-xl text-neutral-400 text-xs font-medium">
+                    <i class="fas fa-images text-sm md:text-[13px]"></i>
+                    <span class="hidden md:inline">Gallery</span>
+                </a>
+
+                <div class="h-6 w-px bg-[var(--border-medium)] my-auto"></div>
+
+                <!-- Theme Switcher Button -->
+                <button onclick="toggleTheme()" class="nav-btn flex items-center justify-center p-2.5 rounded-xl text-neutral-400" aria-label="Toggle Theme">
+                    <i id="theme-icon" class="fas fa-sun text-sm"></i>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Right Side: Live Clock (hidden on mobile) -->
+        <div class="hidden md:flex flex-1 items-center justify-end text-xs text-neutral-400 font-mono">
+            <span id="live-clock">00:00:00</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-2xl mx-auto px-6 pt-32 pb-24 space-y-24 relative">
+        
+        <!-- Background Grid Highlight Lines -->
+        <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-white/5 via-transparent to-transparent -ml-4 hidden md:block"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-white/5 via-transparent to-transparent -mr-4 hidden md:block"></div>
+
+        <!-- Section: Hero (Home / Intro) -->
+        <section id="about" class="space-y-6 pt-8">
+            <div class="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-6">
+                <div class="space-y-2">
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Nguyễn Phúc Lộc</h1>
+                    <p class="text-sm font-mono text-brand-cyan tracking-wider uppercase font-medium">Growth Marketer & Performance Lead</p>
+                </div>
+                <div class="w-20 h-20 rounded-full border border-white/10 overflow-hidden bg-neutral-900 shadow-xl flex-shrink-0">
+                    <img src="anh cv 2.jpg" alt="Nguyen Phuc Loc" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <p class="text-neutral-300 leading-relaxed text-justify text-sm">
+                Result-oriented Growth Marketer specializing in User Acquisition (UA), conversion rate optimization (CRO), and marketing automation workflows. Proven track record of scaling campaigns, managing performance budgets, and optimizing marketing funnels to achieve business objectives.
+            </p>
+
+            <!-- Social Links & Contact -->
+            <div class="flex flex-wrap gap-3 pt-2">
+                <a href="https://www.linkedin.com/in/nguyen-phuc-loc-growth-marketer/" target="_blank" class="once-card px-4 py-2 rounded-lg text-xs flex items-center gap-2 text-neutral-300 hover:text-white">
+                    <i class="fab fa-linkedin-in text-brand-cyan"></i> LinkedIn
+                </a>
+                <a href="mailto:phucloc.work@gmail.com" class="once-card px-4 py-2 rounded-lg text-xs flex items-center gap-2 text-neutral-300 hover:text-white">
+                    <i class="far fa-envelope text-brand-cyan"></i> Email
+                </a>
+                <a href="https://www.facebook.com/lok.nguyenphuc/" target="_blank" class="once-card px-4 py-2 rounded-lg text-xs flex items-center gap-2 text-neutral-300 hover:text-white">
+                    <i class="fab fa-facebook-f text-brand-cyan"></i> Facebook
+                </a>
+            </div>
+        </section>
+
+        <!-- Section: Work Experience -->
+        <section id="experience" class="space-y-8">
+            <div class="space-y-1">
+                <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+                    <i class="fas fa-briefcase text-xs text-brand-cyan"></i> Work Experience
+                </h2>
+                <div class="w-full h-px bg-white/5"></div>
+            </div>
+
+            <div class="space-y-6 pl-2 border-l border-white/5">
+                
+                <!-- Azway Travel -->
+                <div class="relative pl-6 space-y-2 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-page border-2 border-brand-cyan flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-brand-cyan"></div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                        <h3 class="font-semibold text-white group-hover:text-brand-cyan transition-colors">Performance Marketing Lead</h3>
+                        <span class="text-[11px] font-mono text-neutral-500">Nov 2023 - Present</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-brand-cyan/80 font-mono">
+                        <span>Azway Travel</span>
+                        <span>•</span>
+                        <span>Full-time</span>
+                    </div>
+                    <p class="text-xs text-neutral-400 text-justify leading-relaxed">
+                        Led performance marketing campaigns, optimized user acquisition budgets, and standardized conversion tracking. Achieved 3.93% CTR and designed key lead generation campaigns.
+                    </p>
+                    <button onclick="openShowcase('azway-showcase')" class="text-xs font-mono text-brand-cyan hover:underline flex items-center gap-1.5 pt-1">
+                        View Details & Campaign Metrics <i class="fas fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Karofi Holding -->
+                <div class="relative pl-6 space-y-2 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-page border-2 border-neutral-700 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-neutral-700"></div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                        <h3 class="font-semibold text-white group-hover:text-brand-cyan transition-colors">Growth Marketer</h3>
+                        <span class="text-[11px] font-mono text-neutral-500">Apr 2023 - Oct 2023</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-neutral-500 font-mono">
+                        <span>Karofi Holding</span>
+                        <span>•</span>
+                        <span>User Acquisition</span>
+                    </div>
+                    <p class="text-xs text-neutral-400 text-justify leading-relaxed">
+                        Managed digital performance campaigns for smart home devices, refined audience segmentation, and created automated data pipelines.
+                    </p>
+                    <button onclick="openShowcase('karofi-showcase')" class="text-xs font-mono text-brand-cyan hover:underline flex items-center gap-1.5 pt-1">
+                        View Learnings & Automation Loops <i class="fas fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Tap Hoa Decor -->
+                <div class="relative pl-6 space-y-2 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-page border-2 border-neutral-700 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-neutral-700"></div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                        <h3 class="font-semibold text-white group-hover:text-brand-cyan transition-colors">E-commerce Growth Specialist</h3>
+                        <span class="text-[11px] font-mono text-neutral-500">Sep 2022 - Mar 2023</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-neutral-500 font-mono">
+                        <span>Tap Hoa Decor</span>
+                        <span>•</span>
+                        <span>Lark Suite Project</span>
+                    </div>
+                    <p class="text-xs text-neutral-400 text-justify leading-relaxed">
+                        Exceeded Opportunity KPIs by 17-60% for ByteDance's Lark Suite B2B marketing channels, establishing a stable B2B paid acquisition funnel.
+                    </p>
+                    <button onclick="openShowcase('upbase-showcase')" class="text-xs font-mono text-brand-cyan hover:underline flex items-center gap-1.5 pt-1">
+                        View Funnel & Campaign Performance <i class="fas fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section: Education & Academic Record -->
+        <section id="education" class="space-y-6">
+            <div class="space-y-1">
+                <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+                    <i class="fas fa-graduation-cap text-xs text-brand-cyan"></i> Education & Achievements
+                </h2>
+                <div class="w-full h-px bg-white/5"></div>
+            </div>
+
+            <div class="once-card p-6 rounded-2xl space-y-6 relative overflow-hidden">
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                    <div class="space-y-1">
+                        <h3 class="font-bold text-white text-base">National Economics University (NEU)</h3>
+                        <p class="text-xs text-neutral-400 font-medium">Bachelor of Digital Marketing</p>
+                    </div>
+                    <span class="text-[10px] font-mono text-brand-cyan bg-brand-cyan/5 border border-brand-cyan/20 px-3 py-1 rounded-full w-fit">2022 - 2026</span>
+                </div>
+
+                <!-- Academic KPIs -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-white/[0.01] border border-white/5 rounded-xl p-4 text-center">
+                        <p class="text-sm font-mono text-neutral-400 uppercase tracking-wider mb-1">GPA Score</p>
+                        <p class="text-xl font-extrabold text-white">GPA: 3.77/4.0 | 8.8/10</p>
+                    </div>
+                    <div class="bg-white/[0.01] border border-white/5 rounded-xl p-4 text-center">
+                        <p class="text-sm font-mono text-neutral-400 uppercase tracking-wider mb-1">Class Standing</p>
+                        <p class="text-xl font-extrabold text-brand-cyan">Top 5% | High Distinction</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <p class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Key Distinctions</p>
+                    <ul class="text-xs text-neutral-300 space-y-2 list-disc pl-4 text-justify leading-relaxed">
+                        <li>Ranked 1st in major with Excellence Academic Scholarship 2022-2023.</li>
+                        <li>Champion – “Marketing Warrior 2024” hosted by Thuongmai University.</li>
+                        <li>University-level Student with Five Good Criteria 2023-2024.</li>
+                        <li>4th Prize – Scientific Research 2024-2025 (University-level).</li>
+                        <li>Semi-finalist – Euréka Scientific Research Award 2025.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Skills & Pillars -->
+        <section id="skills" class="space-y-6">
+            <div class="space-y-1">
+                <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+                    <i class="fas fa-sliders-h text-xs text-brand-cyan"></i> Core Pillars & Technical Skills
+                </h2>
+                <div class="w-full h-px bg-white/5"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-white/[0.01] border border-white/5 p-5 rounded-2xl space-y-3">
+                    <div class="w-8 h-8 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-brand-cyan text-sm">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">Performance & UA</h3>
+                    <p class="text-[11px] text-neutral-400 leading-relaxed text-justify">
+                        Targeted User Acquisition campaigns utilizing Meta, Google, and TikTok Ads. Budget pacing & ROI optimization.
+                    </p>
+                </div>
+
+                <div class="bg-white/[0.01] border border-white/5 p-5 rounded-2xl space-y-3">
+                    <div class="w-8 h-8 rounded-lg bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center text-brand-purple text-sm">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">Data & Automation</h3>
+                    <p class="text-[11px] text-neutral-400 leading-relaxed text-justify">
+                        Tracking implementation with GTM and GA4. Automated pipelines via n8n, scraper scripts, and custom dashboards.
+                    </p>
+                </div>
+
+                <div class="bg-white/[0.01] border border-white/5 p-5 rounded-2xl space-y-3">
+                    <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-neutral-300 text-sm">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">CRO & Positioning</h3>
+                    <p class="text-[11px] text-neutral-400 leading-relaxed text-justify">
+                        Conversion optimization via Landing Page restructuring, copywriting refinement, and user journey optimization.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Growth Proposals & Case Studies -->
+        <section id="proposals" class="space-y-6">
+            <div class="space-y-1">
+                <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+                    <i class="fas fa-file-invoice-dollar text-xs text-brand-cyan"></i> Growth Proposals & Case Studies
+                </h2>
+                <div class="w-full h-px bg-white/5"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- MoMo -->
+                <div onclick="openShowcase('project-showcase')" class="once-card p-5 rounded-2xl cursor-pointer space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-mono text-neutral-500 uppercase">Retention & P2P Loop</span>
+                        <i class="fas fa-arrow-up-right-from-square text-[10px] text-neutral-500"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">MoMo Growth Proposal</h3>
+                    <p class="text-[11px] text-neutral-400 leading-relaxed">
+                        Viral referral loops and notification strategies to increase wallet activation and P2P transaction frequencies.
+                    </p>
+                </div>
+
+                <!-- Durex -->
+                <div onclick="openShowcase('project-showcase')" class="once-card p-5 rounded-2xl cursor-pointer space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-mono text-neutral-500 uppercase">Digital Engagement</span>
+                        <i class="fas fa-arrow-up-right-from-square text-[10px] text-neutral-500"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">Durex Campaign Strategy</h3>
+                    <p class="text-[11px] text-neutral-400 leading-relaxed">
+                        Social engagement quizzes, influencer collaborations, and e-commerce coupon conversion strategies.
+                    </p>
+                </div>
+
+                <!-- Livotec -->
+                <div onclick="openShowcase('project-showcase')" class="once-card p-5 rounded-2xl cursor-pointer space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-mono text-neutral-500 uppercase">Product Launch</span>
+                        <i class="fas fa-arrow-up-right-from-square text-[10px] text-neutral-500"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">Livotec Market Strategy</h3>
+                    <p class="text-[11px] text-neutral-400 leading-relaxed">
+                        Funnel creation and digital campaign parameters for smart water purifier and home appliance launches.
+                    </p>
+                </div>
+
+                <!-- Azway Travel Proposal -->
+                <div onclick="openShowcase('project-showcase')" class="once-card p-5 rounded-2xl cursor-pointer space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-mono text-neutral-500 uppercase">User Acquisition</span>
+                        <i class="fas fa-arrow-up-right-from-square text-[10px] text-neutral-500"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm">Azway Lead Gen Proposal</h3>
+                    <p class="text-[11px] text-neutral-400 leading-relaxed">
+                        Full funnel mapping across Meta Lead Ads and interactive landing page designs for booking pipelines.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Media Gallery -->
+        <section id="gallery" class="space-y-6">
+            <div class="space-y-1">
+                <h2 class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+                    <i class="fas fa-images text-xs text-brand-cyan"></i> Media Gallery
+                </h2>
+                <div class="w-full h-px bg-white/5"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-4">
+                    <div class="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.01] p-2 hover:border-brand-cyan/20 transition-all once-card">
+                        <img src="nyf 2023.png" alt="NEU Youth Festival 2023" class="w-full aspect-[16/9] object-cover rounded-xl cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <div class="p-2">
+                            <p class="text-xs font-semibold text-white">NEU Youth Festival 2023</p>
+                            <p class="text-[10px] text-neutral-500 font-mono">Event Media & Production</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.01] p-2 hover:border-brand-cyan/20 transition-all once-card">
+                        <img src="n8n fb wf.jpg" alt="n8n Facebook Workflow" class="w-full aspect-[16/9] object-cover rounded-xl cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <div class="p-2">
+                            <p class="text-xs font-semibold text-white">n8n Facebook Scraping Pipeline</p>
+                            <p class="text-[10px] text-neutral-500 font-mono">Automation Workflow</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.01] p-2 hover:border-brand-cyan/20 transition-all once-card">
+                        <img src="creative assets.png" alt="Azway Travel Creative Assets" class="w-full aspect-[16/9] object-cover rounded-xl cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <div class="p-2">
+                            <p class="text-xs font-semibold text-white">Azway Travel Creative Assets</p>
+                            <p class="text-[10px] text-neutral-500 font-mono">Performance Ad Creatives</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.01] p-2 hover:border-brand-cyan/20 transition-all once-card">
+                        <img src="n8n dmx wf.jpg" alt="n8n DMX Workflow" class="w-full aspect-[16/9] object-cover rounded-xl cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <div class="p-2">
+                            <p class="text-xs font-semibold text-white">n8n DMX Reviews Pipeline</p>
+                            <p class="text-[10px] text-neutral-500 font-mono">Automation Workflow</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Centered Once UI Footer -->
+        <footer class="pt-8 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-neutral-500">
+            <div>
+                © 2026 Nguyễn Phúc Lộc. Built with Once UI Design.
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#about" class="hover:text-neutral-300 transition-colors">About</a>
+                <a href="#experience" class="hover:text-neutral-300 transition-colors">Experience</a>
+                <a href="#proposals" class="hover:text-neutral-300 transition-colors">Proposals</a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- ================= MODALS & SHOWCASES ================= -->
+
+    <!-- Modal 1: Azway Travel Showcase -->
+    <div id="azway-showcase" class="fixed inset-0 z-50 hidden bg-page/98 backdrop-blur-md overflow-y-auto transition-all duration-300 opacity-0 scale-95 flex items-center justify-center p-4">
+        <div class="bg-neutral-950 border border-white/10 w-full max-w-4xl rounded-3xl p-6 sm:p-10 relative space-y-8 max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeShowcase('azway-showcase')" class="absolute top-6 right-6 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-white/5 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Header -->
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono text-brand-cyan tracking-widest uppercase">Performance Lead Journey</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Azway Travel Case Study</h2>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-brand-cyan to-brand-purple rounded-full"></div>
+            </div>
+
+            <!-- Campaign Metrics Stats Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-neutral-900/50 border border-white/5 rounded-2xl p-5 text-center">
+                    <p class="text-[10px] font-mono text-neutral-500 uppercase mb-1">Click-Through Rate (CTR)</p>
+                    <p class="text-2xl font-black text-brand-cyan">3.93%</p>
+                    <p class="text-[9px] text-neutral-400 mt-1">Benchmark: &gt;2.0%</p>
+                </div>
+                <div class="bg-neutral-900/50 border border-white/5 rounded-2xl p-5 text-center">
+                    <p class="text-[10px] font-mono text-neutral-500 uppercase mb-1">Lead-to-Qualified CVR</p>
+                    <p class="text-2xl font-black text-brand-purple">31.0%</p>
+                    <p class="text-[9px] text-neutral-400 mt-1">Benchmark: 20% - 30%</p>
+                </div>
+                <div class="bg-neutral-900/50 border border-white/5 rounded-2xl p-5 text-center">
+                    <p class="text-[10px] font-mono text-neutral-500 uppercase mb-1">Qualified-to-Booking CVR</p>
+                    <p class="text-2xl font-black text-white">10.5%</p>
+                    <p class="text-[9px] text-neutral-400 mt-1">Benchmark: &gt;7.0%</p>
+                </div>
+            </div>
+
+            <!-- Detailed Content -->
+            <div class="space-y-6 text-sm text-neutral-300 leading-relaxed text-justify">
+                <p>
+                    Azway Travel provides premium cruise tours and regional corporate team-building travel services. As the Performance Marketing Lead, I took control of digital campaign execution on Meta Ads, Google Ads, and TikTok. I designed custom workflows to close-track booking data.
+                </p>
+                <div class="space-y-2">
+                    <h4 class="font-bold text-white">Key Implementation Steps:</h4>
+                    <ul class="list-disc pl-5 space-y-1 text-xs">
+                        <li>Standardized web events tracking with Google Tag Manager and GA4, establishing solid lead-attribution reports.</li>
+                        <li>A/B tested copywriting directions and creative angles targeting specific pain points of corporate vacation planners.</li>
+                        <li>Created high-converting Landing Pages (LDPs) for three core sales categories: Sunworld tours, Team Building events, and Ha Long luxury cruise packages.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Creative Gallery with Custom Album Ratio Tabs -->
+            <div class="space-y-4 pt-4 border-t border-white/5">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <h4 class="font-bold text-white text-sm">Creative Assets Showcase</h4>
+                    <!-- Album Tabs -->
+                    <div class="flex items-center gap-2 bg-neutral-900 p-1 border border-white/5 rounded-lg text-[10px] font-mono">
+                        <button id="tab-1" onclick="switchAzwayAlbum('1')" class="px-3 py-1.5 rounded-md hover:text-white transition-colors active-tab">1:1 Square</button>
+                        <button id="tab-9" onclick="switchAzwayAlbum('9')" class="px-3 py-1.5 rounded-md hover:text-white transition-colors">9:16 vertical</button>
+                        <button id="tab-16" onclick="switchAzwayAlbum('16')" class="px-3 py-1.5 rounded-md hover:text-white transition-colors">16:9 horizontal</button>
+                    </div>
+                </div>
+
+                <!-- Album Images -->
+                <div class="relative min-h-[300px] border border-white/5 rounded-2xl overflow-hidden bg-neutral-900/40 p-4 flex items-center justify-center">
+                    
+                    <!-- 1:1 Square -->
+                    <div id="album-1" class="azw-album grid grid-cols-2 gap-4 w-full max-w-lg">
+                        <img src="azw creative assets/vuong 1.1.png" alt="Creative Square 1" class="w-full aspect-square object-cover rounded-xl border border-white/10 cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="azw creative assets/vuong 1.1 (4).png" alt="Creative Square 2" class="w-full aspect-square object-cover rounded-xl border border-white/10 cursor-zoom-in" onclick="openLightbox(this.src)">
+                    </div>
+
+                    <!-- 9:16 Vertical -->
+                    <div id="album-9" class="azw-album hidden grid grid-cols-2 gap-4 w-full max-w-lg">
+                        <img src="azw creative assets/doc 9.16 (2).png" alt="Creative Vertical 1" class="w-full aspect-[9/16] object-cover rounded-xl border border-white/10 cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="azw creative assets/doc 9.16.png" alt="Creative Vertical 2" class="w-full aspect-[9/16] object-cover rounded-xl border border-white/10 cursor-zoom-in" onclick="openLightbox(this.src)">
+                    </div>
+
+                    <!-- 16:9 Horizontal -->
+                    <div id="album-16" class="azw-album hidden grid grid-cols-2 gap-4 w-full">
+                        <div class="space-y-1 text-center">
+                            <img src="azw ldp SW.png" alt="Sunworld LDP" class="w-full aspect-[16/9] object-cover rounded-xl border border-white/10 cursor-zoom-in" onclick="openLightbox(this.src)">
+                            <span class="text-[10px] text-neutral-500 font-mono">Sunworld LDP</span>
+                        </div>
+                        <div class="space-y-1 text-center">
+                            <img src="azw ldp teambuilding.png" alt="Team Building LDP" class="w-full aspect-[16/9] object-cover rounded-xl border border-white/10 cursor-zoom-in" onclick="openLightbox(this.src)">
+                            <span class="text-[10px] text-neutral-500 font-mono">Team Building LDP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Karofi Holding Showcase -->
+    <div id="karofi-showcase" class="fixed inset-0 z-50 hidden bg-page/98 backdrop-blur-md overflow-y-auto transition-all duration-300 opacity-0 scale-95 flex items-center justify-center p-4">
+        <div class="bg-neutral-950 border border-white/10 w-full max-w-4xl rounded-3xl p-6 sm:p-10 relative space-y-8 max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeShowcase('karofi-showcase')" class="absolute top-6 right-6 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-white/5 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Header -->
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono text-brand-cyan tracking-widest uppercase">Smart Appliances UA</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Karofi Holding Journey</h2>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-brand-cyan to-brand-purple rounded-full"></div>
+            </div>
+
+            <!-- Strategy Detail Box -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                <div class="bg-neutral-900/50 border border-white/5 p-6 rounded-2xl space-y-3">
+                    <h3 class="font-bold text-white text-sm flex items-center gap-2">
+                        <i class="fas fa-microchip text-brand-cyan"></i> Automation Workflow
+                    </h3>
+                    <p class="text-xs text-neutral-400 leading-relaxed text-justify">
+                        Designed web scraper workflow using Puppeteer to retrieve target appliance reviews, structure dataset and feed insights back to product messaging funnels.
+                    </p>
+                </div>
+                <div class="bg-neutral-900/50 border border-white/5 p-6 rounded-2xl space-y-3">
+                    <h3 class="font-bold text-white text-sm flex items-center gap-2">
+                        <i class="fas fa-chart-line text-brand-purple"></i> UA Performance
+                    </h3>
+                    <p class="text-xs text-neutral-400 leading-relaxed text-justify">
+                        Maintained campaign KPIs and generated customer pain point matrices. Shortened feedback loop on digital ads performance data.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Workflow Images -->
+            <div class="space-y-4 pt-4 border-t border-white/5">
+                <h4 class="font-bold text-white text-sm">Data Scraping & Analysis Pipeline</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <img src="demo workflow Web 2.jpg" alt="Puppeteer Scraper" class="w-full h-48 object-cover rounded-xl border border-white/10 cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <span class="text-[10px] text-neutral-500 font-mono block text-center">Puppeteer + n8n Scraper Pipeline</span>
+                    </div>
+                    <div class="space-y-1">
+                        <img src="n8n dmx wf result.jpg" alt="Scraping Result" class="w-full h-48 object-cover rounded-xl border border-white/10 cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <span class="text-[10px] text-neutral-500 font-mono block text-center">Result Review Dataset</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lesson Learned Section -->
+            <div class="space-y-4 pt-4 border-t border-white/5">
+                <h4 class="font-bold text-white text-sm flex items-center gap-2">
+                    <i class="far fa-lightbulb text-brand-cyan"></i> Lesson Learned
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-neutral-900/30 border border-white/5 p-4 rounded-xl space-y-2 h-full flex flex-col justify-between">
+                        <p class="text-[10px] font-mono text-brand-cyan uppercase tracking-wider">01. UA Core</p>
+                        <p class="text-xs text-neutral-300 leading-relaxed">Understanding user pain points and product positioning sets the base for clean creatives.</p>
+                    </div>
+                    <div class="bg-neutral-900/30 border border-white/5 p-4 rounded-xl space-y-2 h-full flex flex-col justify-between">
+                        <p class="text-[10px] font-mono text-brand-purple uppercase tracking-wider">02. Insight Loop</p>
+                        <p class="text-xs text-neutral-300 leading-relaxed">Automation is key to shorten insight delivery and align ad execution parameters.</p>
+                    </div>
+                    <div class="bg-neutral-900/30 border border-white/5 p-4 rounded-xl space-y-2 h-full flex flex-col justify-between">
+                        <p class="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">03. messaging quality</p>
+                        <p class="text-xs text-neutral-300 leading-relaxed">Sharper user segmentation directly drives high lead conversion and CPA savings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Tap Hoa Decor Showcase (Upbase) -->
+    <div id="upbase-showcase" class="fixed inset-0 z-50 hidden bg-page/98 backdrop-blur-md overflow-y-auto transition-all duration-300 opacity-0 scale-95 flex items-center justify-center p-4">
+        <div class="bg-neutral-950 border border-white/10 w-full max-w-4xl rounded-3xl p-6 sm:p-10 relative space-y-8 max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeShowcase('upbase-showcase')" class="absolute top-6 right-6 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-white/5 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Header -->
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono text-brand-cyan tracking-widest uppercase">E-Commerce Growth Case Study</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Lark Suite Paid Acquisition Funnel</h2>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-brand-cyan to-brand-purple rounded-full"></div>
+            </div>
+
+            <!-- Campaign Stats -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-neutral-900/50 border border-white/5 rounded-2xl p-5 text-center">
+                    <p class="text-[10px] font-mono text-neutral-500 uppercase mb-1">Opportunity Cost</p>
+                    <p class="text-2xl font-black text-brand-cyan">300K - 400K</p>
+                    <p class="text-[9px] text-neutral-400 mt-1">Cost per B2B Opportunity</p>
+                </div>
+                <div class="bg-neutral-900/50 border border-white/5 rounded-2xl p-5 text-center">
+                    <p class="text-[10px] font-mono text-neutral-500 uppercase mb-1">Lead-to-Opportunity CVR</p>
+                    <p class="text-2xl font-black text-brand-purple">11% - 37%</p>
+                    <p class="text-[9px] text-neutral-400 mt-1">Average conversion rates</p>
+                </div>
+                <div class="bg-neutral-900/50 border border-white/5 rounded-2xl p-5 text-center">
+                    <p class="text-[10px] font-mono text-neutral-500 uppercase mb-1">Demo Conversion Rate</p>
+                    <p class="text-2xl font-black text-white">33% - 60%</p>
+                    <p class="text-[9px] text-neutral-400 mt-1">Exceeded target KPIs by 17%-60%</p>
+                </div>
+            </div>
+
+            <!-- Detailed Content -->
+            <div class="space-y-6 text-sm text-neutral-300 leading-relaxed text-justify">
+                <p>
+                    Managed B2B funnel campaigns promoting ByteDance's Lark Suite software. Designed full-funnel layouts, ad creatives, and lead tracking variables.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <img src="creative assets.png" alt="Creative Assets" class="w-full h-40 object-cover rounded-xl border border-white/10 cursor-zoom-in" onclick="openLightbox(this.src)">
+                    <img src="LDP (2).png" alt="Landing Page Layout" class="w-full h-40 object-cover rounded-xl border border-white/10 cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Proposals General Showcase -->
+    <div id="project-showcase" class="fixed inset-0 z-50 hidden bg-page/98 backdrop-blur-md overflow-y-auto transition-all duration-300 opacity-0 scale-95 flex items-center justify-center p-4">
+        <div class="bg-neutral-950 border border-white/10 w-full max-w-3xl rounded-3xl p-6 sm:p-10 relative space-y-8 max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeShowcase('project-showcase')" class="absolute top-6 right-6 w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-white/5 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Header -->
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono text-brand-cyan tracking-widest uppercase">Client Growth Blueprints</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Campaign & Growth Proposals</h2>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-brand-cyan to-brand-purple rounded-full"></div>
+            </div>
+
+            <!-- Content list -->
+            <div class="space-y-6 text-sm text-neutral-300">
+                <div class="bg-neutral-900/30 border border-white/5 p-5 rounded-2xl space-y-2">
+                    <h3 class="font-bold text-white text-sm">MoMo Growth Strategy Proposal</h3>
+                    <p class="text-xs text-neutral-400 leading-relaxed text-justify">
+                        Focused on peer-to-peer transaction viral loops, gamified referral systems, and automated customized notification push variables based on user historical transaction milestones.
+                    </p>
+                </div>
+
+                <div class="bg-neutral-900/30 border border-white/5 p-5 rounded-2xl space-y-2">
+                    <h3 class="font-bold text-white text-sm">Durex Creative Campaign proposal</h3>
+                    <p class="text-xs text-neutral-400 leading-relaxed text-justify">
+                        Designed social engagement loops coupled with product-selection quizzes, linking social activity points directly to e-commerce discount coupons.
+                    </p>
+                </div>
+
+                <div class="bg-neutral-900/30 border border-white/5 p-5 rounded-2xl space-y-2">
+                    <h3 class="font-bold text-white text-sm">Livotec Launch Plan</h3>
+                    <p class="text-xs text-neutral-400 leading-relaxed text-justify">
+                        Funnel structuring and target campaign metrics setting for water filtration appliances launch, optimizing cost per acquisition metric (CPA).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox for Image Zoom -->
+    <div id="lightbox" class="fixed inset-0 z-[200] hidden bg-black/95 flex items-center justify-center backdrop-blur-md transition-opacity duration-300 opacity-0" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white text-3xl hover:text-brand-cyan transition-colors" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="" class="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        // Theme Switching Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            if (!icon) return;
+            if (theme === 'dark') {
+                icon.className = 'fas fa-sun text-sm';
+            } else {
+                icon.className = 'fas fa-moon text-sm';
+            }
+        }
+
+        // Live Clock Logic (Asia/Ho_Chi_Minh Timezone)
+        function updateClock() {
+            const clockElement = document.getElementById('live-clock');
+            if (!clockElement) return;
+            const now = new Date();
+            const options = {
+                timeZone: 'Asia/Ho_Chi_Minh',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+            const timeString = new Intl.DateTimeFormat('en-GB', options).format(now);
+            clockElement.textContent = timeString;
+        }
+
+        // Scroll Spy Logic for Active Nav Indicator
+        const spySections = [
+            { id: 'about', navId: 'nav-home' },
+            { id: 'experience', navId: 'nav-about' },
+            { id: 'education', navId: 'nav-work' },
+            { id: 'skills', navId: 'nav-work' },
+            { id: 'proposals', navId: 'nav-blog' },
+            { id: 'gallery', navId: 'nav-gallery' }
+        ];
+
+        function spy() {
+            const scrollPos = window.scrollY || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            
+            // If scrolled to the very bottom, active section is Gallery
+            if (scrollPos + windowHeight >= docHeight - 20) {
+                setActiveNav('nav-gallery');
+                return;
+            }
+
+            let activeNavId = 'nav-home';
+            for (let i = 0; i < spySections.length; i++) {
+                const sec = document.getElementById(spySections[i].id);
+                if (sec) {
+                    const top = sec.offsetTop - 150;
+                    if (scrollPos >= top) {
+                        activeNavId = spySections[i].navId;
+                    }
+                }
+            }
+            setActiveNav(activeNavId);
+        }
+
+        function setActiveNav(navId) {
+            const navLinks = document.querySelectorAll('.nav-btn');
+            navLinks.forEach(link => {
+                if (link.id === navId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Initialize script logic on load
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            updateThemeIcon(savedTheme);
+            setInterval(updateClock, 1000);
+            updateClock();
+            
+            // Smooth scroll for nav items
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        window.addEventListener('scroll', spy);
+        window.addEventListener('load', spy);
+
+        // Modal controls
+        function openShowcase(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                modal.classList.remove('opacity-0', 'scale-95');
+                modal.classList.add('opacity-100', 'scale-100');
+            }, 10);
+        }
+
+        function closeShowcase(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.remove('opacity-100', 'scale-100');
+            modal.classList.add('opacity-0', 'scale-95');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Azway Travel Album Tabs
+        function switchAzwayAlbum(ratio) {
+            document.querySelectorAll('.azw-album').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('#tab-1, #tab-9, #tab-16').forEach(el => el.classList.remove('active-tab'));
+            document.getElementById('album-' + ratio).classList.remove('hidden');
+            document.getElementById('tab-' + ratio).classList.add('active-tab');
+        }
+
+        // Lightbox Zoom logic
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.remove('hidden');
+            setTimeout(() => {
+                lb.classList.remove('opacity-0');
+                img.classList.remove('scale-95');
+                img.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            lb.classList.add('opacity-0');
+            img.classList.remove('scale-100');
+            img.classList.add('scale-95');
+            setTimeout(() => {
+                lb.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close showcase modals on escape press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('[id$="-showcase"]').forEach(el => {
+                    if (!el.classList.contains('hidden')) {
+                        closeShowcase(el.id);
+                    }
+                });
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
