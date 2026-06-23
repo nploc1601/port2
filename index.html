@@ -39,10 +39,13 @@
         }
     </script>
     <style>
+        html {
+            scroll-behavior: auto !important;
+        }
+
         body {
             background-color: #FFF8EE;
             color: #2D1B00;
-            background-attachment: fixed;
         }
 
         .bg-grid-tech {
@@ -154,6 +157,10 @@
 
         .timeline-dot {
             box-shadow: 0 0 10px #D4680A, 0 0 20px #D4680A;
+        }
+
+        .upload-container {
+            position: relative;
         }
 
         .upload-overlay {
@@ -386,6 +393,7 @@
         .reveal-on-scroll.is-revealed {
             opacity: 1;
             transform: translateY(0);
+            will-change: auto;
         }
 
         /* Custom hover colors for proposal link icons */
@@ -630,6 +638,28 @@
         /* Light Theme Text & Utility Overrides - Minimalist & Modern */
         .text-white {
             color: #2D1B00 !important;
+        }
+
+        /* Ensure white text/icons inside dark overlays/containers stay white on light theme */
+        .upload-overlay .text-white,
+        .upload-overlay i,
+        .bg-black\/50 .text-white,
+        .bg-black\/50 span,
+        .bg-black\/80 .text-white,
+        .bg-black\/80 span,
+        .bg-black\/90 .text-white,
+        .bg-black\/90 span,
+        .bg-gradient-to-t .text-white,
+        .bg-gradient-to-t h4,
+        .bg-gradient-to-t p,
+        .bg-gradient-to-t span,
+        .bg-gradient-to-t i,
+        .text-keep-white {
+            color: #ffffff !important;
+        }
+
+        .bg-gradient-to-t .text-ai-cyan {
+            color: #FFCC4D !important; /* Lighter gold color for high contrast on dark gradients */
         }
 
         .text-gray-300 {
@@ -1081,7 +1111,7 @@
             <div class="flex items-center justify-between h-16">
                 <a href="#about" class="flex items-center">
                     <img src="mascot falcon.webp" alt="Falcon Mascot"
-                        class="h-10 w-auto object-contain select-none hover:scale-105 transition-transform duration-300">
+                        class="h-14 w-auto object-contain select-none hover:scale-105 transition-transform duration-300">
                 </a>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
@@ -1492,341 +1522,7 @@
                     </div>
                 </div>
             </div>
-
-            <div id="upbase-showcase" data-lenis-prevent="true"
-                class="fixed inset-0 z-[150] hidden bg-[#FFF8EE]/95 backdrop-blur-sm overflow-y-auto transition-all duration-500 opacity-0 transform scale-105 custom-scroll">
-                <!-- Floating Ambient Orbs inside Modal -->
-                <div
-                    class="absolute top-[10%] left-[20%] w-96 h-96 bg-ai-cyan/20 rounded-full blur-[120px] pointer-events-none">
-                </div>
-                <div
-                    class="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-ai-purple/20 rounded-full blur-[150px] pointer-events-none">
-                </div>
-
-                <div class="max-w-7xl mx-auto px-4 py-16 relative">
-                    <button onclick="closeUpbaseShowcase()"
-                        class="fixed top-8 right-8 z-[160] w-14 h-14 rounded-full glass-card flex items-center justify-center hover:bg-white/10 text-white transition-all group border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
-                        <i class="fas fa-times text-2xl group-hover:rotate-90 transition-transform"></i>
-                    </button>
-
-                    <div class="text-center mb-24">
-                        <div
-                            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full glass-card border-white/10 mb-6">
-                            <div class="w-2.5 h-2.5 rounded-full bg-ai-cyan animate-pulse shadow-[0_0_10px_#D4680A]">
-                            </div>
-                            <span class="text-ai-cyan text-xs font-black tracking-[0.5em] uppercase">From Helicopter to
-                                Detail-oriented</span>
-                        </div>
-                        <h2
-                            class="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase mb-6 drop-shadow-xl">
-                            Upbase Journey</h2>
-                        <div
-                            class="h-1.5 w-48 bg-gradient-to-r from-ai-cyan via-[#F5A623] to-ai-purple mx-auto rounded-full shadow-[0_0_20px_rgba(212, 104, 10,0.6)]">
-                        </div>
-                    </div>
-
-                    <div class="space-y-32">
-
-                        <div
-                            class="glass-card p-8 md:p-14 rounded-[3rem] border border-white/10 shadow-2xl relative overflow-hidden group">
-                            <div
-                                class="absolute top-0 right-0 w-[600px] h-[600px] bg-ai-cyan/5 rounded-full blur-[120px] pointer-events-none group-hover:bg-ai-cyan/10 transition-colors duration-700">
-                            </div>
-
-                            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center relative z-10">
-                                <div class="lg:w-5/12 space-y-10">
-                                    <div class="flex items-center gap-6">
-                                        <div
-                                            class="w-20 h-20 rounded-[2rem] glass-card border-ai-cyan/30 flex items-center justify-center shadow-[0_0_25px_rgba(212, 104, 10,0.2)] overflow-hidden p-2.5 bg-white/5">
-                                            <img loading="lazy" decoding="async" src="https://lf-package-sg.larksuitecdn.com/obj/lark-static-sgsaas/lark/open/website/share-logo.png"
-                                                alt="Lark Suite" class="w-full h-full object-contain">
-                                        </div>
-                                        <div>
-                                            <h3
-                                                class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-2">
-                                                Lark Suite <span class="text-white-500">(B2B)</span></h3>
-                                            <p class="text-ai-cyan font-black uppercase tracking-[0.3em] text-[10px]">AI
-                                                & MarTech Efficiency</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="space-y-6">
-                                        <div
-                                            class="glass-card p-6 rounded-3xl border-l-4 border-l-ai-cyan bg-white/[0.02] hover:bg-white/[0.05] transition-colors shadow-inner">
-                                            <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-3"><i
-                                                    class="fas fa-magic text-ai-cyan"></i> AI-Enhanced Content</h4>
-                                            <p class="text-sm text-gray-300 leading-relaxed text-justify">Leveraged
-                                                ChatGPT/Gemini for ideation and Canva AI/Photoshop for rapid visual
-                                                production.</p>
-                                        </div>
-                                        <div
-                                            class="glass-card p-6 rounded-3xl border-l-4 border-l-ai-cyan bg-white/[0.02] hover:bg-white/[0.05] transition-colors shadow-inner">
-                                            <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-3"><i
-                                                    class="fas fa-filter text-ai-cyan"></i> Lead Nurturing</h4>
-                                            <p class="text-sm text-gray-300 leading-relaxed text-justify">Developed
-                                                high-converting Landing Pages (LadiPage) and managed CRM workflows
-                                                (Brevo, Mailchimp) to streamline lead journeys.</p>
-                                        </div>
-                                        <div
-                                            class="glass-card p-6 rounded-3xl border-l-4 border-l-ai-cyan bg-white/[0.02] hover:bg-white/[0.05] transition-colors shadow-inner">
-                                            <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-3"><i
-                                                    class="fas fa-project-diagram text-ai-cyan"></i> Workflow
-                                                Optimization</h4>
-                                            <p class="text-sm text-gray-300 leading-relaxed text-justify">Applied an
-                                                "Audit-to-Action" cycle, utilizing AI to shorten the path from task
-                                                brief to creative delivery.</p>
-                                        </div>
-                                    </div>
-
-                                    <a href="https://www.facebook.com/upbasedigitaltransformation" target="_blank"
-                                        class="inline-flex items-center justify-center gap-4 px-8 py-5 rounded-2xl bg-[#1877F2]/10 border border-[#1877F2]/30 text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all font-black text-xs uppercase tracking-widest shadow-lg w-full md:w-max">
-                                        <i class="fab fa-facebook text-xl"></i> Lark Suite Fanpage
-                                    </a>
-                                </div>
-
-                                <div class="lg:w-7/12 w-full">
-                                    <div class="grid grid-cols-2 gap-5">
-                                        <div class="col-span-2 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-[0_20px_40px_rgba(0,0,0,0.5)] h-72"
-                                            onclick="openModal('lark-main')">
-                                            <img loading="lazy" decoding="async" id="lark-main"
-                                                src="https://cdn.brvn.vn/editor/2025/09/U84141_1280x1280_1758275601.PNG"
-                                                class="rounded-[2rem] w-full h-full object-cover" alt="">
-                                            <div
-                                                class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
-                                                <i class="fas fa-search-plus text-white text-4xl"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
-                                            onclick="openModal('lark-assets')">
-                                            <img loading="lazy" decoding="async" id="lark-assets" src="creative assets.webp"
-                                                class="rounded-[2rem] w-full h-full object-cover" alt="">
-                                            <div
-                                                class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
-                                                <i class="fas fa-search-plus text-white text-2xl"></i>
-                                            </div>
-                                            <span
-                                                class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest"
-                                                style="color: #ffffff !important;">Advertising
-                                                Assets</span>
-                                        </div>
-                                        <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
-                                            onclick="openModal('lark-lp')">
-                                            <img loading="lazy" decoding="async" id="lark-lp" src="LDP (2).webp"
-                                                class="rounded-[2rem] w-full h-full object-cover" alt="">
-                                            <div
-                                                class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
-                                                <i class="fas fa-search-plus text-white text-2xl"></i>
-                                            </div>
-                                            <span
-                                                class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest"
-                                                style="color: #ffffff !important;">Conversion
-                                                Landing Pages</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="relative">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-b from-ai-purple/5 to-ai-cyan/5 rounded-[3.5rem] blur-2xl pointer-events-none">
-                            </div>
-                            <div
-                                class="glass-card p-10 md:p-16 rounded-[3.5rem] border-t-2 border-ai-purple shadow-[0_30px_60px_rgba(0,0,0,0.6)] relative overflow-hidden group">
-
-                                <div class="text-center mb-20 relative z-10">
-                                    <div
-                                        class="w-24 h-24 rounded-[2rem] glass-card border-ai-purple/30 flex items-center justify-center text-5xl shadow-[0_0_30px_rgba(245, 166, 35,0.3)] mx-auto mb-8">
-                                        📈</div>
-                                    <h3
-                                        class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
-                                        Performance Dashboard</h3>
-                                    <p class="text-ai-purple font-black uppercase tracking-[0.4em] text-xs">Sales-Led
-                                        Growth Optimization</p>
-                                </div>
-
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24 relative z-10">
-                                    <div
-                                        class="glass-card p-10 rounded-[3rem] border-t-4 border-t-ai-cyan relative overflow-hidden group/card hover:-translate-y-3 transition-all duration-500 shadow-2xl flex flex-col justify-center items-center">
-                                        <div
-                                            class="absolute inset-0 bg-gradient-to-b from-ai-cyan/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
-                                        </div>
-                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
-                                            style="color: #2D1B00 !important; opacity: 0.85;">
-                                            Exceeded Opp KPIs</p>
-                                        <p
-                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-purple to-ai-cyan drop-shadow-[0_0_20px_rgba(212, 104, 10,0.4)] mb-4 text-center leading-tight">
-                                            60%</p>
-                                        <div
-                                            class="w-full bg-black/50 rounded-full h-10 flex items-center justify-center px-4 border border-white/10 mt-auto">
-                                            <span class="text-[10px] font-black tracking-widest uppercase"
-                                                style="color: #ffffff !important;">Peak Growth Rate</span>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="glass-card p-10 rounded-[3rem] border-t-4 border-t-ai-purple relative overflow-hidden group/card hover:-translate-y-3 transition-all duration-500 shadow-2xl flex flex-col justify-center items-center">
-                                        <div
-                                            class="absolute inset-0 bg-gradient-to-b from-ai-purple/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
-                                        </div>
-                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
-                                            style="color: #2D1B00 !important; opacity: 0.85;">
-                                            Cost / Opp (VNĐ)</p>
-                                        <p
-                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-cyan to-ai-purple drop-shadow-[0_0_20px_rgba(245, 166, 35,0.4)] mb-4 text-center leading-tight">
-                                            300K</p>
-                                        <div
-                                            class="w-full bg-black/50 rounded-full h-10 flex items-center justify-between px-5 border border-white/10 mt-auto">
-                                            <span class="text-[10px] font-black tracking-widest"
-                                                style="color: #ffffff !important;">Achieved</span>
-                                            <span class="text-[10px] font-black line-through"
-                                                style="color: #FFF3DB !important; opacity: 0.85;">BM: 600K</span>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="glass-card p-10 rounded-[3rem] border-t-4 border-t-ai-cyan relative overflow-hidden group/card hover:-translate-y-3 transition-all duration-500 shadow-2xl flex flex-col justify-center items-center">
-                                        <div
-                                            class="absolute inset-0 bg-gradient-to-b from-ai-cyan/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
-                                        </div>
-                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
-                                            style="color: #2D1B00 !important; opacity: 0.85;">
-                                            Lead-to-Opp CVR</p>
-                                        <p
-                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-purple to-ai-cyan drop-shadow-[0_0_20px_rgba(212, 104, 10,0.4)] mb-4 text-center leading-tight">
-                                            37%</p>
-                                        <div
-                                            class="w-full bg-black/50 rounded-full h-10 flex items-center justify-between px-5 border border-white/10 mt-auto">
-                                            <span class="text-[10px] font-black tracking-widest"
-                                                style="color: #ffffff !important;">Peak</span>
-                                            <span class="text-[10px] font-black"
-                                                style="color: #FFF3DB !important; opacity: 0.85;">BM: 10-15%</span>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="glass-card p-10 rounded-[3rem] border-t-4 border-t-ai-purple relative overflow-hidden group/card hover:-translate-y-3 transition-all duration-500 shadow-2xl flex flex-col justify-center items-center">
-                                        <div
-                                            class="absolute inset-0 bg-gradient-to-b from-ai-purple/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
-                                        </div>
-                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
-                                            style="color: #2D1B00 !important; opacity: 0.85;">
-                                            Opp-to-Demo CVR</p>
-                                        <p
-                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-cyan to-ai-purple drop-shadow-[0_0_20px_rgba(245, 166, 35,0.4)] mb-4 text-center leading-tight">
-                                            38%</p>
-                                        <div
-                                            class="w-full bg-black/50 rounded-full h-10 flex items-center justify-between px-5 border border-white/10 mt-auto">
-                                            <span class="text-[10px] font-black tracking-widest"
-                                                style="color: #ffffff !important;">Peak</span>
-                                            <span class="text-[10px] font-black"
-                                                style="color: #FFF3DB !important; opacity: 0.85;">BM: 9-17%</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
-                                    <div class="lg:col-span-5 space-y-8">
-                                        <div
-                                            class="glass-card p-6 rounded-3xl border-l-4 border-ai-purple bg-white/[0.02]">
-                                            <h4 class="text-white font-black text-lg mb-2">Funnel Growth</h4>
-                                            <p class="text-sm text-gray-300 leading-relaxed text-justify">Managed a
-                                                Sales-led (90%) and Product-led (10%) engine, consistently exceeding
-                                                Opportunity KPIs by 17%–60%.</p>
-                                        </div>
-                                        <div
-                                            class="glass-card p-6 rounded-3xl border-l-4 border-ai-purple bg-white/[0.02]">
-                                            <h4 class="text-white font-black text-lg mb-2">Pipeline Optimization</h4>
-                                            <p class="text-sm text-gray-300 leading-relaxed text-justify">Scaled
-                                                qualified leads through data-backed Meta Ads optimization and precise
-                                                conversion tracking.</p>
-                                        </div>
-                                    </div>
-                                    <div class="lg:col-span-7">
-                                        <div class="glass-card p-4 rounded-[3rem] cursor-pointer upload-container shadow-2xl hover:shadow-[0_0_40px_rgba(245, 166, 35,0.3)] transition-all duration-500 group"
-                                            onclick="openModal('lark-plan')">
-                                            <div class="relative w-full h-[400px] rounded-[2.5rem] overflow-hidden">
-                                                <img loading="lazy" decoding="async" id="lark-plan" src="pfm meta.webp"
-                                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                                    alt="">
-                                                <div
-                                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none">
-                                                </div>
-                                                <div
-                                                    class="absolute inset-0 flex items-center justify-center upload-overlay">
-                                                    <i class="fas fa-search-plus text-white text-5xl"></i>
-                                                </div>
-                                                <div class="absolute bottom-8 left-8 z-20 pointer-events-none">
-                                                    <h4 class="text-white font-black uppercase text-2xl mb-2">Monthly
-                                                        Opportunity Planning</h4>
-                                                    <p
-                                                        class="text-ai-purple text-xs font-black uppercase tracking-[0.3em]">
-                                                        Lark Suite (Sales-led)</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="glass-card rounded-[3rem] border border-white/10 bg-[rgba(255,255,255,0.01)] relative overflow-hidden shadow-2xl">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-r from-ai-cyan/5 via-transparent to-ai-purple/5 opacity-50 pointer-events-none">
-                            </div>
-                            <div class="grid grid-cols-1 lg:grid-cols-12 relative z-10 items-stretch">
-                                <div
-                                    class="lg:col-span-4 p-10 lg:p-14 flex flex-col justify-center bg-black/30 lg:border-r border-white/10">
-                                    <h4
-                                        class="text-3xl font-black text-white uppercase tracking-tighter mb-4 flex items-center gap-4">
-                                        <i
-                                            class="fas fa-lightbulb text-[#fb923c] drop-shadow-[0_0_10px_rgba(251,146,60,0.5)]"></i>
-                                        Lesson Learned
-                                    </h4>
-                                </div>
-                                <div class="lg:col-span-8 p-10 lg:p-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-                                    <div
-                                        class="glass-card p-6 rounded-2xl border-white/10 hover:border-ai-cyan/40 transition-colors">
-                                        <p
-                                            class="text-ai-cyan font-black uppercase text-[9px] tracking-[0.2em] mb-2 flex items-center gap-2">
-                                            <i class="fas fa-link text-sm"></i> Pipeline Ownership
-                                        </p>
-                                        <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
-                                            Learned to treat B2B UA as pipeline ownership, not just lead generation.</p>
-                                    </div>
-                                    <div
-                                        class="glass-card p-6 rounded-2xl border-white/10 hover:border-ai-purple/40 transition-colors">
-                                        <p
-                                            class="text-ai-purple font-black uppercase text-[8.5px] tracking-[0.2em] mb-2 flex items-center gap-2">
-                                            <i class="fas fa-coins text-sm"></i> Quality & Efficiency
-                                        </p>
-                                        <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
-                                            Prioritized opportunity quality and cost efficiency over raw lead volume.
-                                        </p>
-                                    </div>
-                                    <div
-                                        class="glass-card p-6 rounded-2xl border-white/10 hover:border-white/40 transition-colors">
-                                        <p
-                                            class="text-white font-black uppercase text-[10px] tracking-[0.2em] mb-2 flex items-center gap-2">
-                                            <i class="fas fa-users-cog text-sm"></i> Cross-Alignment
-                                        </p>
-                                        <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
-                                            Learned that strong UA is not only about acquisition execution, but also
-                                            about cross-functional alignment to improve lead quality and closed-won
-                                            potential.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="text-center mt-24 pb-10">
-                        <button onclick="closeUpbaseShowcase()"
-                            class="px-16 py-6 glass-card bg-white/5 border border-white/20 text-white hover:bg-white/20 hover:scale-105 transition-all font-black uppercase tracking-[0.4em] text-xs shadow-[0_0_40px_rgba(255,255,255,0.1)] rounded-full">
-                            <i class="fas fa-times mr-2 text-lg"></i> Close Experience
-                        </button>
-                    </div>
-                </div>
-            </div>
+        </div>
 
             <!-- Next Section Hint -->
             <div class="mt-16 flex justify-center animate-bounce pb-8 relative z-30">
@@ -2072,7 +1768,7 @@
                 <div
                     class="glass-card rounded-[2.5rem] overflow-hidden flex flex-col border border-white/10 bg-white/5">
                     <div class="h-64 w-full relative upload-container cursor-pointer" onclick="openModal('nyf-img-sc')">
-                        <img loading="lazy" decoding="async" id="nyf-img-sc" src="nyf 2023.webp" alt="NYF" class="w-full h-full object-cover">
+                        <img loading="eager" decoding="async" id="nyf-img-sc" src="nyf 2023.webp" alt="NYF" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center upload-overlay">
                             <i class="fas fa-search-plus text-3xl text-white"></i>
@@ -2119,7 +1815,7 @@
                     class="glass-card rounded-[2.5rem] overflow-hidden flex flex-col border border-white/10 bg-white/5">
                     <div class="h-64 w-full relative upload-container cursor-pointer"
                         onclick="openModal('tnth-img-sc')">
-                        <img loading="lazy" decoding="async" id="tnth-img-sc" src="tnth 2023.jpg" alt="TNTH" class="w-full h-full object-cover">
+                        <img loading="eager" decoding="async" id="tnth-img-sc" src="tnth 2023.jpg" alt="TNTH" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center upload-overlay">
                             <i class="fas fa-search-plus text-3xl text-white"></i>
@@ -3216,19 +2912,19 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-cyan/50 transition-all cursor-pointer"
                             onclick="openModal('neu-cert-1')">
-                            <img loading="lazy" decoding="async" id="neu-cert-1" src="winner of cbmkt.jpg"
+                            <img loading="eager" decoding="async" id="neu-cert-1" src="winner of cbmkt.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-cyan/50 transition-all cursor-pointer"
                             onclick="openModal('neu-cert-2')">
-                            <img loading="lazy" decoding="async" id="neu-cert-2" src="sv5t.jpg"
+                            <img loading="eager" decoding="async" id="neu-cert-2" src="sv5t.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-cyan/50 transition-all cursor-pointer"
                             onclick="openModal('neu-cert-3')">
-                            <img loading="lazy" decoding="async" id="neu-cert-3" src="nckh.jpg"
+                            <img loading="eager" decoding="async" id="neu-cert-3" src="nckh.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
@@ -3242,19 +2938,19 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-purple/50 transition-all cursor-pointer"
                             onclick="openModal('neu-people-1')">
-                            <img loading="lazy" decoding="async" id="neu-people-1" src="winner of cbmkt 2.jpg"
+                            <img loading="eager" decoding="async" id="neu-people-1" src="winner of cbmkt 2.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-purple/50 transition-all cursor-pointer"
                             onclick="openModal('neu-people-2')">
-                            <img loading="lazy" decoding="async" id="neu-people-2" src="sv5t 2.jpg"
+                            <img loading="eager" decoding="async" id="neu-people-2" src="sv5t 2.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-purple/50 transition-all cursor-pointer"
                             onclick="openModal('neu-people-3')">
-                            <img loading="lazy" decoding="async" id="neu-people-3" src="nckh 2.jpg"
+                            <img loading="eager" decoding="async" id="neu-people-3" src="nckh 2.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
@@ -3355,7 +3051,7 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="col-span-2 glass-card p-2 rounded-[2rem] cursor-pointer hover:scale-[1.02] transition-transform duration-300 upload-container shadow-2xl h-56"
                                     onclick="openModal('proj-ai-3')">
-                                    <img loading="lazy" decoding="async" id="proj-ai-3" src="thd tiktok.jpg"
+                                    <img loading="eager" decoding="async" id="proj-ai-3" src="thd tiktok.jpg"
                                         class="rounded-[1.5rem] w-full h-full object-cover object-top" alt="">
                                     <div
                                         class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2rem]">
@@ -3364,7 +3060,7 @@
                                 </div>
                                 <div class="col-span-1 glass-card p-2 rounded-[2rem] cursor-pointer hover:scale-[1.02] transition-transform duration-300 upload-container shadow-2xl h-48"
                                     onclick="openModal('proj-ai-1')">
-                                    <img loading="lazy" decoding="async" id="proj-ai-1" src="thd portfolio.jpg"
+                                    <img loading="eager" decoding="async" id="proj-ai-1" src="thd portfolio.jpg"
                                         class="rounded-[1.5rem] w-full h-full object-cover" alt="">
                                     <div
                                         class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2rem]">
@@ -3373,7 +3069,7 @@
                                 </div>
                                 <div class="col-span-1 glass-card p-2 rounded-[2rem] cursor-pointer hover:scale-[1.02] transition-transform duration-300 upload-container shadow-2xl h-48"
                                     onclick="openModal('proj-ai-2')">
-                                    <img loading="lazy" decoding="async" id="proj-ai-2" src="thd ins.jpg"
+                                    <img loading="eager" decoding="async" id="proj-ai-2" src="thd ins.jpg"
                                         class="rounded-[1.5rem] w-full h-full object-cover" alt="">
                                     <div
                                         class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2rem]">
@@ -3480,7 +3176,7 @@
                             <div class="glass-card p-3 rounded-[2.5rem] cursor-pointer upload-container shadow-2xl hover:shadow-[0_0_30px_rgba(245, 166, 35,0.2)] transition-shadow group"
                                 onclick="openModal('proj-data-1')">
                                 <div class="w-full h-64 md:h-80 relative rounded-[2rem] overflow-hidden">
-                                    <img loading="lazy" decoding="async" id="proj-data-1" src="thd zalo.jpg"
+                                    <img loading="eager" decoding="async" id="proj-data-1" src="thd zalo.jpg"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         alt="">
                                     <div
@@ -3498,7 +3194,7 @@
                             <div class="glass-card p-3 rounded-[2.5rem] cursor-pointer upload-container shadow-2xl hover:shadow-[0_0_30px_rgba(212, 104, 10,0.2)] transition-shadow group"
                                 onclick="openModal('proj-data-2')">
                                 <div class="w-full h-64 md:h-80 relative rounded-[2rem] overflow-hidden">
-                                    <img loading="lazy" decoding="async" id="proj-data-2" src="thd meta.jpg"
+                                    <img loading="eager" decoding="async" id="proj-data-2" src="thd meta.jpg"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         alt="">
                                     <div
@@ -3581,7 +3277,7 @@
                         <div class="lg:col-span-6 lg:order-1">
                             <div class="glass-card p-3 rounded-[2.5rem] shadow-2xl relative overflow-hidden group upload-container cursor-pointer"
                                 onclick="openModal('proj-human')">
-                                <img loading="lazy" decoding="async" id="proj-human" src="brand guideline taphoadecor.webp"
+                                <img loading="eager" decoding="async" id="proj-human" src="brand guideline taphoadecor.webp"
                                     class="rounded-[2rem] w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 shadow-inner"
                                     alt="">
                                 <div
@@ -3721,7 +3417,7 @@
                             <div class="grid grid-cols-2 gap-5">
                                 <div class="col-span-2 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-[0_20px_40px_rgba(0,0,0,0.5)] h-72"
                                     onclick="openModal('karofi-fb-workflow')">
-                                    <img loading="lazy" decoding="async" id="karofi-fb-workflow" src="n8n fb wf.jpg"
+                                    <img loading="eager" decoding="async" id="karofi-fb-workflow" src="n8n fb wf.jpg"
                                         class="rounded-[2rem] w-full h-full object-cover"
                                         alt="n8n Facebook Scraping Workflow">
                                     <div
@@ -3731,7 +3427,7 @@
                                 </div>
                                 <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
                                     onclick="openModal('karofi-fb-group')">
-                                    <img loading="lazy" decoding="async" id="karofi-fb-group" src="demo workflow FB 2.jpg"
+                                    <img loading="eager" decoding="async" id="karofi-fb-group" src="demo workflow FB 2.jpg"
                                         class="rounded-[2rem] w-full h-full object-cover" alt="Facebook Group Target">
                                     <div
                                         class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
@@ -3744,7 +3440,7 @@
                                 </div>
                                 <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
                                     onclick="openModal('karofi-fb-data')">
-                                    <img loading="lazy" decoding="async" id="karofi-fb-data" src="n8n fb wf result.jpg"
+                                    <img loading="eager" decoding="async" id="karofi-fb-data" src="n8n fb wf result.jpg"
                                         class="rounded-[2rem] w-full h-full object-cover" alt="Scraped Data Output">
                                     <div
                                         class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
@@ -3803,7 +3499,7 @@
                                 <div class="grid grid-cols-2 gap-5">
                                     <div class="col-span-2 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-[0_20px_40px_rgba(0,0,0,0.5)] h-72"
                                         onclick="openModal('karofi-web-workflow')">
-                                        <img loading="lazy" decoding="async" id="karofi-web-workflow" src="n8n dmx wf.jpg"
+                                        <img loading="eager" decoding="async" id="karofi-web-workflow" src="n8n dmx wf.jpg"
                                             class="rounded-[2rem] w-full h-full object-cover"
                                             alt="n8n Web Scraping Workflow">
                                         <div
@@ -3813,7 +3509,7 @@
                                     </div>
                                     <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
                                         onclick="openModal('karofi-web-scraper')">
-                                        <img loading="lazy" decoding="async" id="karofi-web-scraper" src="demo workflow Web 2.jpg"
+                                        <img loading="eager" decoding="async" id="karofi-web-scraper" src="demo workflow Web 2.jpg"
                                             class="rounded-[2rem] w-full h-full object-cover" alt="Puppeteer Scraper">
                                         <div
                                             class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
@@ -3826,7 +3522,7 @@
                                     </div>
                                     <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
                                         onclick="openModal('karofi-web-data')">
-                                        <img loading="lazy" decoding="async" id="karofi-web-data" src="n8n dmx wf result.jpg"
+                                        <img loading="eager" decoding="async" id="karofi-web-data" src="n8n dmx wf result.jpg"
                                             class="rounded-[2rem] w-full h-full object-cover"
                                             alt="Structured Review Data">
                                         <div
@@ -3900,6 +3596,343 @@
             </div>
         </div>
     </div>
+    <div id="upbase-showcase" data-lenis-prevent="true"
+                class="fixed inset-0 z-[150] hidden bg-[#FFF8EE]/95 backdrop-blur-sm overflow-y-auto transition-all duration-500 opacity-0 transform scale-105 custom-scroll">
+                <!-- Floating Ambient Orbs inside Modal -->
+                <div
+                    class="absolute top-[10%] left-[20%] w-96 h-96 bg-ai-cyan/20 rounded-full blur-[120px] pointer-events-none">
+                </div>
+                <div
+                    class="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-ai-purple/20 rounded-full blur-[150px] pointer-events-none">
+                </div>
+
+                <div class="max-w-7xl mx-auto px-4 py-16 relative">
+                    <button onclick="closeUpbaseShowcase()"
+                        class="fixed top-8 right-8 z-[160] w-14 h-14 rounded-full glass-card flex items-center justify-center hover:bg-white/10 text-white transition-all group border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                        <i class="fas fa-times text-2xl group-hover:rotate-90 transition-transform"></i>
+                    </button>
+
+                    <div class="text-center mb-24">
+                        <div
+                            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full glass-card border-white/10 mb-6">
+                            <div class="w-2.5 h-2.5 rounded-full bg-ai-cyan animate-pulse shadow-[0_0_10px_#D4680A]">
+                            </div>
+                            <span class="text-ai-cyan text-xs font-black tracking-[0.5em] uppercase">From Helicopter to
+                                Detail-oriented</span>
+                        </div>
+                        <h2
+                            class="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase mb-6 drop-shadow-xl">
+                            Upbase Journey</h2>
+                        <div
+                            class="h-1.5 w-48 bg-gradient-to-r from-ai-cyan via-[#F5A623] to-ai-purple mx-auto rounded-full shadow-[0_0_20px_rgba(212, 104, 10,0.6)]">
+                        </div>
+                    </div>
+
+                    <div class="space-y-32">
+
+                        <div
+                            class="glass-card p-8 md:p-14 rounded-[3rem] border border-white/10 shadow-2xl relative overflow-hidden group">
+                            <div
+                                class="absolute top-0 right-0 w-[600px] h-[600px] bg-ai-cyan/5 rounded-full blur-[120px] pointer-events-none group-hover:bg-ai-cyan/10 transition-colors duration-700">
+                            </div>
+
+                            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center relative z-10">
+                                <div class="lg:w-5/12 space-y-10">
+                                    <div class="flex items-center gap-6">
+                                        <div
+                                            class="w-20 h-20 rounded-[2rem] glass-card border-ai-cyan/30 flex items-center justify-center shadow-[0_0_25px_rgba(212, 104, 10,0.2)] overflow-hidden p-2.5 bg-white/5">
+                                            <img loading="eager" decoding="async" src="https://lf-package-sg.larksuitecdn.com/obj/lark-static-sgsaas/lark/open/website/share-logo.png"
+                                                alt="Lark Suite" class="w-full h-full object-contain">
+                                        </div>
+                                        <div>
+                                            <h3
+                                                class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-2">
+                                                Lark Suite <span class="text-white-500">(B2B)</span></h3>
+                                            <p class="text-ai-cyan font-black uppercase tracking-[0.3em] text-[10px]">AI
+                                                & MarTech Efficiency</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-6">
+                                        <div
+                                            class="glass-card p-6 rounded-3xl border-l-4 border-l-ai-cyan bg-white/[0.02] hover:bg-white/[0.05] transition-colors shadow-inner">
+                                            <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-3"><i
+                                                    class="fas fa-magic text-ai-cyan"></i> AI-Enhanced Content</h4>
+                                            <p class="text-sm text-gray-300 leading-relaxed text-justify">Leveraged
+                                                ChatGPT/Gemini for ideation and Canva AI/Photoshop for rapid visual
+                                                production.</p>
+                                        </div>
+                                        <div
+                                            class="glass-card p-6 rounded-3xl border-l-4 border-l-ai-cyan bg-white/[0.02] hover:bg-white/[0.05] transition-colors shadow-inner">
+                                            <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-3"><i
+                                                    class="fas fa-filter text-ai-cyan"></i> Lead Nurturing</h4>
+                                            <p class="text-sm text-gray-300 leading-relaxed text-justify">Developed
+                                                high-converting Landing Pages (LadiPage) and managed CRM workflows
+                                                (Brevo, Mailchimp) to streamline lead journeys.</p>
+                                        </div>
+                                        <div
+                                            class="glass-card p-6 rounded-3xl border-l-4 border-l-ai-cyan bg-white/[0.02] hover:bg-white/[0.05] transition-colors shadow-inner">
+                                            <h4 class="text-white font-bold text-lg mb-2 flex items-center gap-3"><i
+                                                    class="fas fa-project-diagram text-ai-cyan"></i> Workflow
+                                                Optimization</h4>
+                                            <p class="text-sm text-gray-300 leading-relaxed text-justify">Applied an
+                                                "Audit-to-Action" cycle, utilizing AI to shorten the path from task
+                                                brief to creative delivery.</p>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.facebook.com/upbasedigitaltransformation" target="_blank"
+                                        class="inline-flex items-center justify-center gap-4 px-8 py-5 rounded-2xl bg-[#1877F2]/10 border border-[#1877F2]/30 text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all font-black text-xs uppercase tracking-widest shadow-lg w-full md:w-max">
+                                        <i class="fab fa-facebook text-xl"></i> Lark Suite Fanpage
+                                    </a>
+                                </div>
+
+                                <div class="lg:w-7/12 w-full">
+                                    <div class="grid grid-cols-2 gap-5">
+                                        <div class="col-span-2 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-[0_20px_40px_rgba(0,0,0,0.5)] h-72 relative"
+                                            onclick="openModal('lark-main')">
+                                            <img loading="eager" decoding="async" id="lark-main"
+                                                src="pfm meta ads.webp"
+                                                class="rounded-[2rem] w-full h-full object-cover" alt="Lark Suite Meta Ads Performance">
+                                            <div
+                                                class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
+                                                <i class="fas fa-search-plus text-white text-4xl"></i>
+                                            </div>
+                                            <span
+                                                class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest"
+                                                style="color: #ffffff !important;">Meta Ads Manager</span>
+                                        </div>
+                                        <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
+                                            onclick="openModal('lark-assets')">
+                                            <img loading="eager" decoding="async" id="lark-assets" src="creative assets.webp"
+                                                class="rounded-[2rem] w-full h-full object-cover" alt="">
+                                            <div
+                                                class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
+                                                <i class="fas fa-search-plus text-white text-2xl"></i>
+                                            </div>
+                                            <span
+                                                class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest"
+                                                style="color: #ffffff !important;">Advertising
+                                                Assets</span>
+                                        </div>
+                                        <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
+                                            onclick="openModal('lark-lp')">
+                                            <img loading="eager" decoding="async" id="lark-lp" src="LDP (2).webp"
+                                                class="rounded-[2rem] w-full h-full object-cover" alt="">
+                                            <div
+                                                class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
+                                                <i class="fas fa-search-plus text-white text-2xl"></i>
+                                            </div>
+                                            <span
+                                                class="absolute bottom-5 left-5 bg-black/80 backdrop-blur-md px-4 py-1.5 rounded-lg border border-white/20 text-[9px] font-black text-white uppercase tracking-widest"
+                                                style="color: #ffffff !important;">Conversion
+                                                Landing Pages</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-ai-purple/5 to-ai-cyan/5 rounded-[3.5rem] blur-2xl pointer-events-none">
+                            </div>
+                            <div
+                                class="glass-card p-10 md:p-16 rounded-[3.5rem] border-t-2 border-ai-purple shadow-[0_30px_60px_rgba(0,0,0,0.6)] relative overflow-hidden group">
+
+                                <div class="text-center mb-20 relative z-10">
+                                    <div
+                                        class="w-24 h-24 rounded-[2rem] glass-card border-ai-purple/30 flex items-center justify-center text-5xl shadow-[0_0_30px_rgba(245, 166, 35,0.3)] mx-auto mb-8">
+                                        📈</div>
+                                    <h3
+                                        class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+                                        Performance Dashboard</h3>
+                                    <p class="text-ai-purple font-black uppercase tracking-[0.4em] text-xs">Sales-Led
+                                        Growth Optimization</p>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24 relative z-10">
+                                    <div
+                                        class="glass-card p-10 rounded-[3rem] border-t-4 border-t-ai-cyan relative overflow-hidden group/card hover:-translate-y-3 transition-all duration-500 shadow-2xl flex flex-col justify-center items-center">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-b from-ai-cyan/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
+                                        </div>
+                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
+                                            style="color: #2D1B00 !important; opacity: 0.85;">
+                                            Exceeded Opp KPIs</p>
+                                        <p
+                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-purple to-ai-cyan drop-shadow-[0_0_20px_rgba(212, 104, 10,0.4)] mb-4 text-center leading-tight">
+                                            60%</p>
+                                        <div
+                                            class="w-full bg-black/50 rounded-full h-10 flex items-center justify-center px-4 border border-white/10 mt-auto">
+                                            <span class="text-[10px] font-black tracking-widest uppercase"
+                                                style="color: #ffffff !important;">Peak Growth Rate</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="glass-card p-10 rounded-[3rem] border-t-4 border-t-ai-purple relative overflow-hidden group/card hover:-translate-y-3 transition-all duration-500 shadow-2xl flex flex-col justify-center items-center">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-b from-ai-purple/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
+                                        </div>
+                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
+                                            style="color: #2D1B00 !important; opacity: 0.85;">
+                                            Cost / Opp (VNĐ)</p>
+                                        <p
+                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-cyan to-ai-purple drop-shadow-[0_0_20px_rgba(245, 166, 35,0.4)] mb-4 text-center leading-tight">
+                                            300K</p>
+                                        <div
+                                            class="w-full bg-black/50 rounded-full h-10 flex items-center justify-between px-5 border border-white/10 mt-auto">
+                                            <span class="text-[10px] font-black tracking-widest"
+                                                style="color: #ffffff !important;">Achieved</span>
+                                            <span class="text-[10px] font-black line-through"
+                                                style="color: #FFF3DB !important; opacity: 0.85;">BM: 600K</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="glass-card p-10 rounded-[3rem] border-t-4 border-t-ai-cyan relative overflow-hidden group/card hover:-translate-y-3 transition-all duration-500 shadow-2xl flex flex-col justify-center items-center">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-b from-ai-cyan/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
+                                        </div>
+                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
+                                            style="color: #2D1B00 !important; opacity: 0.85;">
+                                            Lead-to-Opp CVR</p>
+                                        <p
+                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-purple to-ai-cyan drop-shadow-[0_0_20px_rgba(212, 104, 10,0.4)] mb-4 text-center leading-tight">
+                                            37%</p>
+                                        <div
+                                            class="w-full bg-black/50 rounded-full h-10 flex items-center justify-between px-5 border border-white/10 mt-auto">
+                                            <span class="text-[10px] font-black tracking-widest"
+                                                style="color: #ffffff !important;">Peak</span>
+                                            <span class="text-[10px] font-black"
+                                                style="color: #FFF3DB !important; opacity: 0.85;">BM: 10-15%</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="glass-card p-10 rounded-[3rem] border-t-4 border-t-ai-purple relative overflow-hidden group/card hover:-translate-y-3 transition-all duration-500 shadow-2xl flex flex-col justify-center items-center">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-b from-ai-purple/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
+                                        </div>
+                                        <p class="text-[11px] font-black uppercase tracking-[0.2em] mb-4 text-center"
+                                            style="color: #2D1B00 !important; opacity: 0.85;">
+                                            Opp-to-Demo CVR</p>
+                                        <p
+                                            class="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-ai-cyan to-ai-purple drop-shadow-[0_0_20px_rgba(245, 166, 35,0.4)] mb-4 text-center leading-tight">
+                                            38%</p>
+                                        <div
+                                            class="w-full bg-black/50 rounded-full h-10 flex items-center justify-between px-5 border border-white/10 mt-auto">
+                                            <span class="text-[10px] font-black tracking-widest"
+                                                style="color: #ffffff !important;">Peak</span>
+                                            <span class="text-[10px] font-black"
+                                                style="color: #FFF3DB !important; opacity: 0.85;">BM: 9-17%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+                                    <div class="lg:col-span-5 space-y-8">
+                                        <div
+                                            class="glass-card p-6 rounded-3xl border-l-4 border-ai-purple bg-white/[0.02]">
+                                            <h4 class="text-white font-black text-lg mb-2">Funnel Growth</h4>
+                                            <p class="text-sm text-gray-300 leading-relaxed text-justify">Managed a
+                                                Sales-led (90%) and Product-led (10%) engine, consistently exceeding
+                                                Opportunity KPIs by 17%–60%.</p>
+                                        </div>
+                                        <div
+                                            class="glass-card p-6 rounded-3xl border-l-4 border-ai-purple bg-white/[0.02]">
+                                            <h4 class="text-white font-black text-lg mb-2">Pipeline Optimization</h4>
+                                            <p class="text-sm text-gray-300 leading-relaxed text-justify">Scaled
+                                                qualified leads through data-backed Meta Ads optimization and precise
+                                                conversion tracking.</p>
+                                        </div>
+                                    </div>
+                                    <div class="lg:col-span-7">
+                                        <div class="glass-card p-4 rounded-[3rem] cursor-pointer upload-container shadow-2xl hover:shadow-[0_0_40px_rgba(245, 166, 35,0.3)] transition-all duration-500 group"
+                                            onclick="openModal('lark-plan')">
+                                            <div class="relative w-full h-[400px] rounded-[2.5rem] overflow-hidden">
+                                                <img loading="eager" decoding="async" id="lark-plan" src="pfm meta.webp"
+                                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                                    alt="">
+                                                <div
+                                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none">
+                                                </div>
+                                                <div
+                                                    class="absolute inset-0 flex items-center justify-center upload-overlay">
+                                                    <i class="fas fa-search-plus text-white text-5xl"></i>
+                                                </div>
+                                                <div class="absolute bottom-8 left-8 z-20 pointer-events-none">
+                                                    <h4 class="text-white font-black uppercase text-2xl mb-2">Monthly
+                                                        Opportunity Planning</h4>
+                                                    <p
+                                                        class="text-ai-purple text-xs font-black uppercase tracking-[0.3em]">
+                                                        Lark Suite (Sales-led)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="glass-card rounded-[3rem] border border-white/10 bg-[rgba(255,255,255,0.01)] relative overflow-hidden shadow-2xl">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-ai-cyan/5 via-transparent to-ai-purple/5 opacity-50 pointer-events-none">
+                            </div>
+                            <div class="grid grid-cols-1 lg:grid-cols-12 relative z-10 items-stretch">
+                                <div
+                                    class="lg:col-span-4 p-10 lg:p-14 flex flex-col justify-center bg-black/30 lg:border-r border-white/10">
+                                    <h4
+                                        class="text-3xl font-black text-white uppercase tracking-tighter mb-4 flex items-center gap-4">
+                                        <i
+                                            class="fas fa-lightbulb text-[#fb923c] drop-shadow-[0_0_10px_rgba(251,146,60,0.5)]"></i>
+                                        Lesson Learned
+                                    </h4>
+                                </div>
+                                <div class="lg:col-span-8 p-10 lg:p-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div
+                                        class="glass-card p-6 rounded-2xl border-white/10 hover:border-ai-cyan/40 transition-colors">
+                                        <p
+                                            class="text-ai-cyan font-black uppercase text-[9px] tracking-[0.2em] mb-2 flex items-center gap-2">
+                                            <i class="fas fa-link text-sm"></i> Pipeline Ownership
+                                        </p>
+                                        <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
+                                            Learned to treat B2B UA as pipeline ownership, not just lead generation.</p>
+                                    </div>
+                                    <div
+                                        class="glass-card p-6 rounded-2xl border-white/10 hover:border-ai-purple/40 transition-colors">
+                                        <p
+                                            class="text-ai-purple font-black uppercase text-[8.5px] tracking-[0.2em] mb-2 flex items-center gap-2">
+                                            <i class="fas fa-coins text-sm"></i> Quality & Efficiency
+                                        </p>
+                                        <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
+                                            Prioritized opportunity quality and cost efficiency over raw lead volume.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="glass-card p-6 rounded-2xl border-white/10 hover:border-white/40 transition-colors">
+                                        <p
+                                            class="text-white font-black uppercase text-[10px] tracking-[0.2em] mb-2 flex items-center gap-2">
+                                            <i class="fas fa-users-cog text-sm"></i> Cross-Alignment
+                                        </p>
+                                        <p class="text-sm text-gray-300 leading-relaxed italic text-justify">
+                                            Learned that strong UA is not only about acquisition execution, but also
+                                            about cross-functional alignment to improve lead quality and closed-won
+                                            potential.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mt-24 pb-10">
+                        <button onclick="closeUpbaseShowcase()"
+                            class="px-16 py-6 glass-card bg-white/5 border border-white/20 text-white hover:bg-white/20 hover:scale-105 transition-all font-black uppercase tracking-[0.4em] text-xs shadow-[0_0_40px_rgba(255,255,255,0.1)] rounded-full">
+                            <i class="fas fa-times mr-2 text-lg"></i> Close Experience
+                        </button>
+                    </div>
+                </div>
+            </div>
+
     <!-- AZWAY TRAVEL SHOWCASE MODAL -->
     <div id="azway-showcase" data-lenis-prevent="true"
         class="fixed inset-0 z-[150] hidden bg-[#FFF8EE]/95 backdrop-blur-sm overflow-y-auto transition-all duration-500 opacity-0 transform scale-105 custom-scroll">
@@ -4024,7 +4057,7 @@
                                 <i class="fab fa-facebook text-[#1877F2] text-sm"></i> Meta Ads Manager — Campaign
                                 Performance
                             </p>
-                            <img loading="lazy" decoding="async" src="azw meta ads.png" alt="Azway Meta Ads Performance Dashboard"
+                            <img loading="eager" decoding="async" src="azw meta ads.png" alt="Azway Meta Ads Performance Dashboard"
                                 class="w-full rounded-xl border border-white/10 shadow-lg cursor-pointer hover:scale-[1.02] transition-transform duration-500"
                                 onclick="openModal('azway-meta-proof')" id="azway-meta-proof">
                         </div>
@@ -4075,25 +4108,25 @@
                         <div id="album-1-1" class="azw-album grid grid-cols-2 md:grid-cols-4 gap-4">
                             <div
                                 class="glass-card rounded-xl border border-white/10 overflow-hidden aspect-square cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg">
-                                <img loading="lazy" decoding="async" src="azw creative assets/vuong 1.1.png" alt="Creative 1:1 - 1"
+                                <img loading="eager" decoding="async" src="azw creative assets/vuong 1.1.png" alt="Creative 1:1 - 1"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-11-1')"
                                     id="azw-c-11-1">
                             </div>
                             <div
                                 class="glass-card rounded-xl border border-white/10 overflow-hidden aspect-square cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg">
-                                <img loading="lazy" decoding="async" src="azw creative assets/vuong 1.1 (2).png" alt="Creative 1:1 - 2"
+                                <img loading="eager" decoding="async" src="azw creative assets/vuong 1.1 (2).png" alt="Creative 1:1 - 2"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-11-2')"
                                     id="azw-c-11-2">
                             </div>
                             <div
                                 class="glass-card rounded-xl border border-white/10 overflow-hidden aspect-square cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg">
-                                <img loading="lazy" decoding="async" src="azw creative assets/vuong 1.1 (4).png" alt="Creative 1:1 - 3"
+                                <img loading="eager" decoding="async" src="azw creative assets/vuong 1.1 (4).png" alt="Creative 1:1 - 3"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-11-3')"
                                     id="azw-c-11-3">
                             </div>
                             <div
                                 class="glass-card rounded-xl border border-white/10 overflow-hidden aspect-square cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg">
-                                <img loading="lazy" decoding="async" src="azw creative assets/vuong 1.1 (5).png" alt="Creative 1:1 - 4"
+                                <img loading="eager" decoding="async" src="azw creative assets/vuong 1.1 (5).png" alt="Creative 1:1 - 4"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-11-4')"
                                     id="azw-c-11-4">
                             </div>
@@ -4103,13 +4136,13 @@
                         <div id="album-3-4" class="azw-album hidden grid grid-cols-2 md:grid-cols-4 gap-4">
                             <div class="glass-card rounded-xl border border-white/10 overflow-hidden cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg"
                                 style="aspect-ratio:3/4">
-                                <img loading="lazy" decoding="async" src="azw creative assets/ngang 3.4.png" alt="Creative 3:4 - 1"
+                                <img loading="eager" decoding="async" src="azw creative assets/ngang 3.4.png" alt="Creative 3:4 - 1"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-34-1')"
                                     id="azw-c-34-1">
                             </div>
                             <div class="glass-card rounded-xl border border-white/10 overflow-hidden cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg"
                                 style="aspect-ratio:3/4">
-                                <img loading="lazy" decoding="async" src="azw creative assets/ngang 3.4 (2).png" alt="Creative 3:4 - 2"
+                                <img loading="eager" decoding="async" src="azw creative assets/ngang 3.4 (2).png" alt="Creative 3:4 - 2"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-34-2')"
                                     id="azw-c-34-2">
                             </div>
@@ -4119,13 +4152,13 @@
                         <div id="album-9-16" class="azw-album hidden grid grid-cols-2 md:grid-cols-4 gap-4">
                             <div class="glass-card rounded-xl border border-white/10 overflow-hidden cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg"
                                 style="aspect-ratio:9/16">
-                                <img loading="lazy" decoding="async" src="azw creative assets/doc 9.16.png" alt="Creative 9:16 - 1"
+                                <img loading="eager" decoding="async" src="azw creative assets/doc 9.16.png" alt="Creative 9:16 - 1"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-916-1')"
                                     id="azw-c-916-1">
                             </div>
                             <div class="glass-card rounded-xl border border-white/10 overflow-hidden cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg"
                                 style="aspect-ratio:9/16">
-                                <img loading="lazy" decoding="async" src="azw creative assets/doc 9.16 (2).png" alt="Creative 9:16 - 2"
+                                <img loading="eager" decoding="async" src="azw creative assets/doc 9.16 (2).png" alt="Creative 9:16 - 2"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-916-2')"
                                     id="azw-c-916-2">
                             </div>
@@ -4160,7 +4193,7 @@
                                 <div
                                     class="glass-card rounded-2xl border border-white/10 overflow-hidden hover:border-ai-cyan/40 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(212,104,10,0.15)] hover:-translate-y-2">
                                     <div class="relative overflow-hidden" style="aspect-ratio:16/9">
-                                        <img loading="lazy" decoding="async" src="azw ldp SW.webp" alt="Sunworld 3-in-1 Landing Page"
+                                        <img loading="eager" decoding="async" src="azw ldp SW.webp" alt="Sunworld 3-in-1 Landing Page"
                                             class="w-full h-full object-cover object-top group-hover/lp:scale-105 transition-transform duration-700">
                                         <div
                                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/lp:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -4185,7 +4218,7 @@
                                 <div
                                     class="glass-card rounded-2xl border border-white/10 overflow-hidden hover:border-ai-purple/40 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(245,166,35,0.15)] hover:-translate-y-2">
                                     <div class="relative overflow-hidden" style="aspect-ratio:16/9">
-                                        <img loading="lazy" decoding="async" src="azw ldp teambuilding.webp" alt="Team Building Landing Page"
+                                        <img loading="eager" decoding="async" src="azw ldp teambuilding.webp" alt="Team Building Landing Page"
                                             class="w-full h-full object-cover object-top group-hover/lp:scale-105 transition-transform duration-700">
                                         <div
                                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/lp:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -4210,7 +4243,7 @@
                                 <div
                                     class="glass-card rounded-2xl border border-white/10 overflow-hidden hover:border-ai-cyan/40 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(212,104,10,0.15)] hover:-translate-y-2">
                                     <div class="relative overflow-hidden" style="aspect-ratio:16/9">
-                                        <img loading="lazy" decoding="async" src="azw HLB cruise.webp" alt="Ha Long Cruise Landing Page"
+                                        <img loading="eager" decoding="async" src="azw HLB cruise.webp" alt="Ha Long Cruise Landing Page"
                                             class="w-full h-full object-cover object-top group-hover/lp:scale-105 transition-transform duration-700">
                                         <div
                                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/lp:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -4687,6 +4720,55 @@
                 isMusicPlaying = false;
             }
         }
+    </script>
+
+    <!-- Image Preloader for Showcase Modals -->
+    <script>
+        window.addEventListener('load', () => {
+            const prefetchUrls = [
+                'LDP (2).webp',
+                'azw HLB cruise.webp',
+                'azw creative assets/doc 9.16 (2).png',
+                'azw creative assets/doc 9.16.png',
+                'azw creative assets/ngang 3.4 (2).png',
+                'azw creative assets/ngang 3.4.png',
+                'azw creative assets/vuong 1.1 (2).png',
+                'azw creative assets/vuong 1.1 (4).png',
+                'azw creative assets/vuong 1.1 (5).png',
+                'azw creative assets/vuong 1.1.png',
+                'azw ldp SW.webp',
+                'azw ldp teambuilding.webp',
+                'azw meta ads.png',
+                'brand guideline taphoadecor.webp',
+                'creative assets.webp',
+                'demo workflow FB 2.jpg',
+                'demo workflow Web 2.jpg',
+                'n8n dmx wf result.jpg',
+                'n8n dmx wf.jpg',
+                'n8n fb wf result.jpg',
+                'n8n fb wf.jpg',
+                'nckh 2.jpg',
+                'nckh.jpg',
+                'nyf 2023.webp',
+                'pfm meta ads.webp',
+                'pfm meta.webp',
+                'sv5t 2.jpg',
+                'sv5t.jpg',
+                'thd ins.jpg',
+                'thd meta.jpg',
+                'thd portfolio.jpg',
+                'thd tiktok.jpg',
+                'thd zalo.jpg',
+                'tnth 2023.jpg',
+                'winner of cbmkt 2.jpg',
+                'winner of cbmkt.jpg'
+            ];
+            // Load images in the background
+            prefetchUrls.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
     </script>
 </body>
 
