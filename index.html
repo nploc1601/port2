@@ -11,6 +11,15 @@
     <link rel="shortcut icon" type="image/jpeg" href="anh cv 2.jpg">
     <link rel="apple-touch-icon" href="anh cv 2.jpg">
 
+    <!-- Preload Critical Images for Instant Display & Smooth Navigation -->
+    <link rel="preload" as="image" href="anh cv 2.jpg">
+    <link rel="preload" as="image" href="Cert - DP21.jpg">
+    <link rel="preload" as="image" href="cert_datacamp_da.png">
+    <link rel="preload" as="image" href="cert_google_play.png">
+    <link rel="preload" as="image" href="cert_ga4.png">
+    <link rel="preload" as="image" href="cert_apple_ads.png">
+    <link rel="preload" as="image" href="cert_google_ads_apps.png">
+
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -1069,8 +1078,9 @@
         }
 
         /* Render performance optimization for long sections below the fold */
+        /* Exclude sections that contain heavy animations, sliders, or are target of anchor navigation links (#experience, #project, #certifications) to avoid scroll jank and display latency */
         @media (prefers-reduced-motion: no-preference) {
-            section:not(#about) {
+            section:not(#about):not(#experience):not(#project):not(#certifications) {
                 content-visibility: auto;
                 contain-intrinsic-size: auto 1200px;
             }
