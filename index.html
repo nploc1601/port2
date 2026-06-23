@@ -571,6 +571,10 @@
             display: flex;
             width: max-content;
             animation: marquee-scroll 25s linear infinite;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
         }
 
         .marquee-container:hover .marquee-track,
@@ -2458,7 +2462,7 @@
                         onclick="openModal('cert1-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert1-preview" src="Cert - DP21.jpg" alt="Digital Performance"
+                            <img loading="eager" decoding="async" id="cert1-preview" src="Cert - DP21.jpg" alt="Digital Performance" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2470,7 +2474,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo-TM.png" alt="TM" class="w-full h-full object-contain">
+                                    <img loading="eager" decoding="async" src="logo-TM.png" alt="TM" width="24" height="24" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Tomorrow Marketers</p>
@@ -2483,7 +2487,7 @@
                         onclick="openModal('cert2-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert2-preview" src="cert_datacamp_da.png" alt="Data Analyst Associate - DataCamp"
+                            <img loading="eager" decoding="async" id="cert2-preview" src="cert_datacamp_da.png" alt="Data Analyst Associate - DataCamp" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2495,7 +2499,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo datacamp.png" alt="DataCamp" class="w-full h-full object-contain">
+                                    <img loading="eager" decoding="async" src="logo datacamp.png" alt="DataCamp" width="24" height="24" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     DataCamp</p>
@@ -2508,8 +2512,8 @@
                         onclick="openModal('cert3-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert3-preview" src="cert_google_play.png"
-                                alt="Google Play Store Listing Certificate"
+                            <img loading="eager" decoding="async" id="cert3-preview" src="cert_google_play.png"
+                                alt="Google Play Store Listing Certificate" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2521,7 +2525,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo googleplay.png" alt="Google Play"
+                                    <img loading="eager" decoding="async" src="logo googleplay.png" alt="Google Play" width="24" height="24"
                                         class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
@@ -2535,7 +2539,7 @@
                         onclick="openModal('cert5-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert5-preview" src="cert_ga4.png" alt="Google Analytics GA4 Certification"
+                            <img loading="eager" decoding="async" id="cert5-preview" src="cert_ga4.png" alt="Google Analytics GA4 Certification" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2547,7 +2551,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo google 1.png" alt="Google" class="w-full h-full object-contain">
+                                    <img loading="eager" decoding="async" src="logo google 1.png" alt="Google" width="24" height="24" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Google</p>
@@ -2560,7 +2564,7 @@
                         onclick="openModal('cert4-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert4-preview" src="cert_apple_ads.png" alt="Apple Ads Certification"
+                            <img loading="eager" decoding="async" id="cert4-preview" src="cert_apple_ads.png" alt="Apple Ads Certification" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2572,7 +2576,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo apple.png" alt="Apple" class="w-full h-full object-contain">
+                                    <img loading="eager" decoding="async" src="logo apple.png" alt="Apple" width="24" height="24" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Apple</p>
@@ -2585,7 +2589,7 @@
                         onclick="openModal('cert6-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert6-preview" src="cert_google_ads_apps.png" alt="Google Ads Apps Certification"
+                            <img loading="eager" decoding="async" id="cert6-preview" src="cert_google_ads_apps.png" alt="Google Ads Apps Certification" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2597,7 +2601,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo google 1.png" alt="Google" class="w-full h-full object-contain">
+                                    <img loading="eager" decoding="async" src="logo google 1.png" alt="Google" width="24" height="24" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Google</p>
@@ -2613,7 +2617,7 @@
                         onclick="openModal('cert1-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert1-preview-dup" src="Cert - DP21.jpg" alt="Digital Performance"
+                            <img loading="eager" decoding="async" id="cert1-preview-dup" src="Cert - DP21.jpg" alt="Digital Performance" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2625,7 +2629,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo-TM.png" alt="TM" class="w-full h-full object-contain">
+                                    <img loading="eager" decoding="async" src="logo-TM.png" alt="TM" width="24" height="24" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Tomorrow Marketers</p>
@@ -2638,8 +2642,8 @@
                         onclick="openModal('cert2-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert2-preview-dup" src="cert_datacamp_da.png"
-                                alt="Data Analyst Associate - DataCamp"
+                            <img loading="eager" decoding="async" id="cert2-preview-dup" src="cert_datacamp_da.png"
+                                alt="Data Analyst Associate - DataCamp" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2651,7 +2655,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo datacamp.png" alt="DataCamp" class="w-full h-full object-contain">
+                                    <img loading="eager" decoding="async" src="logo datacamp.png" alt="DataCamp" width="24" height="24" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     DataCamp</p>
@@ -2664,8 +2668,8 @@
                         onclick="openModal('cert3-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert3-preview-dup" src="cert_google_play.png"
-                                alt="Google Play Store Listing Certificate"
+                            <img loading="eager" decoding="async" id="cert3-preview-dup" src="cert_google_play.png"
+                                alt="Google Play Store Listing Certificate" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2677,7 +2681,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo googleplay.png" alt="Google Play"
+                                    <img loading="eager" decoding="async" src="logo googleplay.png" alt="Google Play" width="24" height="24"
                                         class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
@@ -2691,7 +2695,7 @@
                         onclick="openModal('cert5-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert5-preview-dup" src="cert_ga4.png" alt="Google Analytics GA4 Certification"
+                            <img loading="eager" decoding="async" id="cert5-preview-dup" src="cert_ga4.png" alt="Google Analytics GA4 Certification" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2703,7 +2707,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo google.png" alt="Google" class="w-full h-full object-contain">
+                                    <img loading="eager" decoding="async" src="logo google.png" alt="Google" width="24" height="24" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Google</p>
@@ -2716,7 +2720,7 @@
                         onclick="openModal('cert4-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert4-preview-dup" src="cert_apple_ads.png" alt="Apple Ads Certification"
+                            <img loading="eager" decoding="async" id="cert4-preview-dup" src="cert_apple_ads.png" alt="Apple Ads Certification" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2728,7 +2732,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo apple.png" alt="Apple" class="w-full h-full object-contain">
+                                    <img loading="eager" decoding="async" src="logo apple.png" alt="Apple" width="24" height="24" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Apple</p>
@@ -2741,8 +2745,8 @@
                         onclick="openModal('cert6-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img loading="lazy" decoding="async" id="cert6-preview-dup" src="cert_google_ads_apps.png"
-                                alt="Google Ads Apps Certification"
+                            <img loading="eager" decoding="async" id="cert6-preview-dup" src="cert_google_ads_apps.png"
+                                alt="Google Ads Apps Certification" width="228" height="171"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2754,7 +2758,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img loading="lazy" decoding="async" src="logo google.png" alt="Google" class="w-full h-full object-contain">
+                                    <img loading="eager" decoding="async" src="logo google.png" alt="Google" width="24" height="24" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Google</p>
@@ -4564,15 +4568,7 @@
             });
         });
 
-        // Certifications Marquee Hover Pause
-        document.querySelectorAll('.marquee-track').forEach(track => {
-            track.addEventListener('mouseenter', () => {
-                track.style.animationPlayState = 'paused';
-            });
-            track.addEventListener('mouseleave', () => {
-                track.style.animationPlayState = 'running';
-            });
-        });
+        // Certifications Marquee Hover Pause is handled efficiently via CSS.
     </script>
 
     <!-- Falcon Background Sparkle & Game Element Generation -->
