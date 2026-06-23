@@ -96,6 +96,8 @@
         .animate-blob {
             animation: blob 15s infinite alternate ease-in-out;
             will-change: transform;
+            transform: translate3d(0,0,0);
+            backface-visibility: hidden;
         }
 
         .animation-delay-2000 {
@@ -108,29 +110,34 @@
 
         @keyframes blob {
             0% {
-                transform: translate(0px, 0px);
+                transform: translate3d(0px, 0px, 0);
             }
 
             33% {
-                transform: translate(30px, -50px);
+                transform: translate3d(30px, -50px, 0);
             }
 
             66% {
-                transform: translate(-20px, 20px);
+                transform: translate3d(-20px, 20px, 0);
             }
 
             100% {
-                transform: translate(0px, 0px);
+                transform: translate3d(0px, 0px, 0);
             }
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.9) !important;
-            backdrop-filter: blur(12px) !important;
-            -webkit-backdrop-filter: blur(12px) !important;
+            background: rgba(255, 255, 255, 0.93) !important;
             border: 1px solid rgba(212, 104, 10, 0.12) !important;
             box-shadow: 0 8px 30px rgba(212, 104, 10, 0.03) !important;
             transition: all 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .glass-card {
+                backdrop-filter: blur(6px) !important;
+                -webkit-backdrop-filter: blur(6px) !important;
+            }
         }
 
         .glass-card:hover {
@@ -823,6 +830,9 @@
                     transparent 360deg);
             animation: falcon-spin-slow 60s linear infinite;
             z-index: -2;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
         }
 
         .falcon-center-glow {
@@ -886,6 +896,9 @@
             font-size: 20px;
             animation: falcon-twinkle 3s ease-in-out infinite;
             text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+            will-change: transform, opacity;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
         }
 
         .falcon-game-elements {
@@ -901,6 +914,9 @@
             border: 2px solid rgba(255, 255, 255, 0.12);
             border-radius: 6px;
             animation: falcon-float-el linear infinite;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
         }
 
         .falcon-game-el.circle {
@@ -993,12 +1009,12 @@
             0%,
             100% {
                 opacity: 0.3;
-                transform: scale(0.7) rotate(0deg)
+                transform: scale3d(0.7, 0.7, 1) rotate(0deg)
             }
 
             50% {
                 opacity: 1;
-                transform: scale(1.2) rotate(20deg)
+                transform: scale3d(1.2, 1.2, 1) rotate(20deg)
             }
         }
 
@@ -1017,7 +1033,14 @@
                 opacity: 0
             }
         }
-    </style>
+
+        /* Render performance optimization for long sections below the fold */
+        @media (prefers-reduced-motion: no-preference) {
+            section:not(#about) {
+                content-visibility: auto;
+                contain-intrinsic-size: auto 1200px;
+            }
+        }
     </style>
 </head>
 
@@ -1035,7 +1058,7 @@
         <!-- Mascot in the center of the background -->
         <div
             class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-[-1]">
-            <img src="falcon mascot.png" alt="Falcon Mascot"
+            <img src="falcon mascot.webp" alt="Falcon Mascot"
                 class="w-[550px] h-[550px] max-w-[95vw] max-h-[95vh] object-contain opacity-[0.08] filter blur-[1.5px] select-none pointer-events-none">
         </div>
         <div class="falcon-sparkles" id="falcon-sparkles"></div>
@@ -1057,7 +1080,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="#about" class="flex items-center">
-                    <img src="mascot falcon.png" alt="Falcon Mascot"
+                    <img src="mascot falcon.webp" alt="Falcon Mascot"
                         class="h-10 w-auto object-contain select-none hover:scale-105 transition-transform duration-300">
                 </a>
                 <div class="hidden md:block">
@@ -1288,7 +1311,7 @@
                     <div class="flex flex-col sm:flex-row gap-4 mb-4">
                         <div class="flex-shrink-0 relative cursor-pointer upload-container w-16 h-16 rounded-lg bg-[rgba(0,0,0,0.3)] border border-[rgba(255,255,255,0.1)] overflow-hidden"
                             onclick="openModal('karofi-preview')" title="Phóng to">
-                            <img id="karofi-preview" src="logo Karofi.jpg" alt="Karofi Logo"
+                            <img loading="lazy" decoding="async" id="karofi-preview" src="logo Karofi.jpg" alt="Karofi Logo"
                                 class="w-full h-full object-contain p-1">
                             <div class="absolute inset-0 flex items-center justify-center upload-overlay">
                                 <i class="fas fa-search-plus text-white"></i>
@@ -1348,7 +1371,7 @@
                     <div class="flex flex-col sm:flex-row gap-4 mb-4">
                         <div class="flex-shrink-0 relative cursor-pointer upload-container w-16 h-16 rounded-lg bg-[rgba(0,0,0,0.3)] border border-[rgba(255,255,255,0.1)] overflow-hidden"
                             onclick="openModal('azway-preview')" title="Phóng to">
-                            <img id="azway-preview" src="logo azw.jpg" alt="AZWAY TRAVEL Logo"
+                            <img loading="lazy" decoding="async" id="azway-preview" src="logo azw.jpg" alt="AZWAY TRAVEL Logo"
                                 class="w-full h-full object-contain p-1">
                             <div class="absolute inset-0 flex items-center justify-center upload-overlay">
                                 <i class="fas fa-search-plus text-white"></i>
@@ -1411,7 +1434,7 @@
                     <div class="flex flex-col sm:flex-row gap-4 mb-4">
                         <div class="flex-shrink-0 relative cursor-pointer upload-container w-16 h-16 rounded-lg bg-[rgba(0,0,0,0.3)] border border-[rgba(255,255,255,0.1)] overflow-hidden"
                             onclick="openModal('upbase-preview')" title="Phóng to">
-                            <img id="upbase-preview" src="logo upbase.jpg" alt="Upbase Logo"
+                            <img loading="lazy" decoding="async" id="upbase-preview" src="logo upbase.jpg" alt="Upbase Logo"
                                 class="w-full h-full object-contain p-1">
                             <div class="absolute inset-0 flex items-center justify-center upload-overlay">
                                 <i class="fas fa-search-plus text-white"></i>
@@ -1515,7 +1538,7 @@
                                     <div class="flex items-center gap-6">
                                         <div
                                             class="w-20 h-20 rounded-[2rem] glass-card border-ai-cyan/30 flex items-center justify-center shadow-[0_0_25px_rgba(212, 104, 10,0.2)] overflow-hidden p-2.5 bg-white/5">
-                                            <img src="https://lf-package-sg.larksuitecdn.com/obj/lark-static-sgsaas/lark/open/website/share-logo.png"
+                                            <img loading="lazy" decoding="async" src="https://lf-package-sg.larksuitecdn.com/obj/lark-static-sgsaas/lark/open/website/share-logo.png"
                                                 alt="Lark Suite" class="w-full h-full object-contain">
                                         </div>
                                         <div>
@@ -1565,7 +1588,7 @@
                                     <div class="grid grid-cols-2 gap-5">
                                         <div class="col-span-2 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-[0_20px_40px_rgba(0,0,0,0.5)] h-72"
                                             onclick="openModal('lark-main')">
-                                            <img id="lark-main"
+                                            <img loading="lazy" decoding="async" id="lark-main"
                                                 src="https://cdn.brvn.vn/editor/2025/09/U84141_1280x1280_1758275601.PNG"
                                                 class="rounded-[2rem] w-full h-full object-cover" alt="">
                                             <div
@@ -1575,7 +1598,7 @@
                                         </div>
                                         <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
                                             onclick="openModal('lark-assets')">
-                                            <img id="lark-assets" src="creative assets.png"
+                                            <img loading="lazy" decoding="async" id="lark-assets" src="creative assets.webp"
                                                 class="rounded-[2rem] w-full h-full object-cover" alt="">
                                             <div
                                                 class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
@@ -1588,7 +1611,7 @@
                                         </div>
                                         <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
                                             onclick="openModal('lark-lp')">
-                                            <img id="lark-lp" src="LDP (2).png"
+                                            <img loading="lazy" decoding="async" id="lark-lp" src="LDP (2).webp"
                                                 class="rounded-[2rem] w-full h-full object-cover" alt="">
                                             <div
                                                 class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
@@ -1720,7 +1743,7 @@
                                         <div class="glass-card p-4 rounded-[3rem] cursor-pointer upload-container shadow-2xl hover:shadow-[0_0_40px_rgba(245, 166, 35,0.3)] transition-all duration-500 group"
                                             onclick="openModal('lark-plan')">
                                             <div class="relative w-full h-[400px] rounded-[2.5rem] overflow-hidden">
-                                                <img id="lark-plan" src="pfm meta.png"
+                                                <img loading="lazy" decoding="async" id="lark-plan" src="pfm meta.webp"
                                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                                     alt="">
                                                 <div
@@ -1829,7 +1852,7 @@
                     <div class="flex flex-col sm:flex-row gap-4 mb-4">
                         <div class="flex-shrink-0 relative cursor-pointer upload-container w-16 h-16 rounded-lg bg-[rgba(0,0,0,0.3)] border border-[rgba(255,255,255,0.1)] overflow-hidden"
                             onclick="openModal('taphoa-preview')" title="Phóng to">
-                            <img id="taphoa-preview" src="logo decor.jpg" alt="Tap Hoa Logo"
+                            <img loading="lazy" decoding="async" id="taphoa-preview" src="logo decor.jpg" alt="Tap Hoa Logo"
                                 class="w-full h-full object-contain p-1">
                             <div class="absolute inset-0 flex items-center justify-center upload-overlay"><i
                                     class="fas fa-search-plus text-white"></i></div>
@@ -1916,7 +1939,7 @@
                 <!-- Org Image with Link to PDF -->
                 <a href="https://drive.google.com/file/d/1h2mQpBQSt2uWz0IjEkfLvacE3hRIsUzt/view?usp=sharing"
                     target="_blank" class="h-64 lg:h-auto lg:w-1/3 relative group overflow-hidden bg-gray-800 block">
-                    <img id="der-main-preview" src="bdn port.jpg" alt="DER NEU"
+                    <img loading="lazy" decoding="async" id="der-main-preview" src="bdn port.jpg" alt="DER NEU"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div
                         class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white backdrop-blur-sm p-4">
@@ -2049,7 +2072,7 @@
                 <div
                     class="glass-card rounded-[2.5rem] overflow-hidden flex flex-col border border-white/10 bg-white/5">
                     <div class="h-64 w-full relative upload-container cursor-pointer" onclick="openModal('nyf-img-sc')">
-                        <img id="nyf-img-sc" src="nyf 2023.png" alt="NYF" class="w-full h-full object-cover">
+                        <img loading="lazy" decoding="async" id="nyf-img-sc" src="nyf 2023.webp" alt="NYF" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center upload-overlay">
                             <i class="fas fa-search-plus text-3xl text-white"></i>
@@ -2096,7 +2119,7 @@
                     class="glass-card rounded-[2.5rem] overflow-hidden flex flex-col border border-white/10 bg-white/5">
                     <div class="h-64 w-full relative upload-container cursor-pointer"
                         onclick="openModal('tnth-img-sc')">
-                        <img id="tnth-img-sc" src="tnth 2023.jpg" alt="TNTH" class="w-full h-full object-cover">
+                        <img loading="lazy" decoding="async" id="tnth-img-sc" src="tnth 2023.jpg" alt="TNTH" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                         <div class="absolute inset-0 flex items-center justify-center upload-overlay">
                             <i class="fas fa-search-plus text-3xl text-white"></i>
@@ -2168,7 +2191,7 @@
         onclick="closeModal()">
         <button class="absolute top-6 right-6 text-white text-4xl hover:text-ai-cyan transition-colors"
             onclick="closeModal()">&times;</button>
-        <img id="modal-image" src=""
+        <img loading="lazy" decoding="async" id="modal-image" src=""
             class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-[0_0_50px_rgba(212, 104, 10,0.3)] transform scale-95 transition-transform duration-300"
             alt="">
     </div>
@@ -2191,7 +2214,7 @@
                     class="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left border-b md:border-b-0 md:border-r border-white/10 pb-8 md:pb-0 md:pr-8">
                     <div class="flex-shrink-0 relative cursor-pointer upload-container w-24 h-24 rounded-2xl bg-white border border-white/20 overflow-hidden shadow-lg p-2 mb-6"
                         onclick="openModal('neu-logo-preview')" title="Phóng to">
-                        <img id="neu-logo-preview"
+                        <img loading="lazy" decoding="async" id="neu-logo-preview"
                             src="https://cdn.haitrieu.com/wp-content/uploads/2021/10/Logo-DH-Kinh-Te-Quoc-Dan-NEU.png"
                             alt="NEU Logo" class="w-full h-full object-contain">
                         <div
@@ -2285,7 +2308,7 @@
         <button
             class="absolute top-6 right-6 text-white text-4xl hover:text-ai-cyan focus:outline-none transition-colors"
             onclick="closeModal()">&times;</button>
-        <img id="modal-image" src=""
+        <img loading="lazy" decoding="async" id="modal-image" src=""
             class="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-[0_0_30px_rgba(212, 104, 10,0.3)] transform scale-95 transition-transform duration-300"
             onclick="event.stopPropagation()" alt="">
     </div>
@@ -2324,22 +2347,22 @@
                         <div class="grid grid-cols-2 gap-2">
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-gpt')">
-                                <img id="tool-gpt" src="logo gpt black.png" class="w-3.5 h-3.5 object-contain" alt="">
+                                <img loading="lazy" decoding="async" id="tool-gpt" src="logo gpt black.png" class="w-3.5 h-3.5 object-contain" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">GPT</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-gemini')">
-                                <img id="tool-gemini" src="logo gemini.png" class="w-3.5 h-3.5 object-contain" alt="">
+                                <img loading="lazy" decoding="async" id="tool-gemini" src="logo gemini.png" class="w-3.5 h-3.5 object-contain" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Gemini</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-claude')">
-                                <img id="tool-claude" src="logo claude.png" class="w-3.5 h-3.5 object-contain" alt="">
+                                <img loading="lazy" decoding="async" id="tool-claude" src="logo claude.png" class="w-3.5 h-3.5 object-contain" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Claude</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-notebooklm')">
-                                <img id="tool-notebooklm" src="logo notebooklm black.png"
+                                <img loading="lazy" decoding="async" id="tool-notebooklm" src="logo notebooklm black.png"
                                     class="w-3.5 h-3.5 object-contain" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">NotebookLM</span>
                             </div>
@@ -2356,32 +2379,32 @@
                         <div class="grid grid-cols-2 gap-2">
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-figma')">
-                                <img id="tool-figma" src="logo perplexity.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-figma" src="logo perplexity.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Perplexity</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-21st')">
-                                <img id="tool-21st" src="logo 21stdev.jpg" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-21st" src="logo 21stdev.jpg" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">21st.dev</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-gemcanvas')">
-                                <img id="tool-gemcanvas" src="logo gemini.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-gemcanvas" src="logo gemini.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Gemini Canvas</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-vscode')">
-                                <img id="tool-vscode" src="logo vscode.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-vscode" src="logo vscode.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">VS Code</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-github')">
-                                <img id="tool-github" src="logo github black.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-github" src="logo github black.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">GitHub</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-antigravity')">
-                                <img id="tool-antigravity" src="logo antigravity.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-antigravity" src="logo antigravity.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Antigravity</span>
                             </div>
                         </div>
@@ -2397,17 +2420,17 @@
                         <div class="grid grid-cols-2 gap-2">
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-canva')">
-                                <img id="tool-canva" src="logo canva.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-canva" src="logo canva.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Canva AI</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-capcut')">
-                                <img id="tool-capcut" src="white logo capcut.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-capcut" src="white logo capcut.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">CapCut AI</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #D4680A" onclick="openModal('tool-pts')">
-                                <img id="tool-pts" src="logo pts.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-pts" src="logo pts.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Photoshop</span>
                             </div>
                         </div>
@@ -2435,7 +2458,7 @@
                             optimization</p>
                         <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                             style="--pillar-color: #ffffff" onclick="openModal('tool-meta')">
-                            <img id="tool-meta" src="logo meta ads.png" class="w-3.5 h-3.5" alt="">
+                            <img loading="lazy" decoding="async" id="tool-meta" src="logo meta ads.png" class="w-3.5 h-3.5" alt="">
                             <span class="text-[10px] font-bold text-gray-300">Meta Ads</span>
                         </div>
                     </div>
@@ -2451,12 +2474,12 @@
                         <div class="grid grid-cols-2 gap-2">
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #ffffff" onclick="openModal('tool-excel')">
-                                <img id="tool-excel" src="logo excel.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-excel" src="logo excel.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Excel</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #ffffff" onclick="openModal('tool-powerbi')">
-                                <img id="tool-powerbi" src="logo PBI.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-powerbi" src="logo PBI.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Power BI</span>
                             </div>
                         </div>
@@ -2471,12 +2494,12 @@
                         <div class="grid grid-cols-2 gap-2">
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #ffffff" onclick="openModal('tool-brevo')">
-                                <img id="tool-brevo" src="logo brevo.png" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-brevo" src="logo brevo.png" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Brevo</span>
                             </div>
                             <div class="tool-tile flex items-center gap-2 p-2 rounded-xl cursor-pointer"
                                 style="--pillar-color: #ffffff" onclick="openModal('tool-mailchimp')">
-                                <img id="tool-mailchimp" src="logo mailchimp.webp" class="w-3.5 h-3.5" alt="">
+                                <img loading="lazy" decoding="async" id="tool-mailchimp" src="logo mailchimp.webp" class="w-3.5 h-3.5" alt="">
                                 <span class="text-[10px] font-bold text-gray-300">Mailchimp</span>
                             </div>
                         </div>
@@ -2541,7 +2564,7 @@
             <!-- Mobile App -->
             <div class="relative group cursor-pointer upload-container rounded-xl border-2 border-[#8B5A2B] overflow-hidden shadow-[0_0_15px_rgba(139,90,43,0.4)] hover:shadow-[0_0_30px_rgba(139,90,43,0.8)] transition-all duration-300 aspect-video bg-ai-dark reveal-on-scroll"
                 onclick="openModal('prop6-preview')" title="Phóng to">
-                <img id="prop6-preview" src="[MW 24] Game.png" alt="Mobile App" class="w-full h-full object-cover">
+                <img loading="lazy" decoding="async" id="prop6-preview" src="[MW 24] Game.png" alt="Mobile App" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
                     class="absolute inset-0 flex items-center justify-center upload-overlay bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10">
@@ -2570,7 +2593,7 @@
             <!-- Affiliate -->
             <div class="relative group cursor-pointer upload-container rounded-xl border-2 border-[#1D4ED8] overflow-hidden shadow-[0_0_15px_rgba(29,78,216,0.4)] hover:shadow-[0_0_30px_rgba(29,78,216,0.8)] transition-all duration-300 aspect-video bg-ai-dark reveal-on-scroll delay-100"
                 onclick="openModal('prop5-preview')" title="Phóng to">
-                <img id="prop5-preview" src="[MARCHA 25] Z15 Miracle.png" alt="Affiliate"
+                <img loading="lazy" decoding="async" id="prop5-preview" src="[MARCHA 25] Z15 Miracle.webp" alt="Affiliate"
                     class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
@@ -2600,7 +2623,7 @@
             <!-- Ride-hailing -->
             <div class="relative group cursor-pointer upload-container rounded-xl border-2 border-[#00B14F] overflow-hidden shadow-[0_0_15px_rgba(0,177,79,0.4)] hover:shadow-[0_0_30px_rgba(0,177,79,0.8)] transition-all duration-300 aspect-video bg-ai-dark reveal-on-scroll delay-200"
                 onclick="openModal('prop4-preview')" title="Phóng to">
-                <img id="prop4-preview" src="[MA 25] Grab.png" alt="Ride-hailing" class="w-full h-full object-cover">
+                <img loading="lazy" decoding="async" id="prop4-preview" src="[MA 25] Grab.webp" alt="Ride-hailing" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
                     class="absolute inset-0 flex items-center justify-center upload-overlay bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10">
@@ -2630,7 +2653,7 @@
             <!-- Deodorant -->
             <div class="relative group cursor-pointer upload-container rounded-xl border-2 border-[#FFB6C1] overflow-hidden shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_30px_rgba(255,182,193,0.8)] transition-all duration-300 aspect-video bg-ai-dark reveal-on-scroll"
                 onclick="openModal('prop3-preview')" title="Phóng to">
-                <img id="prop3-preview" src="[BLM 24] Dove.png" alt="Deodorants" class="w-full h-full object-cover">
+                <img loading="lazy" decoding="async" id="prop3-preview" src="[BLM 24] Dove.png" alt="Deodorants" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
                     class="absolute inset-0 flex items-center justify-center upload-overlay bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10">
@@ -2658,7 +2681,7 @@
             <!-- Oral Care -->
             <div class="relative group cursor-pointer upload-container rounded-xl border-2 border-[#E63946] overflow-hidden shadow-[0_0_15px_rgba(230,57,70,0.4)] hover:shadow-[0_0_30px_rgba(230,57,70,0.8)] transition-all duration-300 aspect-video bg-ai-dark reveal-on-scroll delay-100"
                 onclick="openModal('prop2-preview')" title="Phóng to">
-                <img id="prop2-preview" src="[MW 24] Colgate.png" alt="Oral Care" class="w-full h-full object-cover">
+                <img loading="lazy" decoding="async" id="prop2-preview" src="[MW 24] Colgate.webp" alt="Oral Care" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
                     class="absolute inset-0 flex items-center justify-center upload-overlay bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10">
@@ -2687,7 +2710,7 @@
             <!-- Facial Care -->
             <div class="relative group cursor-pointer upload-container rounded-xl border-2 border-[#FFB703] overflow-hidden shadow-[0_0_15px_rgba(255,183,3,0.4)] hover:shadow-[0_0_30px_rgba(255,183,3,0.8)] transition-all duration-300 aspect-video bg-ai-dark reveal-on-scroll delay-200"
                 onclick="openModal('prop1-preview')" title="Phóng to">
-                <img id="prop1-preview" src="[CBMKT 24] Laonmedi.png" alt="Facial Care"
+                <img loading="lazy" decoding="async" id="prop1-preview" src="[CBMKT 24] Laonmedi.png" alt="Facial Care"
                     class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0"></div>
                 <div
@@ -2739,7 +2762,7 @@
                         onclick="openModal('cert1-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert1-preview" src="Cert - DP21.jpg" alt="Digital Performance"
+                            <img loading="lazy" decoding="async" id="cert1-preview" src="Cert - DP21.jpg" alt="Digital Performance"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2751,7 +2774,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo-TM.png" alt="TM" class="w-full h-full object-contain">
+                                    <img loading="lazy" decoding="async" src="logo-TM.png" alt="TM" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Tomorrow Marketers</p>
@@ -2764,7 +2787,7 @@
                         onclick="openModal('cert2-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert2-preview" src="cert_datacamp_da.png" alt="Data Analyst Associate - DataCamp"
+                            <img loading="lazy" decoding="async" id="cert2-preview" src="cert_datacamp_da.png" alt="Data Analyst Associate - DataCamp"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2776,7 +2799,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo datacamp.png" alt="DataCamp" class="w-full h-full object-contain">
+                                    <img loading="lazy" decoding="async" src="logo datacamp.png" alt="DataCamp" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     DataCamp</p>
@@ -2789,7 +2812,7 @@
                         onclick="openModal('cert3-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert3-preview" src="cert_google_play.png"
+                            <img loading="lazy" decoding="async" id="cert3-preview" src="cert_google_play.png"
                                 alt="Google Play Store Listing Certificate"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
@@ -2802,7 +2825,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo googleplay.png" alt="Google Play"
+                                    <img loading="lazy" decoding="async" src="logo googleplay.png" alt="Google Play"
                                         class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
@@ -2816,7 +2839,7 @@
                         onclick="openModal('cert5-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert5-preview" src="cert_ga4.png" alt="Google Analytics GA4 Certification"
+                            <img loading="lazy" decoding="async" id="cert5-preview" src="cert_ga4.png" alt="Google Analytics GA4 Certification"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2828,7 +2851,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo google 1.png" alt="Google" class="w-full h-full object-contain">
+                                    <img loading="lazy" decoding="async" src="logo google 1.png" alt="Google" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Google</p>
@@ -2841,7 +2864,7 @@
                         onclick="openModal('cert4-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert4-preview" src="cert_apple_ads.png" alt="Apple Ads Certification"
+                            <img loading="lazy" decoding="async" id="cert4-preview" src="cert_apple_ads.png" alt="Apple Ads Certification"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2853,7 +2876,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo apple.png" alt="Apple" class="w-full h-full object-contain">
+                                    <img loading="lazy" decoding="async" src="logo apple.png" alt="Apple" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Apple</p>
@@ -2866,7 +2889,7 @@
                         onclick="openModal('cert6-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert6-preview" src="cert_google_ads_apps.png" alt="Google Ads Apps Certification"
+                            <img loading="lazy" decoding="async" id="cert6-preview" src="cert_google_ads_apps.png" alt="Google Ads Apps Certification"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2878,7 +2901,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo google 1.png" alt="Google" class="w-full h-full object-contain">
+                                    <img loading="lazy" decoding="async" src="logo google 1.png" alt="Google" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Google</p>
@@ -2894,7 +2917,7 @@
                         onclick="openModal('cert1-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert1-preview-dup" src="Cert - DP21.jpg" alt="Digital Performance"
+                            <img loading="lazy" decoding="async" id="cert1-preview-dup" src="Cert - DP21.jpg" alt="Digital Performance"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2906,7 +2929,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo-TM.png" alt="TM" class="w-full h-full object-contain">
+                                    <img loading="lazy" decoding="async" src="logo-TM.png" alt="TM" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Tomorrow Marketers</p>
@@ -2919,7 +2942,7 @@
                         onclick="openModal('cert2-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert2-preview-dup" src="cert_datacamp_da.png"
+                            <img loading="lazy" decoding="async" id="cert2-preview-dup" src="cert_datacamp_da.png"
                                 alt="Data Analyst Associate - DataCamp"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
@@ -2932,7 +2955,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo datacamp.png" alt="DataCamp" class="w-full h-full object-contain">
+                                    <img loading="lazy" decoding="async" src="logo datacamp.png" alt="DataCamp" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     DataCamp</p>
@@ -2945,7 +2968,7 @@
                         onclick="openModal('cert3-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert3-preview-dup" src="cert_google_play.png"
+                            <img loading="lazy" decoding="async" id="cert3-preview-dup" src="cert_google_play.png"
                                 alt="Google Play Store Listing Certificate"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
@@ -2958,7 +2981,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo googleplay.png" alt="Google Play"
+                                    <img loading="lazy" decoding="async" src="logo googleplay.png" alt="Google Play"
                                         class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
@@ -2972,7 +2995,7 @@
                         onclick="openModal('cert5-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert5-preview-dup" src="cert_ga4.png" alt="Google Analytics GA4 Certification"
+                            <img loading="lazy" decoding="async" id="cert5-preview-dup" src="cert_ga4.png" alt="Google Analytics GA4 Certification"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -2984,7 +3007,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo google.png" alt="Google" class="w-full h-full object-contain">
+                                    <img loading="lazy" decoding="async" src="logo google.png" alt="Google" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Google</p>
@@ -2997,7 +3020,7 @@
                         onclick="openModal('cert4-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert4-preview-dup" src="cert_apple_ads.png" alt="Apple Ads Certification"
+                            <img loading="lazy" decoding="async" id="cert4-preview-dup" src="cert_apple_ads.png" alt="Apple Ads Certification"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
                                 class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -3009,7 +3032,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo apple.png" alt="Apple" class="w-full h-full object-contain">
+                                    <img loading="lazy" decoding="async" src="logo apple.png" alt="Apple" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Apple</p>
@@ -3022,7 +3045,7 @@
                         onclick="openModal('cert6-preview')">
                         <div
                             class="w-full aspect-[4/3] relative rounded-xl overflow-hidden mb-4 bg-[#0a0a16] shadow-inner">
-                            <img id="cert6-preview-dup" src="cert_google_ads_apps.png"
+                            <img loading="lazy" decoding="async" id="cert6-preview-dup" src="cert_google_ads_apps.png"
                                 alt="Google Ads Apps Certification"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-out will-change-transform group-hover:scale-105">
                             <div
@@ -3035,7 +3058,7 @@
                             <div class="flex items-center justify-center gap-3">
                                 <div
                                     class="w-6 h-6 bg-white rounded-full p-[3px] shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                                    <img src="logo google.png" alt="Google" class="w-full h-full object-contain">
+                                    <img loading="lazy" decoding="async" src="logo google.png" alt="Google" class="w-full h-full object-contain">
                                 </div>
                                 <p class="text-[10px] text-gray-300 font-black tracking-widest uppercase text-center">
                                     Google</p>
@@ -3193,19 +3216,19 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-cyan/50 transition-all cursor-pointer"
                             onclick="openModal('neu-cert-1')">
-                            <img id="neu-cert-1" src="winner of cbmkt.jpg"
+                            <img loading="lazy" decoding="async" id="neu-cert-1" src="winner of cbmkt.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-cyan/50 transition-all cursor-pointer"
                             onclick="openModal('neu-cert-2')">
-                            <img id="neu-cert-2" src="sv5t.jpg"
+                            <img loading="lazy" decoding="async" id="neu-cert-2" src="sv5t.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-cyan/50 transition-all cursor-pointer"
                             onclick="openModal('neu-cert-3')">
-                            <img id="neu-cert-3" src="nckh.jpg"
+                            <img loading="lazy" decoding="async" id="neu-cert-3" src="nckh.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
@@ -3219,19 +3242,19 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-purple/50 transition-all cursor-pointer"
                             onclick="openModal('neu-people-1')">
-                            <img id="neu-people-1" src="winner of cbmkt 2.jpg"
+                            <img loading="lazy" decoding="async" id="neu-people-1" src="winner of cbmkt 2.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-purple/50 transition-all cursor-pointer"
                             onclick="openModal('neu-people-2')">
-                            <img id="neu-people-2" src="sv5t 2.jpg"
+                            <img loading="lazy" decoding="async" id="neu-people-2" src="sv5t 2.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
                         <div class="group relative overflow-hidden rounded-2xl glass-card p-2 border border-white/10 hover:border-ai-purple/50 transition-all cursor-pointer"
                             onclick="openModal('neu-people-3')">
-                            <img id="neu-people-3" src="nckh 2.jpg"
+                            <img loading="lazy" decoding="async" id="neu-people-3" src="nckh 2.jpg"
                                 class="w-full h-auto rounded-xl group-hover:scale-[1.03] transition-transform duration-700"
                                 alt="">
                         </div>
@@ -3332,7 +3355,7 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="col-span-2 glass-card p-2 rounded-[2rem] cursor-pointer hover:scale-[1.02] transition-transform duration-300 upload-container shadow-2xl h-56"
                                     onclick="openModal('proj-ai-3')">
-                                    <img id="proj-ai-3" src="thd tiktok.jpg"
+                                    <img loading="lazy" decoding="async" id="proj-ai-3" src="thd tiktok.jpg"
                                         class="rounded-[1.5rem] w-full h-full object-cover object-top" alt="">
                                     <div
                                         class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2rem]">
@@ -3341,7 +3364,7 @@
                                 </div>
                                 <div class="col-span-1 glass-card p-2 rounded-[2rem] cursor-pointer hover:scale-[1.02] transition-transform duration-300 upload-container shadow-2xl h-48"
                                     onclick="openModal('proj-ai-1')">
-                                    <img id="proj-ai-1" src="thd portfolio.jpg"
+                                    <img loading="lazy" decoding="async" id="proj-ai-1" src="thd portfolio.jpg"
                                         class="rounded-[1.5rem] w-full h-full object-cover" alt="">
                                     <div
                                         class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2rem]">
@@ -3350,7 +3373,7 @@
                                 </div>
                                 <div class="col-span-1 glass-card p-2 rounded-[2rem] cursor-pointer hover:scale-[1.02] transition-transform duration-300 upload-container shadow-2xl h-48"
                                     onclick="openModal('proj-ai-2')">
-                                    <img id="proj-ai-2" src="thd ins.jpg"
+                                    <img loading="lazy" decoding="async" id="proj-ai-2" src="thd ins.jpg"
                                         class="rounded-[1.5rem] w-full h-full object-cover" alt="">
                                     <div
                                         class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2rem]">
@@ -3457,7 +3480,7 @@
                             <div class="glass-card p-3 rounded-[2.5rem] cursor-pointer upload-container shadow-2xl hover:shadow-[0_0_30px_rgba(245, 166, 35,0.2)] transition-shadow group"
                                 onclick="openModal('proj-data-1')">
                                 <div class="w-full h-64 md:h-80 relative rounded-[2rem] overflow-hidden">
-                                    <img id="proj-data-1" src="thd zalo.jpg"
+                                    <img loading="lazy" decoding="async" id="proj-data-1" src="thd zalo.jpg"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         alt="">
                                     <div
@@ -3475,7 +3498,7 @@
                             <div class="glass-card p-3 rounded-[2.5rem] cursor-pointer upload-container shadow-2xl hover:shadow-[0_0_30px_rgba(212, 104, 10,0.2)] transition-shadow group"
                                 onclick="openModal('proj-data-2')">
                                 <div class="w-full h-64 md:h-80 relative rounded-[2rem] overflow-hidden">
-                                    <img id="proj-data-2" src="thd meta.jpg"
+                                    <img loading="lazy" decoding="async" id="proj-data-2" src="thd meta.jpg"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         alt="">
                                     <div
@@ -3558,7 +3581,7 @@
                         <div class="lg:col-span-6 lg:order-1">
                             <div class="glass-card p-3 rounded-[2.5rem] shadow-2xl relative overflow-hidden group upload-container cursor-pointer"
                                 onclick="openModal('proj-human')">
-                                <img id="proj-human" src="brand guideline taphoadecor.png"
+                                <img loading="lazy" decoding="async" id="proj-human" src="brand guideline taphoadecor.webp"
                                     class="rounded-[2rem] w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 shadow-inner"
                                     alt="">
                                 <div
@@ -3698,7 +3721,7 @@
                             <div class="grid grid-cols-2 gap-5">
                                 <div class="col-span-2 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-[0_20px_40px_rgba(0,0,0,0.5)] h-72"
                                     onclick="openModal('karofi-fb-workflow')">
-                                    <img id="karofi-fb-workflow" src="n8n fb wf.jpg"
+                                    <img loading="lazy" decoding="async" id="karofi-fb-workflow" src="n8n fb wf.jpg"
                                         class="rounded-[2rem] w-full h-full object-cover"
                                         alt="n8n Facebook Scraping Workflow">
                                     <div
@@ -3708,7 +3731,7 @@
                                 </div>
                                 <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
                                     onclick="openModal('karofi-fb-group')">
-                                    <img id="karofi-fb-group" src="demo workflow FB 2.jpg"
+                                    <img loading="lazy" decoding="async" id="karofi-fb-group" src="demo workflow FB 2.jpg"
                                         class="rounded-[2rem] w-full h-full object-cover" alt="Facebook Group Target">
                                     <div
                                         class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
@@ -3721,7 +3744,7 @@
                                 </div>
                                 <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
                                     onclick="openModal('karofi-fb-data')">
-                                    <img id="karofi-fb-data" src="n8n fb wf result.jpg"
+                                    <img loading="lazy" decoding="async" id="karofi-fb-data" src="n8n fb wf result.jpg"
                                         class="rounded-[2rem] w-full h-full object-cover" alt="Scraped Data Output">
                                     <div
                                         class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
@@ -3780,7 +3803,7 @@
                                 <div class="grid grid-cols-2 gap-5">
                                     <div class="col-span-2 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-[0_20px_40px_rgba(0,0,0,0.5)] h-72"
                                         onclick="openModal('karofi-web-workflow')">
-                                        <img id="karofi-web-workflow" src="n8n dmx wf.jpg"
+                                        <img loading="lazy" decoding="async" id="karofi-web-workflow" src="n8n dmx wf.jpg"
                                             class="rounded-[2rem] w-full h-full object-cover"
                                             alt="n8n Web Scraping Workflow">
                                         <div
@@ -3790,7 +3813,7 @@
                                     </div>
                                     <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
                                         onclick="openModal('karofi-web-scraper')">
-                                        <img id="karofi-web-scraper" src="demo workflow Web 2.jpg"
+                                        <img loading="lazy" decoding="async" id="karofi-web-scraper" src="demo workflow Web 2.jpg"
                                             class="rounded-[2rem] w-full h-full object-cover" alt="Puppeteer Scraper">
                                         <div
                                             class="absolute inset-0 flex items-center justify-center upload-overlay rounded-[2.5rem]">
@@ -3803,7 +3826,7 @@
                                     </div>
                                     <div class="col-span-1 glass-card p-3 rounded-[2.5rem] cursor-pointer hover:-translate-y-2 transition-transform duration-500 upload-container shadow-2xl h-48 relative"
                                         onclick="openModal('karofi-web-data')">
-                                        <img id="karofi-web-data" src="n8n dmx wf result.jpg"
+                                        <img loading="lazy" decoding="async" id="karofi-web-data" src="n8n dmx wf result.jpg"
                                             class="rounded-[2rem] w-full h-full object-cover"
                                             alt="Structured Review Data">
                                         <div
@@ -4001,7 +4024,7 @@
                                 <i class="fab fa-facebook text-[#1877F2] text-sm"></i> Meta Ads Manager — Campaign
                                 Performance
                             </p>
-                            <img src="azw meta ads.png" alt="Azway Meta Ads Performance Dashboard"
+                            <img loading="lazy" decoding="async" src="azw meta ads.png" alt="Azway Meta Ads Performance Dashboard"
                                 class="w-full rounded-xl border border-white/10 shadow-lg cursor-pointer hover:scale-[1.02] transition-transform duration-500"
                                 onclick="openModal('azway-meta-proof')" id="azway-meta-proof">
                         </div>
@@ -4052,25 +4075,25 @@
                         <div id="album-1-1" class="azw-album grid grid-cols-2 md:grid-cols-4 gap-4">
                             <div
                                 class="glass-card rounded-xl border border-white/10 overflow-hidden aspect-square cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg">
-                                <img src="azw creative assets/vuong 1.1.png" alt="Creative 1:1 - 1"
+                                <img loading="lazy" decoding="async" src="azw creative assets/vuong 1.1.png" alt="Creative 1:1 - 1"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-11-1')"
                                     id="azw-c-11-1">
                             </div>
                             <div
                                 class="glass-card rounded-xl border border-white/10 overflow-hidden aspect-square cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg">
-                                <img src="azw creative assets/vuong 1.1 (2).png" alt="Creative 1:1 - 2"
+                                <img loading="lazy" decoding="async" src="azw creative assets/vuong 1.1 (2).png" alt="Creative 1:1 - 2"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-11-2')"
                                     id="azw-c-11-2">
                             </div>
                             <div
                                 class="glass-card rounded-xl border border-white/10 overflow-hidden aspect-square cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg">
-                                <img src="azw creative assets/vuong 1.1 (4).png" alt="Creative 1:1 - 3"
+                                <img loading="lazy" decoding="async" src="azw creative assets/vuong 1.1 (4).png" alt="Creative 1:1 - 3"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-11-3')"
                                     id="azw-c-11-3">
                             </div>
                             <div
                                 class="glass-card rounded-xl border border-white/10 overflow-hidden aspect-square cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg">
-                                <img src="azw creative assets/vuong 1.1 (5).png" alt="Creative 1:1 - 4"
+                                <img loading="lazy" decoding="async" src="azw creative assets/vuong 1.1 (5).png" alt="Creative 1:1 - 4"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-11-4')"
                                     id="azw-c-11-4">
                             </div>
@@ -4080,13 +4103,13 @@
                         <div id="album-3-4" class="azw-album hidden grid grid-cols-2 md:grid-cols-4 gap-4">
                             <div class="glass-card rounded-xl border border-white/10 overflow-hidden cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg"
                                 style="aspect-ratio:3/4">
-                                <img src="azw creative assets/ngang 3.4.png" alt="Creative 3:4 - 1"
+                                <img loading="lazy" decoding="async" src="azw creative assets/ngang 3.4.png" alt="Creative 3:4 - 1"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-34-1')"
                                     id="azw-c-34-1">
                             </div>
                             <div class="glass-card rounded-xl border border-white/10 overflow-hidden cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg"
                                 style="aspect-ratio:3/4">
-                                <img src="azw creative assets/ngang 3.4 (2).png" alt="Creative 3:4 - 2"
+                                <img loading="lazy" decoding="async" src="azw creative assets/ngang 3.4 (2).png" alt="Creative 3:4 - 2"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-34-2')"
                                     id="azw-c-34-2">
                             </div>
@@ -4096,13 +4119,13 @@
                         <div id="album-9-16" class="azw-album hidden grid grid-cols-2 md:grid-cols-4 gap-4">
                             <div class="glass-card rounded-xl border border-white/10 overflow-hidden cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg"
                                 style="aspect-ratio:9/16">
-                                <img src="azw creative assets/doc 9.16.png" alt="Creative 9:16 - 1"
+                                <img loading="lazy" decoding="async" src="azw creative assets/doc 9.16.png" alt="Creative 9:16 - 1"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-916-1')"
                                     id="azw-c-916-1">
                             </div>
                             <div class="glass-card rounded-xl border border-white/10 overflow-hidden cursor-pointer hover:scale-[1.03] transition-transform duration-300 shadow-lg"
                                 style="aspect-ratio:9/16">
-                                <img src="azw creative assets/doc 9.16 (2).png" alt="Creative 9:16 - 2"
+                                <img loading="lazy" decoding="async" src="azw creative assets/doc 9.16 (2).png" alt="Creative 9:16 - 2"
                                     class="w-full h-full object-cover" onclick="openModal('azw-c-916-2')"
                                     id="azw-c-916-2">
                             </div>
@@ -4137,7 +4160,7 @@
                                 <div
                                     class="glass-card rounded-2xl border border-white/10 overflow-hidden hover:border-ai-cyan/40 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(212,104,10,0.15)] hover:-translate-y-2">
                                     <div class="relative overflow-hidden" style="aspect-ratio:16/9">
-                                        <img src="azw ldp SW.png" alt="Sunworld 3-in-1 Landing Page"
+                                        <img loading="lazy" decoding="async" src="azw ldp SW.webp" alt="Sunworld 3-in-1 Landing Page"
                                             class="w-full h-full object-cover object-top group-hover/lp:scale-105 transition-transform duration-700">
                                         <div
                                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/lp:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -4162,7 +4185,7 @@
                                 <div
                                     class="glass-card rounded-2xl border border-white/10 overflow-hidden hover:border-ai-purple/40 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(245,166,35,0.15)] hover:-translate-y-2">
                                     <div class="relative overflow-hidden" style="aspect-ratio:16/9">
-                                        <img src="azw ldp teambuilding.png" alt="Team Building Landing Page"
+                                        <img loading="lazy" decoding="async" src="azw ldp teambuilding.webp" alt="Team Building Landing Page"
                                             class="w-full h-full object-cover object-top group-hover/lp:scale-105 transition-transform duration-700">
                                         <div
                                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/lp:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -4187,7 +4210,7 @@
                                 <div
                                     class="glass-card rounded-2xl border border-white/10 overflow-hidden hover:border-ai-cyan/40 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(212,104,10,0.15)] hover:-translate-y-2">
                                     <div class="relative overflow-hidden" style="aspect-ratio:16/9">
-                                        <img src="azw HLB cruise.png" alt="Ha Long Cruise Landing Page"
+                                        <img loading="lazy" decoding="async" src="azw HLB cruise.webp" alt="Ha Long Cruise Landing Page"
                                             class="w-full h-full object-cover object-top group-hover/lp:scale-105 transition-transform duration-700">
                                         <div
                                             class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/lp:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
